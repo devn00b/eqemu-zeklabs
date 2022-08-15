@@ -1,0 +1,74 @@
+sub EVENT_SPAWN
+{
+$npc->SetSlotTint(1, 46,43, 43); #1 for chest
+$npc->SetSlotTint(2, 46,43, 43); #2 for arms
+$npc->SetSlotTint(3, 46,43, 43); #3 for bracers
+$npc->SetSlotTint(4, 46,43, 43); #4 for hands
+$npc->SetSlotTint(5, 46,43, 43); #5 for legs
+$npc->SetSlotTint(6, 46,43, 43); #6 for boots
+$npc->SetSlotTint(0, 116,53, 67); #0 for helm
+}
+
+sub EVENT_SAY
+{
+$link = quest::saylink("heads");
+if($text=~/Hail/i){
+quest::say("Well hello there $name, would you happen to have some $link for me today?");
+}
+elsif($text=~/heads/i){
+quest::say("Mmm yes... I love to collect heads.  I have an entire gallery!!  I primarily collect the heads of citizens from kingdoms due to their prominence in society.  Bring back two heads to me so I know I have at least one worth my time.");
+}
+}
+
+sub EVENT_ITEM {
+#count the heads
+$qeynosCount = $itemcount{20470};
+$freeportCount = $itemcount{20471};
+$rivervaleCount = $itemcount{20480};
+$halasCount = $itemcount{20489};
+
+$oddNumber = 1;
+$actualPts = 0;
+
+$count = $qeynosCount + $freeportCount + $rivervaleCount + $halasCount;
+if ( $count < 1 )
+{
+quest::say("I do not want these..");
+plugin::return_items(\%itemcount);
+return;
+}
+elsif ( $client->GetPVPFlag() == 1 )
+{
+$count = $freeportCount + $rivervaleCount + $halasCount;
+}
+elsif ( $client->GetPVPFlag() == 2 )
+{
+$count = $freeportCount + $rivervaleCount + $qeynosCount;
+}
+elsif ( $client->GetPVPFlag() == 3 )
+{
+$count = $qeynosCount + $rivervaleCount + $halasCount;
+}
+elsif ( $client->GetPVPFlag() == 4 )
+{
+$count = $freeportCount + $qeynosCount + $halasCount;
+}
+elsif ( $client->GetPVPFlag() == 5 )
+{
+$count = $freeportCount + $qeynosCount + $halasCount + $rivervaleCount;
+}
+
+$oddNumber = $count % 2;
+$actualPts = $count / 2;
+
+if ( $oddNumber > 0 ) { quest::say("Provide an even amount of heads!"); plugin::return_items(\%itemcount); return; }
+
+if ( $actualPts > 0 ) {
+$client->AddPVPPoints($actualPts);
+if ( $actualPts > 1 ) { quest::say("Ohhh new heads! I have awarded you with $actualPts points for your efforts!"); }
+else {
+quest::say("Ohhh new heads! I have awarded you with $actualPts point for your efforts!"); }
+}
+else { quest::say("I will keep these however I will give you nothing for them!  A shame that you hold the heads of your own people."); }
+
+}

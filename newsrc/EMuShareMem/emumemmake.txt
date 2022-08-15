@@ -1,0 +1,103 @@
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  MMFMutex.cpp -o MMFMutex.o
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  Doors.cpp -o Doors.o
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  Items.cpp -o Items.o
+Items.cpp: In function ‘bool AddItem(uint32, const Item_Struct*)’:
+Items.cpp:31:55: warning: cast from type ‘const void*’ to type ‘MMFItems_Struct*’ casts away qualifiers [-Wcast-qual]
+  MMFItemsData = (MMFItems_Struct*) ItemsMMF.GetHandle();
+                                                       ^
+Items.cpp: In function ‘bool DLLLoadItems(CALLBACK_DBLoadItems, int32, sint32*, int32*)’:
+Items.cpp:99:57: warning: cast from type ‘const void*’ to type ‘MMFItems_Struct*’ casts away qualifiers [-Wcast-qual]
+    MMFItemsData = (MMFItems_Struct*) ItemsMMF.GetHandle();
+                                                         ^
+Items.cpp:137:55: warning: cast from type ‘const void*’ to type ‘MMFItems_Struct*’ casts away qualifiers [-Wcast-qual]
+  MMFItemsData = (MMFItems_Struct*) ItemsMMF.GetHandle();
+                                                       ^
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  Spells.cpp -o Spells.o
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  NPCFactionLists.cpp -o NPCFactionLists.o
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  MMF.cpp -o MMF.o
+MMF.cpp: In member function ‘bool MMF::Open(const char*, int32)’:
+MMF.cpp:228:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       if (mem_size.shm_segsz != int(tmpSize)){ //comparison between signed and unsigned integer expressions
+                              ^
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  Loot.cpp -o Loot.o
+Loot.cpp: In function ‘bool pDLLLoadLoot(CALLBACK_DBLoadLoot, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32)’:
+Loot.cpp:193:70: warning: cast from type ‘const uint8* {aka const unsigned char*}’ to type ‘int32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+  LootTable = (int32*) &MMFLootData->data[MMFLootData->LootTableOffset];
+                                                                      ^
+Loot.cpp:194:68: warning: cast from type ‘const uint8* {aka const unsigned char*}’ to type ‘int32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+  LootDrop = (int32*) &MMFLootData->data[MMFLootData->LootDropOffset];
+                                                                    ^
+Loot.cpp: In function ‘const LootTable_Struct* pGetLootTable(uint32)’:
+Loot.cpp:203:61: warning: cast from type ‘const uint8* {aka const unsigned char*}’ to type ‘LootTable_Struct*’ casts away qualifiers [-Wcast-qual]
+  return (LootTable_Struct*) &MMFLootData->data[LootTable[id]];
+                                                             ^
+Loot.cpp: In function ‘const LootDrop_Struct* pGetLootDrop(uint32)’:
+Loot.cpp:211:59: warning: cast from type ‘const uint8* {aka const unsigned char*}’ to type ‘LootDrop_Struct*’ casts away qualifiers [-Wcast-qual]
+  return (LootDrop_Struct*) &MMFLootData->data[LootDrop[id]];
+                                                           ^
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  Opcodes.cpp -o Opcodes.o
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  SkillCaps.cpp -o SkillCaps.o
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  Zones.cpp -o Zones.o
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  RandomLootDrop.cpp -o RandomLootDrop.o
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  TeamSettings.cpp -o TeamSettings.o
+TeamSettings.cpp: In function ‘bool AddTeamSettings(uint32, TeamSettings_Struct*)’:
+TeamSettings.cpp:32:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+   MMFTeamSettingsData = (MMFTeamSettings_Struct*) TeamSettingsMMF.GetHandle();
+                                                                             ^
+TeamSettings.cpp: In function ‘bool UpdateTeamSettings(uint32, const TeamSettings_Struct*)’:
+TeamSettings.cpp:72:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+   MMFTeamSettingsData = (MMFTeamSettings_Struct*) TeamSettingsMMF.GetHandle();
+                                                                             ^
+TeamSettings.cpp: In function ‘bool UpdatePVPLeaderboard(const PVPLeaderBoardEntry_Struct*)’:
+TeamSettings.cpp:109:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+   MMFTeamSettingsData = (MMFTeamSettings_Struct*) TeamSettingsMMF.GetHandle();
+                                                                             ^
+TeamSettings.cpp:113:37: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+    if ( bestPosPointReplaceName < 0 && MMFTeamSettingsData->TopPVPPointEntries[pos].Name[0] == 0 || !strcasecmp(MMFTeamSettingsData->TopPVPPointEntries[pos].Name, lbe->Name) )
+                                     ^
+TeamSettings.cpp:122:36: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+    if ( bestPosKillReplaceName < 0 && MMFTeamSettingsData->TopPVPKillEntries[pos].Name[0] == 0 || !strcasecmp(MMFTeamSettingsData->TopPVPKillEntries[pos].Name, lbe->Name)  ) // null option field use this and break
+                                    ^
+TeamSettings.cpp:131:38: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+    if ( bestPosInfamyReplaceName < 0 && MMFTeamSettingsData->TopPVPInfamyEntries[pos].Name[0] == 0 || !strcasecmp(MMFTeamSettingsData->TopPVPInfamyEntries[pos].Name, lbe->Name) )
+                                      ^
+TeamSettings.cpp:322:36: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+   if ( bestPosPointReplaceName < 0 && MMFTeamSettingsData_Writable->TopPVPPointEntries[pos].Name[0] == 0 || !strcasecmp(MMFTeamSettingsData_Writable->TopPVPPointEntries[pos].Name, lbe->Name) )
+                                    ^
+TeamSettings.cpp:331:35: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+   if ( bestPosKillReplaceName < 0 && MMFTeamSettingsData_Writable->TopPVPKillEntries[pos].Name[0] == 0 || !strcasecmp(MMFTeamSettingsData_Writable->TopPVPKillEntries[pos].Name, lbe->Name)  ) // null option field use this and break
+                                   ^
+TeamSettings.cpp:340:37: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+   if ( bestPosInfamyReplaceName < 0 && MMFTeamSettingsData_Writable->TopPVPInfamyEntries[pos].Name[0] == 0 || !strcasecmp(MMFTeamSettingsData_Writable->TopPVPInfamyEntries[pos].Name, lbe->Name)  ) // null option field use this and break
+                                     ^
+TeamSettings.cpp: In function ‘bool UpdateGuardSettings(const GuardSettings_Struct*)’:
+TeamSettings.cpp:536:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+   MMFTeamSettingsData = (MMFTeamSettings_Struct*) TeamSettingsMMF.GetHandle();
+                                                                             ^
+TeamSettings.cpp:530:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i=0;
+      ^
+TeamSettings.cpp:532:7: warning: unused variable ‘replaceField’ [-Wunused-variable]
+  bool replaceField = false;
+       ^
+TeamSettings.cpp: In function ‘bool UpdateGuildHateList(uint32, GuildHate_Struct*, bool)’:
+TeamSettings.cpp:598:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+   MMFTeamSettingsData = (MMFTeamSettings_Struct*) TeamSettingsMMF.GetHandle();
+                                                                             ^
+TeamSettings.cpp: In function ‘bool DLLLoadTeamSettings(CALLBACK_DBLoadTeamSettings, int32, sint32*, int32*)’:
+TeamSettings.cpp:718:78: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+    MMFTeamSettingsData = (MMFTeamSettings_Struct*) TeamSettingsMMF.GetHandle();
+                                                                              ^
+TeamSettings.cpp:756:76: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+  MMFTeamSettingsData = (MMFTeamSettings_Struct*) TeamSettingsMMF.GetHandle();
+                                                                            ^
+TeamSettings.cpp: In function ‘GuildHate_Struct* GetGuildHateList(int32, int32)’:
+TeamSettings.cpp:801:79: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+     MMFTeamSettingsData = (MMFTeamSettings_Struct*) TeamSettingsMMF.GetHandle();
+                                                                               ^
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  DLLMain.cpp -o DLLMain.o
+mkdir -p .obj
+gcc -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  -c ../common/timer.cpp -o .obj/timer.o
+mkdir -p .obj
+gcc -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  -c ../common/unix.cpp -o .obj/unix.o
+gcc -g -shared -Wl,-soname,libEMuShareMem.so -o libEMuShareMem.so MMFMutex.o Doors.o Items.o Spells.o NPCFactionLists.o MMF.o Loot.o Opcodes.o SkillCaps.o Zones.o RandomLootDrop.o TeamSettings.o DLLMain.o .obj/timer.o .obj/unix.o -L. -lstdc++ 

@@ -1,0 +1,360 @@
+make: Warning: File 'perlparser.cpp' has modification time 2.5 s in the future
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated  -Wcomment -Wcast-align -Wl,-Map,zone.map -O2 -g -march=ivybridge -pthread -pipe -D_GNU_SOURCE -DINVERSEXY -DFX -DZONE -DEQDEBUG=0 -DTCPN_DEBUG=1 -DCATCH_CRASH -DNO_PIDLOG -DSHAREMEM -DFIELD_ITEMS -DCOMBINED -DREVERSE_AGGRO -DAPP_OPCODE_SIZE=2 -Di386 -DEMBPERL -DEMBPERL_PLUGIN -DHAS_UNION_SEMUN -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing    -g -DNDEBUG  -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE  perlparser.cpp -o perlparser.o
+In file included from perlparser.cpp:19:0:
+features.h:127:0: warning: "REVERSE_AGGRO" redefined
+ #define REVERSE_AGGRO
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from client.h:24:0,
+                 from embparser.h:9,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+../common/emu_opcodes.h:45:20: warning: extra tokens at end of #ifdef directive
+ #ifdef LOGINCRYPTO && !defined(CHAT)
+                    ^
+In file included from zonedb.h:4:0,
+                 from client.h:31,
+                 from embparser.h:9,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+../common/shareddb.h:176:102: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  bool GenerateRandomLootGroupResult(RandomLootDropResult_Struct* rldr, uint32 groupid, char* npcName="UNKNOWN", char* pcName="UNKNOWN", int32 providedCRC=0);
+                                                                                                      ^
+../common/shareddb.h:176:126: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  bool GenerateRandomLootGroupResult(RandomLootDropResult_Struct* rldr, uint32 groupid, char* npcName="UNKNOWN", char* pcName="UNKNOWN", int32 providedCRC=0);
+                                                                                                                              ^
+../common/shareddb.h:184:173: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  bool GenerateRandItemStruct(float baseValue, float dbValue, Item_Struct* itmStruct, const RandomItemTemplate_Struct* rndItem, RNDITEM_DROP_TYPE dropType, char* npcNameStr="UNKNOWN", char* pcNameStr="UNKNOWN");
+                                                                                                                                                                             ^
+../common/shareddb.h:184:200: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  bool GenerateRandItemStruct(float baseValue, float dbValue, Item_Struct* itmStruct, const RandomItemTemplate_Struct* rndItem, RNDITEM_DROP_TYPE dropType, char* npcNameStr="UNKNOWN", char* pcNameStr="UNKNOWN");
+                                                                                                                                                                                                        ^
+In file included from zonedb.h:4:0,
+                 from client.h:31,
+                 from embparser.h:9,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+../common/shareddb.h:253:84: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  float charXPos=0.0f, float charYPos=0.0f, float charZPos=0.0f, char* charZoneName="", float targXPos=0.0f, float targYPos=0.0f, float targZPos=0.0f);
+                                                                                    ^
+../common/shareddb.h:255:84: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  float charXPos=0.0f, float charYPos=0.0f, float charZPos=0.0f, char* charZoneName="", float targXPos=0.0f, float targYPos=0.0f, float targZPos=0.0f);
+                                                                                    ^
+../common/shareddb.h:257:84: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  float charXPos=0.0f, float charYPos=0.0f, float charZPos=0.0f, char* charZoneName="", float targXPos=0.0f, float targYPos=0.0f, float targZPos=0.0f);
+                                                                                    ^
+../common/shareddb.h:281:132: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   int32 petitionID=0, bool bypassMessageLimit=false, uint32 command=0, uint32 commandValue=0, uint32 guildid=0, char* lastAttacker="", int32 fromgroupid=0, char* accountName="", int32 optionalfield1=0, int32 optionalfield2=0);
+                                                                                                                                    ^
+../common/shareddb.h:281:175: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   int32 petitionID=0, bool bypassMessageLimit=false, uint32 command=0, uint32 commandValue=0, uint32 guildid=0, char* lastAttacker="", int32 fromgroupid=0, char* accountName="", int32 optionalfield1=0, int32 optionalfield2=0);
+                                                                                                                                                                               ^
+In file included from mob.h:61:0,
+                 from client.h:36,
+                 from embparser.h:9,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+entity.h:360:150: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  int16 CreateGroundObject(int32 itemid, float x, float y, float z, float heading, int32 decay_time = 300000, uint32 requiredlevel = 0, char* qglobal="");
+                                                                                                                                                      ^
+In file included from client.h:37:0,
+                 from embparser.h:9,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+npc.h: In member function ‘void NPC::ClearQuestItems(bool)’:
+npc.h:380:14: warning: unused variable ‘inst’ [-Wunused-variable]
+    ItemInst* inst = iterator.GetData();
+              ^
+npc.h: In member function ‘void NPC::ClearQuestDeleteItems(bool)’:
+npc.h:393:14: warning: unused variable ‘inst’ [-Wunused-variable]
+    ItemInst* inst = iterator.GetData();
+              ^
+In file included from client.h:44:0,
+                 from embparser.h:9,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+questmgr.h: At global scope:
+questmgr.h:247:158: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  int16 CreateGroundObject(int32 itemid, float x, float y, float z, float heading, int32 decay_time = 300000, uint32 levelrequirement = 0, char* qglobalvalue="");
+                                                                                                                                                              ^
+In file included from embparser.h:9:0,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+client.h: In member function ‘void Client::CheckInfamyLevel(bool)’:
+client.h:1258:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( infamyLevel >= RuleI(PVPCombat, InfamyAttackLevel) )
+                     ^
+client.h:1267:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( infamyLevel < RuleI(PVPCombat, InfamyAttackLevel) )
+                     ^
+client.h: In member function ‘bool Client::IsCampTimerEnabled()’:
+client.h:1285:52: warning: no return statement in function returning non-void [-Wreturn-type]
+  bool IsCampTimerEnabled() { camp_timer.Enabled(); }
+                                                    ^
+In file included from /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h:629:0,
+                 from /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h:3346,
+                 from embperl.h:26,
+                 from embparser.h:11,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h: In function ‘U32 S_perl_hash_siphash_2_4(const unsigned char*, const unsigned char*, STRLEN)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:201:27: warning: cast from type ‘const unsigned char* const’ to type ‘long unsigned int*’ casts away qualifiers [-Wcast-qual]
+   U64TYPE k0 = ((U64TYPE*)seed)[0];
+                           ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:202:27: warning: cast from type ‘const unsigned char* const’ to type ‘long unsigned int*’ casts away qualifiers [-Wcast-qual]
+   U64TYPE k1 = ((U64TYPE*)seed)[1];
+                           ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h: In function ‘U32 S_perl_hash_superfast(const unsigned char*, const unsigned char*, STRLEN)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:260:24: warning: cast from type ‘const unsigned char* const’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+     U32 hash = *((U32*)seed) + len;
+                        ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h: In function ‘U32 S_perl_hash_murmur3(const unsigned char*, const unsigned char*, STRLEN)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:364:22: warning: cast from type ‘const unsigned char* const’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+     U32 h1 = *((U32*)seed);
+                      ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:109:41: warning: cast from type ‘const unsigned char*’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+   #define U8TO32_LE(ptr)   (*((U32*)(ptr)))
+                                         ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:401:18: note: in expansion of macro ‘U8TO32_LE’
+             k1 = U8TO32_LE(ptr);
+                  ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:109:41: warning: cast from type ‘const unsigned char*’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+   #define U8TO32_LE(ptr)   (*((U32*)(ptr)))
+                                         ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:408:21: note: in expansion of macro ‘U8TO32_LE’
+             carry = U8TO32_LE(ptr);
+                     ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:109:41: warning: cast from type ‘const unsigned char*’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+   #define U8TO32_LE(ptr)   (*((U32*)(ptr)))
+                                         ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:416:21: note: in expansion of macro ‘U8TO32_LE’
+             carry = U8TO32_LE(ptr);
+                     ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:109:41: warning: cast from type ‘const unsigned char*’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+   #define U8TO32_LE(ptr)   (*((U32*)(ptr)))
+                                         ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:424:21: note: in expansion of macro ‘U8TO32_LE’
+             carry = U8TO32_LE(ptr);
+                     ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h: In function ‘U32 S_perl_hash_djb2(const unsigned char*, const unsigned char*, STRLEN)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:458:24: warning: cast from type ‘const unsigned char* const’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+     U32 hash = *((U32*)seed + len);
+                        ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h: In function ‘U32 S_perl_hash_sdbm(const unsigned char*, const unsigned char*, STRLEN)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:468:24: warning: cast from type ‘const unsigned char* const’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+     U32 hash = *((U32*)seed + len);
+                        ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h: In function ‘U32 S_perl_hash_one_at_a_time(const unsigned char*, const unsigned char*, STRLEN)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:494:24: warning: cast from type ‘const unsigned char* const’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+     U32 hash = *((U32*)seed) + len;
+                        ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h: In function ‘U32 S_perl_hash_one_at_a_time_hard(const unsigned char*, const unsigned char*, STRLEN)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:509:24: warning: cast from type ‘const unsigned char* const’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+     U32 hash = *((U32*)seed) + len;
+                        ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h: In function ‘U32 S_perl_hash_old_one_at_a_time(const unsigned char*, const unsigned char*, STRLEN)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h:544:24: warning: cast from type ‘const unsigned char* const’ to type ‘U32* {aka unsigned int*}’ casts away qualifiers [-Wcast-qual]
+     U32 hash = *((U32*)seed);
+                        ^
+In file included from embperl.h:26:0,
+                 from embparser.h:11,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h: In function ‘bool S_is_safe_syscall(PerlInterpreter*, const char*, STRLEN, const char*, const char*)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h:313:60: warning: cast from type ‘const void*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+         if (UNLIKELY((null_at = (char *)memchr(pv, 0, len-1)) != NULL)) {
+                                                            ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h:3160:62: note: in definition of macro ‘EXPECT’
+ #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+                                                              ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h:3165:52: note: in expansion of macro ‘cBOOL’
+ #define UNLIKELY(cond)                      EXPECT(cBOOL(cond),FALSE)
+                                                    ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h:313:13: note: in expansion of macro ‘UNLIKELY’
+         if (UNLIKELY((null_at = (char *)memchr(pv, 0, len-1)) != NULL)) {
+             ^
+In file included from perlparser.cpp:31:0:
+../KingsBandits/KingsBandits.h: In static member function ‘static char* KingsBandits::GetKingdomName(int, bool, bool, bool)’:
+../KingsBandits/KingsBandits.h:123:21: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+       return (char*)guildName;
+                     ^
+../KingsBandits/KingsBandits.h:130:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    return "<No Guild>";
+           ^
+../KingsBandits/KingsBandits.h:147:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Good Team";
+            ^
+../KingsBandits/KingsBandits.h:150:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Evil Team";
+            ^
+../KingsBandits/KingsBandits.h:153:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Neutral Team";
+            ^
+../KingsBandits/KingsBandits.h:156:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Bandits";
+            ^
+../KingsBandits/KingsBandits.h:159:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Unknown";
+            ^
+../KingsBandits/KingsBandits.h:166:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Neutral";
+            ^
+../KingsBandits/KingsBandits.h:169:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Qeynos Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:172:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Halas Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:175:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Freeport Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:178:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Rivervale Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:182:13: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+      return "Bandits";
+             ^
+../KingsBandits/KingsBandits.h:184:13: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+      return "Akanon Kingdom";
+             ^
+../KingsBandits/KingsBandits.h:187:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Thurgadin Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:190:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Felwithe Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:193:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Erudin Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:196:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Great Divide Encampment";
+            ^
+../KingsBandits/KingsBandits.h:199:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Toxxulia Forest Encampment";
+            ^
+../KingsBandits/KingsBandits.h:202:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Greater Faydark Encampment";
+            ^
+../KingsBandits/KingsBandits.h:205:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Lavastorm Encampment";
+            ^
+../KingsBandits/KingsBandits.h:208:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Akanon Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:211:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Neriak Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:214:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Kaladim Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:217:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Paineel Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:220:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Kelethin Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:223:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Cabilis Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:226:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Oggok Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:229:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Grobb Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:232:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Shar Vahl Kingdom";
+            ^
+../KingsBandits/KingsBandits.h:235:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     return "Unknown";
+            ^
+../KingsBandits/KingsBandits.h:240:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   return "";
+          ^
+../KingsBandits/KingsBandits.h:112:8: warning: variable ‘skipTeams’ set but not used [-Wunused-but-set-variable]
+   bool skipTeams = false;
+        ^
+In file included from embperl.h:27:0,
+                 from embparser.h:11,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+perlparser.cpp: In function ‘void XS__getstaticzonecount(PerlInterpreter*, CV*)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:164:20: warning: unused variable ‘items’ [-Wunused-variable]
+ #define dITEMS I32 items = (I32)(SP - MARK)
+                    ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:172:16: note: in expansion of macro ‘dITEMS’
+  dSP; dAXMARK; dITEMS
+                ^
+perlparser.cpp:1078:2: note: in expansion of macro ‘dXSARGS’
+  dXSARGS;
+  ^
+perlparser.cpp: In function ‘void XS__getbootedzonecount(PerlInterpreter*, CV*)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:164:20: warning: unused variable ‘items’ [-Wunused-variable]
+ #define dITEMS I32 items = (I32)(SP - MARK)
+                    ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:172:16: note: in expansion of macro ‘dITEMS’
+  dSP; dAXMARK; dITEMS
+                ^
+perlparser.cpp:1094:2: note: in expansion of macro ‘dXSARGS’
+  dXSARGS;
+  ^
+perlparser.cpp: In function ‘void XS__getavailzonecount(PerlInterpreter*, CV*)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:164:20: warning: unused variable ‘items’ [-Wunused-variable]
+ #define dITEMS I32 items = (I32)(SP - MARK)
+                    ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:172:16: note: in expansion of macro ‘dITEMS’
+  dSP; dAXMARK; dITEMS
+                ^
+perlparser.cpp:1109:2: note: in expansion of macro ‘dXSARGS’
+  dXSARGS;
+  ^
+perlparser.cpp: In function ‘void XS__getzonepvp(PerlInterpreter*, CV*)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:164:20: warning: unused variable ‘items’ [-Wunused-variable]
+ #define dITEMS I32 items = (I32)(SP - MARK)
+                    ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:172:16: note: in expansion of macro ‘dITEMS’
+  dSP; dAXMARK; dITEMS
+                ^
+perlparser.cpp:1125:2: note: in expansion of macro ‘dXSARGS’
+  dXSARGS;
+  ^
+perlparser.cpp: In function ‘void XS__getzoneid(PerlInterpreter*, CV*)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:164:20: warning: unused variable ‘items’ [-Wunused-variable]
+ #define dITEMS I32 items = (I32)(SP - MARK)
+                    ^
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:172:16: note: in expansion of macro ‘dITEMS’
+  dSP; dAXMARK; dITEMS
+                ^
+perlparser.cpp:1169:2: note: in expansion of macro ‘dXSARGS’
+  dXSARGS;
+  ^
+perlparser.cpp: In function ‘void XS__CreateGroundObject(PerlInterpreter*, CV*)’:
+perlparser.cpp:3520:66: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    id = quest_manager.CreateGroundObject(itemid, x, y, z, heading);
+                                                                  ^
+perlparser.cpp:3527:78: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    id = quest_manager.CreateGroundObject(itemid, x, y, z, heading, decay_time);
+                                                                              ^
+perlparser.cpp:3535:96: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    id = quest_manager.CreateGroundObject(itemid, x, y, z, heading, decay_time, levelrequirement);
+                                                                                                ^
+In file included from embperl.h:27:0,
+                 from embparser.h:11,
+                 from perlparser.h:28,
+                 from perlparser.cpp:25:
+perlparser.cpp: In function ‘void XS__GetSpellResistType(PerlInterpreter*, CV*)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:175:28: warning: unused variable ‘targ’ [-Wunused-variable]
+ #define dXSTARG SV * const targ = ((PL_op->op_private & OPpENTERSUB_HASTARG) \
+                            ^
+perlparser.cpp:3896:5: note: in expansion of macro ‘dXSTARG’
+     dXSTARG;
+     ^
+perlparser.cpp: In function ‘void XS__GetSpellTargetType(PerlInterpreter*, CV*)’:
+/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h:175:28: warning: unused variable ‘targ’ [-Wunused-variable]
+ #define dXSTARG SV * const targ = ((PL_op->op_private & OPpENTERSUB_HASTARG) \
+                            ^
+perlparser.cpp:3911:5: note: in expansion of macro ‘dXSTARG’
+     dXSTARG;
+     ^
+gcc -o zone .obj/EQPacket.o .obj/EQStream.o .obj/EQStreamFactory.o .obj/CRC16.o ../common/timer.o ../common/packet_dump.o ../common/packet_functions.o ../common/unix.o ../common/packet_dump_file.o ../common/Mutex.o ../common/MiscFunctions.o zone.o entity.o mob.o client.o client_process.o npc.o net.o spawn2.o attack.o hate_list.o ../common/serverinfo.o ../common/moremath.o worldserver.o spells.o spawngroup.o loottables.o faction.o Map.o watermap.o PlayerCorpse.o petitions.o MobAI.o Object.o ../common/eqtime.o groups.o ../common/classes.o ../common/races.o ../common/TCPConnection.o forage.o ../common/crc32.o ../common/guilds.o ../common/md5.o ../common/dbcore.o ../common/dbasync.o zonedbasync.o parser.o embperl.o embparser.o ../common/EMuShareMem.o ../common/EQEMuError.o ../common/ptimer.o ../KingsBandits/KingsBandits.o .obj/debug.o .obj/database.o .obj/Item.o .obj/misc.o tribute.o doors.o command.o beacon.o embxs.o AA.o trap.o client_packet.o bonuses.o trading.o spdat.o spell_effects.o aggro.o guild.o inventory.o client_mods.o tradeskills.o waypoints.o pets.o zone_profile.o effects.o perl_client.o perl_entity.o perl_mob.o perl_questitem.o perl_npc.o perl_PlayerCorpse.o perl_groups.o perl_raids.o questmgr.o client_logs.o perlparser.o ../common/rdtsc.o ../common/extprofile.o horse.o exp.o pathing.o fearpath.o special_attacks.o ../common/timeoutmgr.o ../common/Condition.o .obj/opcodemgr.o .obj/emu_opcodes.o ../common/SharedLibrary.o zoning.o titles.o perlpacket.o perl_perlpacket.o zonedb.o ../common/shareddb.o ../common/logsys.o .obj/rulesys.o ../common/logsys_eqemu.o ../common/EQEmuConfig.o ZoneConfig.o ../common/XMLParser.o ../common/tinyxml/tinystr.o ../common/tinyxml/tinyxml.o ../common/tinyxml/tinyxmlerror.o ../common/tinyxml/tinyxmlparser.o ../common/EQStreamProxy.o ../common/patches/patches.o ../common/patches/Client62.o ../common/patches/Titanium.o ../common/patches/Anniversary.o ../common/patches/SoF.o ../common/patches/SoD.o ../common/StructStrategy.o ../common/EQStreamIdent.o ../common/patches/Underfoot.o ../common/patches/HoT.o zone_logsys.o ../common/BasePacket.o ../common/worldconn.o ../common/EmuTCPConnection.o ../common/EmuTCPServer.o ../common/TCPServer.o ../common/guild_base.o guild_mgr.o tasks.o raids.o perl_hateentry.o perl_object.o QGlobals.o -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated  -Wcomment -Wcast-align -Wl,-Map,zone.map -O2 -g -march=ivybridge -pthread -pipe -D_GNU_SOURCE -DINVERSEXY -DFX -DZONE -DEQDEBUG=0 -DTCPN_DEBUG=1 -DCATCH_CRASH -DNO_PIDLOG -DSHAREMEM -DFIELD_ITEMS -DCOMBINED -DREVERSE_AGGRO -DAPP_OPCODE_SIZE=2 -Di386 -DEMBPERL -DEMBPERL_PLUGIN -DHAS_UNION_SEMUN -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing    -g -DNDEBUG  -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE  -rdynamic -L. -lstdc++ -lm -lz -ldl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -ldl -Wl,-E  -fstack-protector -L/usr/local/lib  -L/usr/lib/x86_64-linux-gnu/perl/5.20/CORE -lperl -ldl -lm -lpthread -lc -lcrypt -L/home/misc/legacy/ 
+make: warning:  Clock skew detected.  Your build may be incomplete.

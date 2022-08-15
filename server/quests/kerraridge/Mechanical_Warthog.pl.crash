@@ -1,0 +1,54 @@
+sub findTarget {
+
+my $npc = shift;
+my $entity_list = shift;
+my $count = 0;
+        my @nlist = $entity_list->GetNPCList();
+        foreach my $n (@nlist){
+	if ( $n->GetBaseRace() == 23 && $n->CheckLoS($npc) && $n->CalculateDistance($npc->GetX(),$npc->GetY(),$npc->GetZ()) < 75 )
+	{
+		return $n;
+	}
+}
+return undef;
+}
+
+sub EVENT_SAY
+{
+$target = findTarget($npc, $entity_list);
+if ( $target == undef )
+{
+quest::say("No target");
+}
+else
+{
+$newname = $target->GetName();
+quest::say("Found $newname");
+$npc->CastSpell(2176,$npc->GetID(),10,0,0);
+$npc->AddToHateList($target,1000);
+$target->AddToHateList($npc,1);
+$target->Damage($npc, $target->GetHP()-1, 0, 1, false);
+}
+}
+
+sub EVENT_COMBAT
+{
+$targname = $target->GetName();
+quest::say("$targname");
+$rnd = quest::ChooseRandom(0,1,2,3);
+if ( $target->GetBaseRace() == 23 && $rnd == 1 )
+{
+$target->Damage($npc, $target->GetHP(), 0, 1, false);
+}
+}
+
+sub EVENT_CAST_ON
+{
+$targname = $target->GetName();
+quest::say("$targname");
+$rnd = quest::ChooseRandom(0,1,2,3);
+if ( $target->GetBaseRace() == 23 && $rnd == 1 )
+{
+$target->Damage($npc, $target->GetHP(), 0, 1, false);
+}
+}

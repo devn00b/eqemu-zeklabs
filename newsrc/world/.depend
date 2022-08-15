@@ -1,0 +1,2135 @@
+../common/timer.o: ../common/timer.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/timer.h \
+ ../common/types.h
+../common/packet_dump.o: ../common/packet_dump.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/packet_dump.h \
+ ../common/../common/types.h ../common/EQPacket.h ../common/BasePacket.h \
+ ../common/types.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/../common/servertalk.h ../common/../common/../common/types.h \
+ ../common/../common/../common/packet_functions.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/../common/version.h \
+ ../common/../common/../common/eq_constants.h \
+ ../common/../common/../common/skills.h \
+ ../common/../common/../common/eq_old_structs.h
+../common/races.o: ../common/races.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/../common/races.h \
+ ../common/../common/../common/types.h
+../common/unix.o: ../common/unix.cpp ../common/unix.h
+../common/Mutex.o: ../common/Mutex.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/Mutex.h
+../common/MiscFunctions.o: ../common/MiscFunctions.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/MiscFunctions.h ../common/types.h ../common/../common/timer.h \
+ ../common/../common/seperator.h
+../common/serverinfo.o: ../common/serverinfo.cpp
+../common/classes.o: ../common/classes.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/classes.h ../common/../common/../common/types.h
+../common/TCPConnection.o: ../common/TCPConnection.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/TCPConnection.h ../common/unix.h ../common/types.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/../common/servertalk.h ../common/../common/../common/types.h \
+ ../common/../common/../common/packet_functions.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/../common/version.h \
+ ../common/../common/../common/eq_constants.h \
+ ../common/../common/../common/skills.h \
+ ../common/../common/../common/eq_old_structs.h \
+ ../common/../common/timer.h ../common/../common/packet_dump.h
+../common/eqtime.o: ../common/eqtime.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/eqtime.h \
+ ../common/../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/../common/version.h \
+ ../common/../common/../common/eq_constants.h \
+ ../common/../common/../common/skills.h \
+ ../common/../common/../common/eq_old_structs.h \
+ ../common/../common/eq_packet_structs.h
+../common/crc32.o: ../common/crc32.cpp ../common/crc32.h ../common/types.h
+client.o: client.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/EQStreamIntf.h \
+ ../common/misc.h ../common/MiscFunctions.h client.h \
+ ../common/linked_list.h ../common/timer.h ../common/logsys.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ cliententry.h ../common/types.h ../common/md5.h \
+ ../common/../common/types.h ../common/servertalk.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h ../common/emu_opcodes.h \
+ ../common/packet_dump.h worlddb.h ../common/shareddb.h \
+ ../common/database.h ../common/debug.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/linked_list.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/EQPacket.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h ../common/Item.h ../common/races.h \
+ ../common/classes.h ../common/languages.h ../common/skills.h \
+ ../common/extprofile.h WorldConfig.h ../common/EQEmuConfig.h \
+ ../common/XMLParser.h ../common/tinyxml/tinyxml.h \
+ ../common/tinyxml/tinystr.h ../common/tinyxml/tinyxml.h \
+ ../common/EQEmuConfig_elements.h LoginServer.h ../common/queue.h \
+ ../common/Mutex.h ../common/EmuTCPConnection.h ../common/TCPConnection.h \
+ ../common/unix.h ../common/Mutex.h ../common/queue.h \
+ ../common/MiscFunctions.h ../common/timer.h LoginServerList.h \
+ zoneserver.h WorldTCPConnection.h zonelist.h ../common/eqtime.h \
+ clientlist.h ../common/rulesys.h ../common/ruletypes.h wguild_mgr.h \
+ ../common/guild_base.h ../common/guilds.h SoFCharCreateData.h
+net.o: net.cpp ../common/debug.h ../common/logsys.h ../common/types.h \
+ ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/queue.h \
+ ../common/timer.h ../common/EQStreamFactory.h \
+ ../common/../common/EQStream.h ../common/../common/EQStreamType.h \
+ ../common/../common/EQPacket.h ../common/../common/BasePacket.h \
+ ../common/../common/types.h ../common/../common/op_codes.h \
+ ../common/../common/emu_opcodes.h ../common/../common/emu_oplist.h \
+ ../common/../common/EQStreamIntf.h ../common/../common/Mutex.h \
+ ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/emu_opcodes.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h \
+ ../common/EQPacket.h client.h ../common/linked_list.h ../common/logsys.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ cliententry.h ../common/types.h ../common/md5.h \
+ ../common/../common/types.h ../common/servertalk.h \
+ ../common/../common/packet_functions.h \
+ ../common/../common/eq_packet_structs.h worlddb.h ../common/shareddb.h \
+ ../common/database.h ../common/debug.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/linked_list.h ../common/../common/queue.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h ../common/seperator.h ../common/version.h \
+ ../common/files.h ../common/eqtime.h ../common/timeoutmgr.h \
+ ../common/EQEMuError.h ../common/opcodemgr.h ../common/guilds.h \
+ ../common/EQStreamIdent.h ../common/EQStream.h ../common/timer.h \
+ ../common/rulesys.h ../common/ruletypes.h ../KingsBandits/KingsBandits.h \
+ ../KingsBandits/../common/types.h ../common/unix.h \
+ ../common/EMuShareMem.h ../common/../common/unix.h \
+ ../common/../zone/zonedump.h ../common/../zone/faction.h \
+ ../common/../zone/../common/types.h ../common/../zone/features.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h ../common/../zone/loottable.h \
+ ../common/../zone/zonedump.h ../common/../zone/../common/linked_list.h \
+ ../common/../common/SharedLibrary.h zoneserver.h WorldTCPConnection.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h console.h \
+ ../common/Mutex.h LoginServer.h LoginServerList.h EQWHTTPHandler.h \
+ ../common/TCPServer.h ../common/TCPConnection.h \
+ ../common/SocketLib/HttpdSocket.h ../common/SocketLib/HTTPSocket.h \
+ ../common/SocketLib/../TCPConnection.h ../common/SocketLib/Mime.h \
+ ../common/dbasync.h ../common/../common/dbcore.h \
+ ../common/EmuTCPServer.h ../common/TCPServer.h WorldConfig.h \
+ ../common/EQEmuConfig.h ../common/XMLParser.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/EQEmuConfig_elements.h \
+ ../common/patches/patches.h zonelist.h clientlist.h LauncherList.h \
+ wguild_mgr.h ../common/guild_base.h ../common/guilds.h lfplist.h \
+ AdventureManager.h Adventure.h AdventureTemplate.h ucs.h
+console.o: console.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/version.h console.h \
+ ../common/linked_list.h ../common/timer.h ../common/queue.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h WorldTCPConnection.h ../common/types.h \
+ ../common/Mutex.h zoneserver.h worlddb.h ../common/shareddb.h \
+ ../common/database.h ../common/debug.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h ../common/packet_dump.h ../common/seperator.h \
+ ../common/eq_packet_structs.h ../common/EQPacket.h LoginServer.h \
+ ../common/servertalk.h ../common/../common/packet_functions.h \
+ ../common/../common/types.h LoginServerList.h ../common/serverinfo.h \
+ ../common/md5.h ../common/files.h ../common/opcodemgr.h \
+ ../common/rulesys.h ../common/ruletypes.h WorldConfig.h \
+ ../common/EQEmuConfig.h ../common/XMLParser.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/EQEmuConfig_elements.h zonelist.h \
+ ../common/eqtime.h clientlist.h LauncherList.h ucs.h
+zoneserver.o: zoneserver.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h zoneserver.h WorldTCPConnection.h \
+ ../common/types.h ../common/EmuTCPConnection.h ../common/TCPConnection.h \
+ ../common/unix.h ../common/Mutex.h ../common/queue.h \
+ ../common/MiscFunctions.h ../common/timer.h clientlist.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/linked_list.h ../common/timer.h ../common/rulesys.h \
+ ../common/ruletypes.h ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h LoginServer.h ../common/queue.h \
+ ../common/Mutex.h LoginServerList.h zonelist.h ../common/eqtime.h \
+ worlddb.h ../common/shareddb.h ../common/database.h ../common/debug.h \
+ ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h console.h client.h ../common/logsys.h \
+ cliententry.h ../common/md5.h WorldConfig.h ../common/EQEmuConfig.h \
+ ../common/XMLParser.h ../common/tinyxml/tinyxml.h \
+ ../common/tinyxml/tinystr.h ../common/tinyxml/tinyxml.h \
+ ../common/EQEmuConfig_elements.h ../common/guilds.h \
+ ../common/packet_dump.h ../common/misc.h ../common/MiscFunctions.h \
+ wguild_mgr.h ../common/guild_base.h ../common/guilds.h lfplist.h \
+ AdventureManager.h Adventure.h AdventureTemplate.h ucs.h
+LoginServer.o: LoginServer.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/version.h \
+ ../common/unix.h ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h LoginServer.h \
+ ../common/linked_list.h ../common/timer.h ../common/queue.h \
+ ../common/eq_packet_structs.h ../common/Mutex.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h LoginServerList.h ../common/packet_dump.h \
+ ../common/MiscFunctions.h zoneserver.h WorldTCPConnection.h \
+ ../common/types.h worlddb.h ../common/shareddb.h ../common/database.h \
+ ../common/debug.h ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/skills.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/item_fieldlist.h ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h zonelist.h ../common/eqtime.h clientlist.h \
+ ../common/rulesys.h ../common/ruletypes.h WorldConfig.h \
+ ../common/EQEmuConfig.h ../common/XMLParser.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/EQEmuConfig_elements.h
+../common/md5.o: ../common/md5.cpp ../common/../common/md5.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/MiscFunctions.h ../common/../common/types.h \
+ ../common/../common/seperator.h
+../common/dbcore.o: ../common/dbcore.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/files.h /usr/include/mysql/errmsg.h \
+ /usr/include/mysql/mysqld_error.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/Mutex.h \
+ ../common/../common/linked_list.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/../common/MiscFunctions.h \
+ ../common/unix.h
+../common/dbasync.o: ../common/dbasync.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/dbasync.h \
+ ../common/../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/../common/DBMemLeak.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/linked_list.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/queue.h \
+ ../common/../common/../common/timer.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h ../common/../common/timeoutmgr.h \
+ ../common/../common/types.h ../common/../common/timer.h \
+ ../common/database.h ../common/dbcore.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ /usr/include/mysql/errmsg.h /usr/include/mysql/mysqld_error.h \
+ ../common/../common/MiscFunctions.h
+../common/EMuShareMem.o: ../common/EMuShareMem.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/types.h ../common/EMuShareMem.h \
+ ../common/../common/unix.h ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/../zone/zonedump.h \
+ ../common/../zone/faction.h ../common/../zone/../common/types.h \
+ ../common/../zone/features.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h \
+ ../common/../zone/../common/../common/eq_packet_structs.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/../common/item_struct.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/item_fieldlist.h \
+ ../common/../zone/loottable.h ../common/../zone/zonedump.h \
+ ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/../common/SharedLibrary.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h
+../common/EQEMuError.o: ../common/EQEMuError.cpp ../common/EQEMuError.h \
+ ../common/../common/types.h ../common/linked_list.h ../common/types.h \
+ ../common/Mutex.h ../common/../common/unix.h ../common/MiscFunctions.h
+../common/misc.o: ../common/misc.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/misc.h
+.obj/debug.o: ../common/debug.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/MiscFunctions.h ../common/../common/types.h
+.obj/database.o: ../common/database.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/rulesys.h ../common/../common/ruletypes.h \
+ /usr/include/mysql/errmsg.h /usr/include/mysql/mysqld_error.h \
+ ../common/unix.h ../common/database.h ../common/debug.h \
+ ../common/types.h ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/guilds.h \
+ ../common/MiscFunctions.h ../common/extprofile.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h
+.obj/Item.o: ../common/Item.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/../common/eq_constants.h \
+ ../common/../common/item_struct.h ../common/item_fieldlist.h \
+ ../common/database.h ../common/debug.h ../common/types.h \
+ ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/misc.h ../common/races.h ../common/shareddb.h \
+ ../common/skills.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/classes.h ../common/rulesys.h ../common/ruletypes.h
+../common/extprofile.o: ../common/extprofile.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/extprofile.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/Item.h ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h
+.obj/EQStream.o: ../common/EQStream.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/EQStream.h \
+ ../common/EQStreamIntf.h ../common/Mutex.h \
+ ../common/../common/opcodemgr.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/emu_opcodes.h \
+ ../common/../common/misc.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/../common/timer.h ../common/misc.h \
+ ../common/CRC16.h ../common/rulesys.h ../common/ruletypes.h
+.obj/EQStreamFactory.o: ../common/EQStreamFactory.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQStreamFactory.h \
+ ../common/../common/EQStream.h ../common/../common/EQStreamType.h \
+ ../common/../common/EQPacket.h ../common/../common/BasePacket.h \
+ ../common/../common/types.h ../common/../common/op_codes.h \
+ ../common/../common/emu_opcodes.h ../common/../common/emu_oplist.h \
+ ../common/../common/EQStreamIntf.h ../common/../common/Mutex.h \
+ ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/emu_opcodes.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h \
+ ../common/op_codes.h ../common/EQStream.h
+.obj/EQPacket.o: ../common/EQPacket.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/misc.h \
+ ../common/CRC16.h ../common/opcodemgr.h ../common/Mutex.h \
+ ../common/packet_dump.h ../common/../common/types.h \
+ ../common/packet_functions.h
+../common/CRC16.o: ../common/CRC16.cpp
+../common/packet_functions.o: ../common/packet_functions.cpp \
+ ../common/../common/debug.h ../common/../common/logsys.h \
+ ../common/../common/types.h ../common/../common/logtypes.h \
+ ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/packet_dump.h \
+ ../common/../common/types.h ../common/EQCheckTable.h \
+ ../common/packet_functions.h ../common/types.h
+../common/timeoutmgr.o: ../common/timeoutmgr.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/timeoutmgr.h \
+ ../common/types.h ../common/timer.h
+../common/Condition.o: ../common/Condition.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/Condition.h
+../common/opcodemgr.o: ../common/opcodemgr.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/opcodemgr.h \
+ ../common/Mutex.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/EMuShareMem.h ../common/../common/unix.h \
+ ../common/../common/eq_packet_structs.h ../common/../common/types.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/../zone/zonedump.h \
+ ../common/../zone/faction.h ../common/../zone/../common/types.h \
+ ../common/../zone/features.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h \
+ ../common/../zone/../common/../common/eq_packet_structs.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/../common/item_struct.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/item_fieldlist.h \
+ ../common/../zone/loottable.h ../common/../zone/zonedump.h \
+ ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/../common/SharedLibrary.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h
+../common/emu_opcodes.o: ../common/emu_opcodes.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/emu_opcodes.h \
+ ../common/emu_oplist.h
+../common/SharedLibrary.o: ../common/SharedLibrary.cpp ../common/SharedLibrary.h \
+ ../common/../common/unix.h
+world_logsys.o: world_logsys.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/logsys.h zoneserver.h \
+ WorldTCPConnection.h ../common/types.h ../common/EmuTCPConnection.h \
+ ../common/TCPConnection.h ../common/unix.h ../common/Mutex.h \
+ ../common/queue.h ../common/MiscFunctions.h ../common/timer.h client.h \
+ ../common/linked_list.h ../common/timer.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h cliententry.h \
+ ../common/md5.h ../common/../common/types.h ../common/servertalk.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h
+../common/logsys.o: ../common/logsys.cpp ../common/logsys.h ../common/types.h \
+ ../common/logtypes.h ../common/debug.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/misc.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h
+../common/logsys_eqemu.o: ../common/logsys_eqemu.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h
+../common/EQEmuConfig.o: ../common/EQEmuConfig.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/EQEmuConfig.h \
+ ../common/XMLParser.h ../common/debug.h ../common/tinyxml/tinyxml.h \
+ ../common/tinyxml/tinystr.h ../common/tinyxml/tinyxml.h \
+ ../common/../common/types.h ../common/linked_list.h ../common/types.h \
+ ../common/EQEmuConfig_elements.h ../common/MiscFunctions.h
+WorldConfig.o: WorldConfig.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h WorldConfig.h \
+ ../common/EQEmuConfig.h ../common/XMLParser.h ../common/debug.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/../common/types.h \
+ ../common/linked_list.h ../common/EQEmuConfig_elements.h
+../common/XMLParser.o: ../common/XMLParser.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/XMLParser.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/../common/types.h
+../common/tinyxml/tinystr.o: ../common/tinyxml/tinystr.cpp ../common/tinyxml/tinyxml.h \
+ ../common/tinyxml/tinystr.h
+../common/tinyxml/tinyxml.o: ../common/tinyxml/tinyxml.cpp ../common/tinyxml/tinyxml.h \
+ ../common/tinyxml/tinystr.h
+../common/tinyxml/tinyxmlerror.o: ../common/tinyxml/tinyxmlerror.cpp \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h
+../common/tinyxml/tinyxmlparser.o: ../common/tinyxml/tinyxmlparser.cpp \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h
+../common/BasePacket.o: ../common/BasePacket.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/BasePacket.h \
+ ../common/misc.h ../common/packet_dump.h ../common/../common/types.h
+../common/shareddb.o: ../common/shareddb.cpp ../common/shareddb.h \
+ ../common/database.h ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/types.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/../common/Item.h ../common/../common/EMuShareMem.h \
+ ../common/../common/../common/eq_packet_structs.h \
+ ../common/../common/../zone/zonedump.h \
+ ../common/../common/../zone/faction.h \
+ ../common/../common/../zone/../common/types.h \
+ ../common/../common/../zone/features.h \
+ ../common/../common/../zone/../common/eq_packet_structs.h \
+ ../common/../common/../zone/../common/Item.h \
+ ../common/../common/../zone/loottable.h \
+ ../common/../common/../zone/zonedump.h \
+ ../common/../common/../zone/../common/linked_list.h \
+ ../common/../common/../common/SharedLibrary.h \
+ ../common/../common/../KingsBandits/KBStructs.h \
+ ../common/../common/classes.h ../common/../common/rulesys.h \
+ ../common/../common/ruletypes.h ../common/MiscFunctions.h \
+ ../common/guilds.h ../common/extprofile.h ../common/CRC16.h \
+ ../common/../KingsBandits/KingsBandits.h \
+ ../common/../KingsBandits/KBItemStructs.h
+worlddb.o: worlddb.cpp worlddb.h ../common/shareddb.h \
+ ../common/database.h ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/types.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h ../common/MiscFunctions.h \
+ ../common/eq_packet_structs.h ../common/Item.h ../common/dbasync.h \
+ ../common/../common/dbcore.h ../common/../common/timeoutmgr.h \
+ ../common/../common/timer.h ../common/rulesys.h ../common/ruletypes.h
+EQW.o: EQW.cpp ../common/debug.h ../common/logsys.h ../common/types.h \
+ ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h EQW.h ../common/types.h \
+ EQWParser.h ../common/useperl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/EXTERN.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/config.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/handy.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unixish.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/iperlsys.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlio.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perly.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/sv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regexp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/utf8.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regcharclass.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unicode_constants.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op_reg_common.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/util.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/form.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/gv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pad.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opnames.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/reentr.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cop.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mydtrace.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/av.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/scope.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/warnings.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/parser.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/patchlevel.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/intrpvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/thread.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/proto.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opcode.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embedvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embed.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlvars.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg_vtable.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/overload.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlapi.h WorldConfig.h \
+ ../common/EQEmuConfig.h ../common/XMLParser.h ../common/debug.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/../common/types.h \
+ ../common/linked_list.h ../common/EQEmuConfig_elements.h \
+ ../common/races.h ../common/classes.h ../common/misc.h \
+ ../common/MiscFunctions.h zoneserver.h WorldTCPConnection.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h zonelist.h ../common/eqtime.h \
+ ../common/../common/eq_packet_structs.h ../common/../common/types.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/timer.h \
+ ../common/linked_list.h clientlist.h ../common/eq_packet_structs.h \
+ ../common/rulesys.h ../common/ruletypes.h ../common/servertalk.h \
+ ../common/../common/packet_functions.h cliententry.h ../common/md5.h \
+ LoginServer.h ../common/queue.h ../common/Mutex.h LoginServerList.h \
+ worlddb.h ../common/shareddb.h ../common/database.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/linked_list.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/skills.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/item_fieldlist.h ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h client.h ../common/logsys.h LauncherList.h \
+ LauncherLink.h wguild_mgr.h ../common/guild_base.h ../common/guilds.h
+HTTPRequest.o: HTTPRequest.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h HTTPRequest.h ../common/types.h \
+ EQWHTTPHandler.h ../common/TCPServer.h ../common/TCPConnection.h \
+ ../common/unix.h ../common/Mutex.h ../common/queue.h \
+ ../common/MiscFunctions.h ../common/SocketLib/HttpdSocket.h \
+ ../common/SocketLib/HTTPSocket.h ../common/SocketLib/../TCPConnection.h \
+ ../common/SocketLib/Mime.h ../common/EQDB.h ../common/EQDBRes.h \
+ ../common/database.h ../common/debug.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/types.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/SocketLib/HttpdForm.h
+EQWHTTPHandler.o: EQWHTTPHandler.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h EQWHTTPHandler.h \
+ ../common/TCPServer.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/SocketLib/HttpdSocket.h ../common/SocketLib/HTTPSocket.h \
+ ../common/SocketLib/../TCPConnection.h ../common/SocketLib/Mime.h \
+ ../common/types.h ../common/SocketLib/Base64.h EQWParser.h \
+ ../common/useperl.h /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/EXTERN.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/config.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/handy.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unixish.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/iperlsys.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlio.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perly.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/sv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regexp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/utf8.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regcharclass.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unicode_constants.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op_reg_common.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/util.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/form.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/gv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pad.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opnames.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/reentr.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cop.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mydtrace.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/av.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/scope.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/warnings.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/parser.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/patchlevel.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/intrpvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/thread.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/proto.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opcode.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embedvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embed.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlvars.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg_vtable.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/overload.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlapi.h EQW.h HTTPRequest.h \
+ ../common/logsys.h worlddb.h ../common/shareddb.h ../common/database.h \
+ ../common/debug.h ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/types.h \
+ ../common/../common/linked_list.h ../common/../common/types.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h console.h ../common/linked_list.h \
+ ../common/timer.h ../common/queue.h ../common/EmuTCPConnection.h \
+ ../common/TCPConnection.h ../common/timer.h WorldTCPConnection.h \
+ ../common/Mutex.h
+EQWParser.o: EQWParser.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h EQWParser.h ../common/useperl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/EXTERN.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/config.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/handy.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unixish.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/iperlsys.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlio.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perly.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/sv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regexp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/utf8.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regcharclass.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unicode_constants.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op_reg_common.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/util.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/form.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/gv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pad.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opnames.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/reentr.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cop.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mydtrace.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/av.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/scope.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/warnings.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/parser.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/patchlevel.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/intrpvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/thread.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/proto.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opcode.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embedvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embed.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlvars.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg_vtable.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/overload.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlapi.h EQW.h \
+ ../common/types.h ../common/EQDB.h ../common/EQDBRes.h \
+ ../common/database.h ../common/debug.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/types.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/logsys.h worlddb.h ../common/shareddb.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h
+perl_EQW.o: perl_EQW.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h EQWParser.h ../common/useperl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/EXTERN.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/config.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/handy.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unixish.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/iperlsys.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlio.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perly.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/sv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regexp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/utf8.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regcharclass.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unicode_constants.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op_reg_common.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/util.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/form.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/gv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pad.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opnames.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/reentr.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cop.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mydtrace.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/av.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/scope.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/warnings.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/parser.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/patchlevel.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/intrpvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/thread.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/proto.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opcode.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embedvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embed.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlvars.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg_vtable.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/overload.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlapi.h EQW.h \
+ ../common/types.h
+perl_HTTPRequest.o: perl_HTTPRequest.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h EQWParser.h ../common/useperl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/EXTERN.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/config.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/handy.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unixish.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/iperlsys.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlio.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perly.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/sv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regexp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/utf8.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regcharclass.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unicode_constants.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op_reg_common.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/util.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/form.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/gv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pad.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opnames.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/reentr.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cop.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mydtrace.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/av.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/scope.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/warnings.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/parser.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/patchlevel.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/intrpvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/thread.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/proto.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opcode.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embedvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embed.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlvars.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg_vtable.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/overload.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlapi.h HTTPRequest.h \
+ ../common/types.h
+clientlist.o: clientlist.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h clientlist.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/linked_list.h ../common/timer.h ../common/rulesys.h \
+ ../common/ruletypes.h ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h zoneserver.h \
+ WorldTCPConnection.h ../common/types.h ../common/EmuTCPConnection.h \
+ ../common/TCPConnection.h ../common/unix.h ../common/Mutex.h \
+ ../common/queue.h ../common/MiscFunctions.h ../common/timer.h zonelist.h \
+ ../common/eqtime.h client.h ../common/logsys.h cliententry.h \
+ ../common/md5.h console.h ../common/queue.h ../common/Mutex.h worlddb.h \
+ ../common/shareddb.h ../common/database.h ../common/debug.h \
+ ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h ../common/guilds.h ../common/races.h \
+ ../common/classes.h ../common/packet_dump.h wguild_mgr.h \
+ ../common/guild_base.h ../common/guilds.h
+ucs.o: ucs.cpp ../common/debug.h ../common/logsys.h ../common/types.h \
+ ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ucs.h ../common/types.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h WorldConfig.h \
+ ../common/EQEmuConfig.h ../common/XMLParser.h ../common/debug.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/linked_list.h \
+ ../common/EQEmuConfig_elements.h ../common/logsys.h ../common/logtypes.h \
+ ../common/md5.h ../common/packet_dump.h
+zonelist.o: zonelist.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h zonelist.h ../common/types.h \
+ ../common/eqtime.h ../common/../common/eq_packet_structs.h \
+ ../common/../common/types.h ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/timer.h \
+ ../common/linked_list.h zoneserver.h WorldTCPConnection.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h clientlist.h ../common/eq_packet_structs.h \
+ ../common/rulesys.h ../common/ruletypes.h ../common/servertalk.h \
+ ../common/../common/types.h ../common/../common/packet_functions.h \
+ worlddb.h ../common/shareddb.h ../common/database.h ../common/debug.h \
+ ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/skills.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/item_fieldlist.h ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h console.h ../common/queue.h ../common/Mutex.h \
+ WorldConfig.h ../common/EQEmuConfig.h ../common/XMLParser.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/EQEmuConfig_elements.h \
+ ../common/MiscFunctions.h
+cliententry.o: cliententry.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h cliententry.h ../common/types.h \
+ ../common/md5.h ../common/../common/types.h ../common/servertalk.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h clientlist.h \
+ ../common/eq_packet_structs.h ../common/linked_list.h ../common/timer.h \
+ ../common/rulesys.h ../common/ruletypes.h LoginServer.h \
+ ../common/queue.h ../common/Mutex.h ../common/EmuTCPConnection.h \
+ ../common/TCPConnection.h ../common/unix.h ../common/Mutex.h \
+ ../common/queue.h ../common/MiscFunctions.h ../common/timer.h \
+ LoginServerList.h worlddb.h ../common/shareddb.h ../common/database.h \
+ ../common/debug.h ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/skills.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/item_fieldlist.h ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h zoneserver.h WorldTCPConnection.h WorldConfig.h \
+ ../common/EQEmuConfig.h ../common/XMLParser.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/EQEmuConfig_elements.h \
+ ../common/guilds.h
+LauncherList.o: LauncherList.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h LauncherList.h ../common/types.h \
+ LauncherLink.h ../common/EmuTCPConnection.h ../common/TCPConnection.h \
+ ../common/unix.h ../common/Mutex.h ../common/queue.h \
+ ../common/MiscFunctions.h ../common/timer.h ../common/timer.h \
+ ../common/logsys.h EQLConfig.h worlddb.h ../common/shareddb.h \
+ ../common/database.h ../common/debug.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/types.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h
+LauncherLink.o: LauncherLink.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h LauncherLink.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h ../common/timer.h LauncherList.h ../common/types.h \
+ WorldConfig.h ../common/EQEmuConfig.h ../common/XMLParser.h \
+ ../common/debug.h ../common/tinyxml/tinyxml.h \
+ ../common/tinyxml/tinystr.h ../common/tinyxml/tinyxml.h \
+ ../common/../common/types.h ../common/linked_list.h \
+ ../common/EQEmuConfig_elements.h ../common/logsys.h ../common/md5.h \
+ ../common/packet_dump.h ../common/servertalk.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h worlddb.h ../common/shareddb.h \
+ ../common/database.h ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/eq_packet_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/skills.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/item_fieldlist.h ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h EQLConfig.h
+lfplist.o: lfplist.cpp lfplist.h ../common/eq_packet_structs.h \
+ ../common/types.h ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/servertalk.h \
+ ../common/../common/types.h ../common/../common/packet_functions.h \
+ ../common/../common/types.h ../common/../common/eq_packet_structs.h \
+ ../common/linked_list.h ../common/timer.h cliententry.h \
+ ../common/types.h ../common/md5.h clientlist.h ../common/rulesys.h \
+ ../common/ruletypes.h zoneserver.h WorldTCPConnection.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/../common/unix.h ../common/queue.h \
+ ../common/MiscFunctions.h ../common/timer.h zonelist.h \
+ ../common/eqtime.h ../common/logsys.h ../common/logtypes.h \
+ ../common/MiscFunctions.h
+Adventure.o: Adventure.cpp ../common/servertalk.h \
+ ../common/../common/types.h ../common/../common/packet_functions.h \
+ ../common/../common/types.h ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/extprofile.h \
+ ../common/eq_packet_structs.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/item_fieldlist.h ../common/rulesys.h ../common/types.h \
+ ../common/ruletypes.h ../common/MiscFunctions.h Adventure.h \
+ ../common/debug.h ../common/logsys.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/types.h \
+ ../common/timer.h AdventureTemplate.h AdventureManager.h worlddb.h \
+ ../common/shareddb.h ../common/database.h ../common/debug.h \
+ ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/EQPacket.h ../common/BasePacket.h \
+ ../common/EQStreamType.h ../common/op_codes.h ../common/emu_opcodes.h \
+ ../common/emu_oplist.h ../common/skills.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h zonelist.h ../common/eqtime.h \
+ ../common/linked_list.h clientlist.h ../common/eq_packet_structs.h \
+ cliententry.h ../common/md5.h
+AdventureManager.o: AdventureManager.cpp ../common/MiscFunctions.h \
+ ../common/types.h ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/rulesys.h \
+ ../common/ruletypes.h Adventure.h ../common/debug.h ../common/logsys.h \
+ ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/types.h \
+ ../common/timer.h AdventureTemplate.h AdventureManager.h worlddb.h \
+ ../common/shareddb.h ../common/database.h ../common/debug.h \
+ ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/skills.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/item_fieldlist.h ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h zonelist.h ../common/eqtime.h \
+ ../common/linked_list.h clientlist.h ../common/eq_packet_structs.h \
+ cliententry.h ../common/md5.h
+../common/EQStreamIdent.o: ../common/EQStreamIdent.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQStreamIdent.h \
+ ../common/EQStream.h ../common/EQStreamType.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/op_codes.h ../common/emu_opcodes.h \
+ ../common/emu_oplist.h ../common/EQStreamIntf.h ../common/Mutex.h \
+ ../common/../common/opcodemgr.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/emu_opcodes.h \
+ ../common/../common/misc.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/../common/timer.h \
+ ../common/timer.h ../common/EQStreamProxy.h
+../common/StructStrategy.o: ../common/StructStrategy.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/StructStrategy.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/EQStream.h \
+ ../common/EQStreamType.h ../common/EQPacket.h ../common/BasePacket.h \
+ ../common/op_codes.h ../common/EQStreamIntf.h ../common/Mutex.h \
+ ../common/../common/opcodemgr.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/emu_opcodes.h \
+ ../common/../common/misc.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/../common/timer.h
+LoginServerList.o: LoginServerList.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/version.h \
+ ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h ../common/../common/types.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h LoginServer.h \
+ ../common/linked_list.h ../common/timer.h ../common/queue.h \
+ ../common/eq_packet_structs.h ../common/Mutex.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h LoginServerList.h ../common/packet_dump.h zoneserver.h \
+ WorldTCPConnection.h ../common/types.h worlddb.h ../common/shareddb.h \
+ ../common/database.h ../common/debug.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/linked_list.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/skills.h \
+ ../common/../zone/spdat.h ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/item_fieldlist.h ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h zonelist.h ../common/eqtime.h clientlist.h \
+ ../common/rulesys.h ../common/ruletypes.h WorldConfig.h \
+ ../common/EQEmuConfig.h ../common/XMLParser.h \
+ ../common/tinyxml/tinyxml.h ../common/tinyxml/tinystr.h \
+ ../common/tinyxml/tinyxml.h ../common/EQEmuConfig_elements.h
+../common/EQStreamProxy.o: ../common/EQStreamProxy.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQStreamProxy.h \
+ ../common/EQStreamIntf.h ../common/EQStream.h ../common/EQStreamType.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/Mutex.h \
+ ../common/../common/opcodemgr.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/emu_opcodes.h \
+ ../common/../common/misc.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/../common/timer.h \
+ ../common/StructStrategy.h
+../common/patches/patches.o: ../common/patches/patches.cpp ../common/patches/../debug.h \
+ ../common/patches/../logsys.h ../common/patches/../types.h \
+ ../common/patches/../logtypes.h ../common/patches/../common_profile.h \
+ ../common/patches/../../common/Mutex.h \
+ ../common/patches/../../common/../common/unix.h \
+ ../common/patches/../../common/../common/types.h \
+ ../common/patches/patches.h ../common/patches/Client62.h \
+ ../common/patches/../StructStrategy.h ../common/patches/../emu_opcodes.h \
+ ../common/patches/../emu_oplist.h ../common/patches/../Item.h \
+ ../common/patches/../../common/eq_packet_structs.h \
+ ../common/patches/../../common/types.h \
+ ../common/patches/../../common/../common/version.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/skills.h \
+ ../common/patches/../../common/eq_old_structs.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/item_struct.h \
+ ../common/patches/../item_fieldlist.h ../common/patches/SSDeclare.h \
+ ../common/patches/Client62_ops.h ../common/patches/Titanium.h \
+ ../common/patches/Titanium_ops.h ../common/patches/Anniversary.h \
+ ../common/patches/Anniversary_ops.h ../common/patches/Underfoot.h \
+ ../common/patches/Underfoot_ops.h ../common/patches/SoF.h \
+ ../common/patches/SoF_ops.h ../common/patches/SoD.h \
+ ../common/patches/SoD_ops.h ../common/patches/HoT.h \
+ ../common/patches/HoT_ops.h
+../common/patches/Client62.o: ../common/patches/Client62.cpp ../common/patches/../debug.h \
+ ../common/patches/../logsys.h ../common/patches/../types.h \
+ ../common/patches/../logtypes.h ../common/patches/../common_profile.h \
+ ../common/patches/../../common/Mutex.h \
+ ../common/patches/../../common/../common/unix.h \
+ ../common/patches/../../common/../common/types.h \
+ ../common/patches/Client62.h ../common/patches/../StructStrategy.h \
+ ../common/patches/../emu_opcodes.h ../common/patches/../emu_oplist.h \
+ ../common/patches/../Item.h \
+ ../common/patches/../../common/eq_packet_structs.h \
+ ../common/patches/../../common/types.h \
+ ../common/patches/../../common/../common/version.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/skills.h \
+ ../common/patches/../../common/eq_old_structs.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/item_struct.h \
+ ../common/patches/../item_fieldlist.h ../common/patches/SSDeclare.h \
+ ../common/patches/Client62_ops.h ../common/patches/../opcodemgr.h \
+ ../common/patches/../Mutex.h ../common/patches/../logsys.h \
+ ../common/patches/../EQStreamIdent.h ../common/patches/../EQStream.h \
+ ../common/patches/../EQStreamType.h ../common/patches/../EQPacket.h \
+ ../common/patches/../BasePacket.h ../common/patches/../op_codes.h \
+ ../common/patches/../EQStreamIntf.h \
+ ../common/patches/../../common/opcodemgr.h \
+ ../common/patches/../../common/misc.h \
+ ../common/patches/../../common/Condition.h \
+ ../common/patches/../../common/debug.h \
+ ../common/patches/../../common/timer.h ../common/patches/../timer.h \
+ ../common/patches/../crc32.h ../common/patches/../eq_packet_structs.h \
+ ../common/patches/../MiscFunctions.h \
+ ../common/patches/Client62_structs.h ../common/patches/SSRegister.h \
+ ../common/patches/SSDefine.h ../common/patches/Client62_itemfields.h
+../common/patches/Titanium.o: ../common/patches/Titanium.cpp ../common/patches/../debug.h \
+ ../common/patches/../logsys.h ../common/patches/../types.h \
+ ../common/patches/../logtypes.h ../common/patches/../common_profile.h \
+ ../common/patches/../../common/Mutex.h \
+ ../common/patches/../../common/../common/unix.h \
+ ../common/patches/../../common/../common/types.h \
+ ../common/patches/Titanium.h ../common/patches/../StructStrategy.h \
+ ../common/patches/../emu_opcodes.h ../common/patches/../emu_oplist.h \
+ ../common/patches/SSDeclare.h ../common/patches/Titanium_ops.h \
+ ../common/patches/../opcodemgr.h ../common/patches/../Mutex.h \
+ ../common/patches/../logsys.h ../common/patches/../EQStreamIdent.h \
+ ../common/patches/../EQStream.h ../common/patches/../EQStreamType.h \
+ ../common/patches/../EQPacket.h ../common/patches/../BasePacket.h \
+ ../common/patches/../op_codes.h ../common/patches/../EQStreamIntf.h \
+ ../common/patches/../../common/opcodemgr.h \
+ ../common/patches/../../common/misc.h \
+ ../common/patches/../../common/Condition.h \
+ ../common/patches/../../common/debug.h \
+ ../common/patches/../../common/timer.h \
+ ../common/patches/../../common/types.h ../common/patches/../timer.h \
+ ../common/patches/../crc32.h ../common/patches/../races.h \
+ ../common/patches/../../common/types.h \
+ ../common/patches/../eq_packet_structs.h \
+ ../common/patches/../../common/version.h \
+ ../common/patches/../eq_constants.h ../common/patches/../skills.h \
+ ../common/patches/../eq_old_structs.h \
+ ../common/patches/../MiscFunctions.h ../common/patches/../Item.h \
+ ../common/patches/../../common/eq_packet_structs.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/item_struct.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../item_fieldlist.h \
+ ../common/patches/Titanium_structs.h ../common/patches/SSRegister.h \
+ ../common/patches/SSDefine.h ../common/patches/Titanium_itemfields.h
+../common/patches/Underfoot.o: ../common/patches/Underfoot.cpp ../common/patches/../debug.h \
+ ../common/patches/../logsys.h ../common/patches/../types.h \
+ ../common/patches/../logtypes.h ../common/patches/../common_profile.h \
+ ../common/patches/../../common/Mutex.h \
+ ../common/patches/../../common/../common/unix.h \
+ ../common/patches/../../common/../common/types.h \
+ ../common/patches/Underfoot.h ../common/patches/../StructStrategy.h \
+ ../common/patches/../emu_opcodes.h ../common/patches/../emu_oplist.h \
+ ../common/patches/SSDeclare.h ../common/patches/Underfoot_ops.h \
+ ../common/patches/../opcodemgr.h ../common/patches/../Mutex.h \
+ ../common/patches/../logsys.h ../common/patches/../EQStreamIdent.h \
+ ../common/patches/../EQStream.h ../common/patches/../EQStreamType.h \
+ ../common/patches/../EQPacket.h ../common/patches/../BasePacket.h \
+ ../common/patches/../op_codes.h ../common/patches/../EQStreamIntf.h \
+ ../common/patches/../../common/opcodemgr.h \
+ ../common/patches/../../common/misc.h \
+ ../common/patches/../../common/Condition.h \
+ ../common/patches/../../common/debug.h \
+ ../common/patches/../../common/timer.h \
+ ../common/patches/../../common/types.h ../common/patches/../timer.h \
+ ../common/patches/../crc32.h ../common/patches/../eq_packet_structs.h \
+ ../common/patches/../../common/version.h \
+ ../common/patches/../eq_constants.h ../common/patches/../skills.h \
+ ../common/patches/../eq_old_structs.h \
+ ../common/patches/../MiscFunctions.h ../common/patches/../Item.h \
+ ../common/patches/../../common/eq_packet_structs.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/item_struct.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../item_fieldlist.h \
+ ../common/patches/Underfoot_structs.h ../common/patches/../rulesys.h \
+ ../common/patches/../ruletypes.h ../common/patches/SSRegister.h \
+ ../common/patches/SSDefine.h
+../common/patches/HoT.o: ../common/patches/HoT.cpp ../common/patches/../debug.h \
+ ../common/patches/../logsys.h ../common/patches/../types.h \
+ ../common/patches/../logtypes.h ../common/patches/../common_profile.h \
+ ../common/patches/../../common/Mutex.h \
+ ../common/patches/../../common/../common/unix.h \
+ ../common/patches/../../common/../common/types.h ../common/patches/HoT.h \
+ ../common/patches/../StructStrategy.h ../common/patches/../emu_opcodes.h \
+ ../common/patches/../emu_oplist.h ../common/patches/SSDeclare.h \
+ ../common/patches/HoT_ops.h ../common/patches/../opcodemgr.h \
+ ../common/patches/../Mutex.h ../common/patches/../logsys.h \
+ ../common/patches/../EQStreamIdent.h ../common/patches/../EQStream.h \
+ ../common/patches/../EQStreamType.h ../common/patches/../EQPacket.h \
+ ../common/patches/../BasePacket.h ../common/patches/../op_codes.h \
+ ../common/patches/../EQStreamIntf.h \
+ ../common/patches/../../common/opcodemgr.h \
+ ../common/patches/../../common/misc.h \
+ ../common/patches/../../common/Condition.h \
+ ../common/patches/../../common/debug.h \
+ ../common/patches/../../common/timer.h \
+ ../common/patches/../../common/types.h ../common/patches/../timer.h \
+ ../common/patches/../crc32.h ../common/patches/../eq_packet_structs.h \
+ ../common/patches/../../common/version.h \
+ ../common/patches/../eq_constants.h ../common/patches/../skills.h \
+ ../common/patches/../eq_old_structs.h \
+ ../common/patches/../MiscFunctions.h ../common/patches/../Item.h \
+ ../common/patches/../../common/eq_packet_structs.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/item_struct.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../item_fieldlist.h ../common/patches/HoT_structs.h \
+ ../common/patches/../rulesys.h ../common/patches/../ruletypes.h \
+ ../common/patches/SSRegister.h ../common/patches/SSDefine.h
+../common/patches/Anniversary.o: ../common/patches/Anniversary.cpp \
+ ../common/patches/../debug.h ../common/patches/../logsys.h \
+ ../common/patches/../types.h ../common/patches/../logtypes.h \
+ ../common/patches/../common_profile.h \
+ ../common/patches/../../common/Mutex.h \
+ ../common/patches/../../common/../common/unix.h \
+ ../common/patches/../../common/../common/types.h \
+ ../common/patches/Anniversary.h ../common/patches/../StructStrategy.h \
+ ../common/patches/../emu_opcodes.h ../common/patches/../emu_oplist.h \
+ ../common/patches/SSDeclare.h ../common/patches/Anniversary_ops.h \
+ ../common/patches/../opcodemgr.h ../common/patches/../Mutex.h \
+ ../common/patches/../logsys.h ../common/patches/../EQStreamIdent.h \
+ ../common/patches/../EQStream.h ../common/patches/../EQStreamType.h \
+ ../common/patches/../EQPacket.h ../common/patches/../BasePacket.h \
+ ../common/patches/../op_codes.h ../common/patches/../EQStreamIntf.h \
+ ../common/patches/../../common/opcodemgr.h \
+ ../common/patches/../../common/misc.h \
+ ../common/patches/../../common/Condition.h \
+ ../common/patches/../../common/debug.h \
+ ../common/patches/../../common/timer.h \
+ ../common/patches/../../common/types.h ../common/patches/../timer.h \
+ ../common/patches/../crc32.h ../common/patches/../eq_packet_structs.h \
+ ../common/patches/../../common/version.h \
+ ../common/patches/../eq_constants.h ../common/patches/../skills.h \
+ ../common/patches/../eq_old_structs.h \
+ ../common/patches/../MiscFunctions.h ../common/patches/../Item.h \
+ ../common/patches/../../common/eq_packet_structs.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/item_struct.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../item_fieldlist.h \
+ ../common/patches/Anniversary_structs.h ../common/patches/SSRegister.h \
+ ../common/patches/SSDefine.h ../common/patches/Anniversary_itemfields.h
+../common/patches/SoF.o: ../common/patches/SoF.cpp ../common/patches/../debug.h \
+ ../common/patches/../logsys.h ../common/patches/../types.h \
+ ../common/patches/../logtypes.h ../common/patches/../common_profile.h \
+ ../common/patches/../../common/Mutex.h \
+ ../common/patches/../../common/../common/unix.h \
+ ../common/patches/../../common/../common/types.h ../common/patches/SoF.h \
+ ../common/patches/../StructStrategy.h ../common/patches/../emu_opcodes.h \
+ ../common/patches/../emu_oplist.h ../common/patches/SSDeclare.h \
+ ../common/patches/SoF_ops.h ../common/patches/../opcodemgr.h \
+ ../common/patches/../Mutex.h ../common/patches/../logsys.h \
+ ../common/patches/../EQStreamIdent.h ../common/patches/../EQStream.h \
+ ../common/patches/../EQStreamType.h ../common/patches/../EQPacket.h \
+ ../common/patches/../BasePacket.h ../common/patches/../op_codes.h \
+ ../common/patches/../EQStreamIntf.h \
+ ../common/patches/../../common/opcodemgr.h \
+ ../common/patches/../../common/misc.h \
+ ../common/patches/../../common/Condition.h \
+ ../common/patches/../../common/debug.h \
+ ../common/patches/../../common/timer.h \
+ ../common/patches/../../common/types.h ../common/patches/../timer.h \
+ ../common/patches/../crc32.h ../common/patches/../eq_packet_structs.h \
+ ../common/patches/../../common/version.h \
+ ../common/patches/../eq_constants.h ../common/patches/../skills.h \
+ ../common/patches/../eq_old_structs.h \
+ ../common/patches/../MiscFunctions.h ../common/patches/../Item.h \
+ ../common/patches/../../common/eq_packet_structs.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/item_struct.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../item_fieldlist.h ../common/patches/SoF_structs.h \
+ ../common/patches/../rulesys.h ../common/patches/../ruletypes.h \
+ ../common/patches/SSRegister.h ../common/patches/SSDefine.h
+../common/patches/SoD.o: ../common/patches/SoD.cpp ../common/patches/../debug.h \
+ ../common/patches/../logsys.h ../common/patches/../types.h \
+ ../common/patches/../logtypes.h ../common/patches/../common_profile.h \
+ ../common/patches/../../common/Mutex.h \
+ ../common/patches/../../common/../common/unix.h \
+ ../common/patches/../../common/../common/types.h ../common/patches/SoD.h \
+ ../common/patches/../StructStrategy.h ../common/patches/../emu_opcodes.h \
+ ../common/patches/../emu_oplist.h ../common/patches/SSDeclare.h \
+ ../common/patches/SoD_ops.h ../common/patches/../opcodemgr.h \
+ ../common/patches/../Mutex.h ../common/patches/../logsys.h \
+ ../common/patches/../EQStreamIdent.h ../common/patches/../EQStream.h \
+ ../common/patches/../EQStreamType.h ../common/patches/../EQPacket.h \
+ ../common/patches/../BasePacket.h ../common/patches/../op_codes.h \
+ ../common/patches/../EQStreamIntf.h \
+ ../common/patches/../../common/opcodemgr.h \
+ ../common/patches/../../common/misc.h \
+ ../common/patches/../../common/Condition.h \
+ ../common/patches/../../common/debug.h \
+ ../common/patches/../../common/timer.h \
+ ../common/patches/../../common/types.h ../common/patches/../timer.h \
+ ../common/patches/../crc32.h ../common/patches/../eq_packet_structs.h \
+ ../common/patches/../../common/version.h \
+ ../common/patches/../eq_constants.h ../common/patches/../skills.h \
+ ../common/patches/../eq_old_structs.h \
+ ../common/patches/../MiscFunctions.h ../common/patches/../Item.h \
+ ../common/patches/../../common/eq_packet_structs.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../../common/item_struct.h \
+ ../common/patches/../../common/eq_constants.h \
+ ../common/patches/../item_fieldlist.h ../common/patches/SoD_structs.h \
+ ../common/patches/../rulesys.h ../common/patches/../ruletypes.h \
+ ../common/patches/SSRegister.h ../common/patches/SSDefine.h
+../common/EQDB.o: ../common/EQDB.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQDB.h \
+ ../common/EQDBRes.h ../common/database.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/types.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h
+../common/perl_EQDB.o: ../common/perl_EQDB.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/useperl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/EXTERN.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/config.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/handy.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unixish.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/iperlsys.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlio.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perly.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/sv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regexp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/utf8.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regcharclass.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unicode_constants.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op_reg_common.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/util.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/form.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/gv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pad.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opnames.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/reentr.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cop.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mydtrace.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/av.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/scope.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/warnings.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/parser.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/patchlevel.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/intrpvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/thread.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/proto.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opcode.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embedvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embed.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlvars.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg_vtable.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/overload.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlapi.h ../common/EQDB.h \
+ ../common/types.h ../common/EQDBRes.h ../common/database.h \
+ ../common/debug.h ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h
+EQLConfig.o: EQLConfig.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h EQLConfig.h ../common/types.h \
+ worlddb.h ../common/shareddb.h ../common/database.h ../common/debug.h \
+ ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/types.h \
+ ../common/../common/linked_list.h ../common/../common/types.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h LauncherLink.h ../common/EmuTCPConnection.h \
+ ../common/TCPConnection.h ../common/unix.h ../common/Mutex.h \
+ ../common/queue.h ../common/MiscFunctions.h ../common/timer.h \
+ ../common/timer.h LauncherList.h ../common/MiscFunctions.h
+perl_EQLConfig.o: perl_EQLConfig.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h EQWParser.h ../common/useperl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/EXTERN.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/config.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/handy.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unixish.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/iperlsys.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlio.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perly.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/sv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regexp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/utf8.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regcharclass.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unicode_constants.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op_reg_common.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/util.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/form.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/gv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pad.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opnames.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/reentr.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cop.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mydtrace.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/av.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/scope.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/warnings.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/parser.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/patchlevel.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/intrpvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/thread.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/proto.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opcode.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embedvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embed.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlvars.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg_vtable.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/overload.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlapi.h EQLConfig.h \
+ ../common/types.h worlddb.h ../common/shareddb.h ../common/database.h \
+ ../common/debug.h ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/types.h \
+ ../common/../common/linked_list.h ../common/../common/types.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/../zone/spdat.h \
+ ../common/../zone/../common/classes.h \
+ ../common/../zone/../common/../common/types.h \
+ ../common/../zone/../common/skills.h ../common/Item.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/eq_constants.h ../common/../common/item_struct.h \
+ ../common/../common/eq_constants.h ../common/item_fieldlist.h \
+ ../common/../KingsBandits/KBStructs.h \
+ ../common/../KingsBandits/../common/types.h \
+ ../common/../KingsBandits/../common/item_struct.h \
+ ../common/../KingsBandits/../common/eq_packet_structs.h \
+ ../common/../KingsBandits/../KingsBandits/KBItemStructs.h \
+ ../common/ZoneNumbers.h
+../common/EQDBRes.o: ../common/EQDBRes.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQDBRes.h \
+ ../common/database.h ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/types.h \
+ ../common/../common/linked_list.h ../common/../common/types.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h
+../common/perl_EQDBRes.o: ../common/perl_EQDBRes.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/useperl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/EXTERN.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perl.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/config.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/handy.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unixish.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/iperlsys.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlio.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perly.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/sv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regexp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/utf8.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/regcharclass.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/unicode_constants.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op_reg_common.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/util.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/form.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/gv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pad.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opnames.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/op.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/reentr.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/hv_func.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/cop.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mydtrace.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/av.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/scope.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/warnings.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/parser.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/patchlevel.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/intrpvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/thread.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/pp.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/proto.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/opcode.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embedvar.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/embed.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlvars.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/mg_vtable.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/inline.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/overload.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/XSUB.h \
+ /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlapi.h ../common/EQDBRes.h \
+ ../common/types.h ../common/database.h ../common/debug.h \
+ ../common/dbcore.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ ../common/../common/DBMemLeak.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/linked_list.h \
+ ../common/../common/queue.h ../common/../common/timer.h \
+ ../common/../common/Condition.h ../common/../common/debug.h \
+ ../common/linked_list.h ../common/eq_packet_structs.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h
+../common/EmuTCPServer.o: ../common/EmuTCPServer.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EmuTCPServer.h \
+ ../common/TCPServer.h ../common/EmuTCPConnection.h \
+ ../common/TCPConnection.h ../common/unix.h ../common/Mutex.h \
+ ../common/queue.h ../common/MiscFunctions.h ../common/timer.h
+../common/TCPServer.o: ../common/TCPServer.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/TCPServer.h
+../common/EmuTCPConnection.o: ../common/EmuTCPConnection.cpp \
+ ../common/../common/debug.h ../common/../common/logsys.h \
+ ../common/../common/types.h ../common/../common/logtypes.h \
+ ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/types.h ../common/Mutex.h ../common/queue.h \
+ ../common/MiscFunctions.h ../common/timer.h ../common/EmuTCPServer.h \
+ ../common/TCPServer.h ../common/../common/servertalk.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/packet_functions.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/../common/version.h \
+ ../common/../common/../common/eq_constants.h \
+ ../common/../common/../common/skills.h \
+ ../common/../common/../common/eq_old_structs.h \
+ ../common/../common/packet_dump.h
+../common/SocketLib/Base64.o: ../common/SocketLib/Base64.cpp ../common/SocketLib/Base64.h
+../common/SocketLib/File.o: ../common/SocketLib/File.cpp ../common/SocketLib/File.h \
+ ../common/SocketLib/IFile.h
+../common/SocketLib/HTTPSocket.o: ../common/SocketLib/HTTPSocket.cpp \
+ ../common/SocketLib/../debug.h ../common/SocketLib/../logsys.h \
+ ../common/SocketLib/../types.h ../common/SocketLib/../logtypes.h \
+ ../common/SocketLib/../common_profile.h \
+ ../common/SocketLib/../../common/Mutex.h \
+ ../common/SocketLib/../../common/../common/unix.h \
+ ../common/SocketLib/../../common/../common/types.h \
+ ../common/SocketLib/Parse.h ../common/SocketLib/HTTPSocket.h \
+ ../common/SocketLib/../TCPConnection.h ../common/SocketLib/../unix.h \
+ ../common/SocketLib/../Mutex.h ../common/SocketLib/../queue.h \
+ ../common/SocketLib/../MiscFunctions.h
+../common/SocketLib/HttpdCookies.o: ../common/SocketLib/HttpdCookies.cpp \
+ ../common/SocketLib/../debug.h ../common/SocketLib/../logsys.h \
+ ../common/SocketLib/../types.h ../common/SocketLib/../logtypes.h \
+ ../common/SocketLib/../common_profile.h \
+ ../common/SocketLib/../../common/Mutex.h \
+ ../common/SocketLib/../../common/../common/unix.h \
+ ../common/SocketLib/../../common/../common/types.h \
+ ../common/SocketLib/Parse.h ../common/SocketLib/Utility.h \
+ ../common/SocketLib/Base64.h ../common/SocketLib/HTTPSocket.h \
+ ../common/SocketLib/../TCPConnection.h ../common/SocketLib/../unix.h \
+ ../common/SocketLib/../Mutex.h ../common/SocketLib/../queue.h \
+ ../common/SocketLib/../MiscFunctions.h \
+ ../common/SocketLib/HttpdCookies.h ../common/SocketLib/../types.h
+../common/SocketLib/HttpdForm.o: ../common/SocketLib/HttpdForm.cpp \
+ ../common/SocketLib/socket_include.h ../common/SocketLib/Parse.h \
+ ../common/SocketLib/IFile.h ../common/SocketLib/HttpdForm.h
+../common/SocketLib/HttpdSocket.o: ../common/SocketLib/HttpdSocket.cpp \
+ ../common/SocketLib/../debug.h ../common/SocketLib/../logsys.h \
+ ../common/SocketLib/../types.h ../common/SocketLib/../logtypes.h \
+ ../common/SocketLib/../common_profile.h \
+ ../common/SocketLib/../../common/Mutex.h \
+ ../common/SocketLib/../../common/../common/unix.h \
+ ../common/SocketLib/../../common/../common/types.h \
+ ../common/SocketLib/Utility.h ../common/SocketLib/Base64.h \
+ ../common/SocketLib/HttpdCookies.h ../common/SocketLib/HttpdForm.h \
+ ../common/SocketLib/MemFile.h ../common/SocketLib/IFile.h \
+ ../common/SocketLib/HttpdSocket.h ../common/SocketLib/HTTPSocket.h \
+ ../common/SocketLib/../TCPConnection.h ../common/SocketLib/../unix.h \
+ ../common/SocketLib/../Mutex.h ../common/SocketLib/../queue.h \
+ ../common/SocketLib/../MiscFunctions.h ../common/SocketLib/../types.h
+../common/SocketLib/MemFile.o: ../common/SocketLib/MemFile.cpp ../common/SocketLib/MemFile.h \
+ ../common/SocketLib/IFile.h
+../common/SocketLib/Mime.o: ../common/SocketLib/Mime.cpp ../common/SocketLib/Parse.h \
+ ../common/SocketLib/Mime.h
+../common/SocketLib/Parse.o: ../common/SocketLib/Parse.cpp ../common/SocketLib/Parse.h
+../common/SocketLib/Utility.o: ../common/SocketLib/Utility.cpp ../common/SocketLib/Utility.h \
+ ../common/SocketLib/Base64.h
+../common/guild_base.o: ../common/guild_base.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/guild_base.h \
+ ../common/guilds.h ../common/database.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/types.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/MiscFunctions.h
+wguild_mgr.o: wguild_mgr.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h wguild_mgr.h ../common/types.h \
+ ../common/guild_base.h ../common/guilds.h ../common/servertalk.h \
+ ../common/../common/types.h ../common/../common/packet_functions.h \
+ ../common/../common/types.h ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h clientlist.h \
+ ../common/eq_packet_structs.h ../common/linked_list.h ../common/timer.h \
+ ../common/rulesys.h ../common/ruletypes.h zonelist.h ../common/eqtime.h
+.obj/rulesys.o: ../common/rulesys.cpp ../common/rulesys.h ../common/types.h \
+ ../common/ruletypes.h ../common/logsys.h ../common/logtypes.h \
+ ../common/database.h ../common/debug.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/dbcore.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ../common/../common/DBMemLeak.h \
+ ../common/../common/types.h ../common/../common/linked_list.h \
+ ../common/../common/types.h ../common/../common/queue.h \
+ ../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/linked_list.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/MiscFunctions.h

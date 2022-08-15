@@ -1,0 +1,241 @@
+sub EVENT_SAY { 
+if ( defined($qglobals{akanon_race_playerflag}) )
+{
+quest::say("You are currently participating in an event and cannot use the teleporter.");
+return;
+}
+	my $teamHalas = quest::getguardfield(2,0, "guildid"); #halas
+
+	my $teamFreeport = quest::getguardfield(3,0, "guildid"); #freeport
+	my $teamFelwithe = quest::getguardfield(7,0, "guildid"); #felwithe
+	my $teamErudin = quest::getguardfield(8,0, "guildid"); #erudin
+
+	my $teamQeynos = quest::getguardfield(1,0, "guildid"); #qeynos
+	my $teamRivervale = quest::getguardfield(4,0, "guildid"); #rivervale
+
+	my $greatdivideCamp = quest::getguardfield(9,0, "guildid");
+
+	my $toxCamp = quest::getguardfield(10,0, "guildid");
+	my $gfayCamp = quest::getguardfield(11,0, "guildid");
+	my $lavaCamp = quest::getguardfield(12,0, "guildid");
+
+	my $guildCamp = quest::findcampteamid($client->GuildID());
+
+if ($text =~/Guild Camp/i ){
+	if ( $guildCamp > 0 )
+	{
+		my $campAlive = quest::getcitymode($guildCamp);
+		if ( $campAlive == 96 )
+		{
+			my $x = quest::getteamlocation($guildCamp,"x");
+			my $y = quest::getteamlocation($guildCamp,"y");
+			my $z = quest::getteamlocation($guildCamp,"z");
+			my $zoneid = quest::getteamlocation($guildCamp,"zoneid");
+			$client->MovePC($zoneid,$x, $y, $z, 0);
+		}
+		else
+		{
+			quest::say("Guild camp is unavailable.");
+		}
+	}
+	else
+	{
+		quest::say("No guild camp exists for you.");
+	}
+}
+elsif ($text =~/Halas/i && ( $client->GuildID() == $teamHalas || $client->GetGM() ) ){
+$client->MovePC(29,171.7,191.9,29.8,192);
+}
+elsif ($text =~/Freeport/i && ( $client->GuildID() == $teamFreeport || $client->GetGM() ) ){
+$client->MovePC(9,-52.1,-108,-10.2,130.9);
+}
+elsif ($text =~/Felwithe/i && ( $client->GuildID() == $teamFelwithe || $client->GetGM() ) ){
+$client->MovePC(61,0,0,0,0);
+}
+elsif ($text =~/Erudin/i && ( $client->GuildID() == $teamErudin || $client->GetGM() ) ){
+$client->MovePC(24,-340,-924,66.7,78);
+}
+elsif ($text =~/Qeynos/i && ( $client->GuildID() == $teamQeynos  || $client->GetGM() ) ){
+$client->MovePC(1,-151.7,106,4.8,222.4);
+}
+elsif ($text =~/Rivervale/i && ( $client->GuildID() == $teamRivervale || $client->GetGM() ) ){
+$client->MovePC(19,-163.2,44.2,1.0,80.2);
+}
+elsif (($text =~/Tox Camp/i || $text =~/Toxxulia Camp/i || $text =~/Toxxulia Forest Camp/i) && ( $client->GuildID() == $toxCamp || $client->GetGM() ) ){
+$client->MovePC(38,1078.7,-980.1,-45.7,190.6);
+}
+elsif ($text =~/Greater Faydark Camp/i && ( $client->GuildID() == $gfayCamp || $client->GetGM() ) ){
+$client->MovePC(54,-1676.2,1667.4,69.2,230.9);
+}
+elsif ($text =~/Lavastorm Camp/i && ( $client->GuildID() == $lavaCamp || $client->GetGM() ) ){
+$client->MovePC(27,-500.3,176.6,99.1,112.9);
+}
+elsif ($text =~/Great Divide Camp/i && ( $client->GuildID() == $greatdivideCamp || $client->GetGM() ) ){
+$client->MovePC(118,-1904.9,-4001.5,39.4,233.4);
+}
+elsif ($text =~/Everfrost Camp/i ){
+if ( $client->GetPVPFlag() == 3 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(30,-3446.7,2695.1,-36.5,191.2);
+}
+elsif ( $client->GetPVPFlag() == 2 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(30,-5462.1,-839.0,191.0,127.2);
+}
+}
+elsif ($text =~/Warrens Camp/i ){
+if ( $client->GetPVPFlag() == 3 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(101,-849.8,658.3,-75.2,64.9);
+}
+elsif ( $client->GetPVPFlag() == 2 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(101,943.3,-292.3,-107.2,18.2);
+}
+}
+elsif ($text =~/Caverns of Exile/i ){
+if ( $client->GetPVPFlag() == 3 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(278,-733.4,628.8,3.8,82.5);
+}
+elsif ( $client->GetPVPFlag() == 2 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(278,315.8,-300.3,-14.2,47.8);
+}
+}
+elsif($text=~/visit scarlet/i)
+  {
+          plugin::handlescarlet_say();
+}
+elsif($text=~/Hail/i){
+if ( $client->GetPVPFlag() == 0 )
+{
+quest::say("Hello $name!  I am here to send players to their city but it seems you are not one!  Speak to Soulbinder Manrider to be gated to your bind, or otherwise use the teleporters in the corridors of nexus.");
+}
+else
+{
+$link = quest::saylink("Freeport");
+$link2 = quest::saylink("Felwithe");
+$link3 = quest::saylink("Erudin");
+$link4 = quest::saylink("Qeynos");
+$link5 = quest::saylink("Rivervale");
+$link6 = quest::saylink("Tox Camp");
+$link7 = quest::saylink("Greater Faydark Camp");
+$link8 = quest::saylink("Lavastorm Camp");
+$link9 = quest::saylink("Great Divide Camp");
+$link10 = quest::saylink("Everfrost Camp");
+$link11 = quest::saylink("Warrens Camp");
+$link12 = quest::saylink("Visit Scarlet");
+$link13 = quest::saylink("Caverns of Exile");
+$link14 = quest::saylink("Guild Camp");
+$link15 = quest::saylink("Halas");
+
+$zones = "You may return to ";
+	if ( $guildCamp > 0 )
+	{
+		my $campAlive = quest::getcitymode($guildCamp);
+		if ( $campAlive == 96 )
+		{
+			$zones = $zones . $link14;
+		}
+	}
+	if ( $client->GuildID() == $teamFreeport )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link;
+	}
+	if ( $client->GuildID() == $teamHalas )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link15;
+	}
+	if ( $client->GuildID() == $teamFelwithe )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link2;
+	}
+	if ( $client->GuildID() == $teamErudin )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link3;
+	}
+	if ( $client->GuildID() == $teamQeynos )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link4;
+	}
+	if ( $client->GuildID() == $teamRivervale )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link5;
+	}
+	if ( $client->GuildID() == $toxCamp )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link6;
+	}
+	if ( $client->GuildID() == $gfayCamp )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link7;
+	}
+	if ( $client->GuildID() == $lavaCamp )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link8;
+	}
+	if ( $client->GuildID() == $greatdivideCamp )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link9;
+	}
+
+		#$length = length $zones;
+		#if ( $length > 19 ) { $zones = $zones . " or "; }
+		#$zones = $zones . $link10;
+
+		#$length = length $zones;
+		#if ( $length > 19 ) { $zones = $zones . " or "; }
+		#$zones = $zones . $link11;
+
+        #$length = length $zones;
+        #if ( $length > 19 ) { $zones = $zones . " or "; }
+        #$zones = $zones . $link12;
+
+        #$length = length $zones;
+        #if ( $length > 19 ) { $zones = $zones . " or "; }
+        #$zones = $zones . $link13;
+				
+	if ( length $zones < 19 )
+	{
+		$zones = "No city teleports available.  Speak to Soulbinder Manrider to be gated to your bind, or otherwise use the teleporters in the corridors of nexus.";
+	}
+	quest::say("$zones");
+}
+}
+}
+
+}
+#if ( $client->GetPVPFlag() == 1 ) { $client->MovePC(2,176.2,293.6,47.7,75.2); }
+#elsif ( $client->GetPVPFlag() == 3 ) { $client->MovePC(9,-52.1,-108,-10.2,130.9); }
+#elsif ( $client->GetPVPFlag() == 2 ) { $client->MovePC(29,-290.6,116.2,3.8,127.1); }
+#elsif ( $client->GetPVPFlag() == 4 ) { $client->MovePC(19,-172.2,52.7,-.3,213); }
+#elsif ( $client->GetPVPFlag() == 5 ) { $client->MovePC(68,2753.5,1139.2,0.8,156.4); }
+#END of FILE Zone:nexus  ID:152013 -- Fani_Dertrimas 
+

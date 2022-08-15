@@ -1,0 +1,45 @@
+sub EVENT_SAY {
+$careerptz = $client->GetPVPCareerPoints();
+#create array of item ids
+
+my @itemrefund = (1001,1002,1003);
+
+if(($text=~/hail/i) ){
+my $val = 1004;
+if ($val ~~ @itemrefund){
+quest::say("We found it!!");
+}
+quest::say("Greetings! Can you feel that? It feels like the veil between worlds is thin here. I wonder, if I open a [portal], where it would lead? TEST: $itemrefund[1]");
+return;
+  }
+
+
+if(($text=~/portal/i) ) {
+#quest::say("There is no telling what has caused this energy to converge like this. What I do know is only those that are weak may enter. So, If you wish to see what is contained within just say '[I am weak]' and I will open a portal.");
+
+}
+
+if(($text=~/portalx/i)  ) {
+#quest::say("There is no telling what has caused this energy to converge like this. What I do know is only those that are weak may enter. So, If you wish to see what is contained within just say '[I am weak]' and I will open a portal.");
+}
+
+
+if(($text=~/i am weak/i) ){
+}
+
+} 
+
+
+
+sub EVENT_ITEM {
+my @itemrefund = (1001,1002,1003);
+
+  if (plugin::check_handin(\%itemcount, 5813 => 1) && plugin::check_handin(\%itemcount, 32428 => 1)){ #### If its earring of woven leaves
+    quest::say("Thank you for this! Now here is your Legendary Earring of Woven Leaves");
+    quest::ding();
+    quest::summonitem(135005);
+    $client->AddLevelBasedExp(25, 40); ## 25% exp, upto level 40
+ }
+
+quest::say("Thanks for your shit beoych...no refunds so dont bother to petition.");
+}

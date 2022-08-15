@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugBots|Win32">
+      <Configuration>DebugBots</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelaseBots|Win32">
+      <Configuration>RelaseBots</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Zone</ProjectName>
+    <ProjectGuid>{63A50DC0-5741-4658-80E8-643E3279A1B7}</ProjectGuid>
+    <SccProjectName />
+    <SccLocalPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\Build\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\Build\ZonePerl\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\../Build\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\../Build/Zone/Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'">$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;E:\Kings and Bandits\projecteqemu-read-only\zlib\include;E:\Kings and Bandits\mysql;c:\perl\lib\core</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'">$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;E:\Kings and Bandits\projecteqemu-read-only\zlib\lib;E:\Kings and Bandits\mysql;c:\perl\lib\core</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;E:\Kings and Bandits\projecteqemu-read-only\zlib\include;E:\Kings and Bandits\mysql;c:\perl\lib\core</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;E:\Kings and Bandits\projecteqemu-read-only\zlib\lib;E:\Kings and Bandits\mysql;c:\perl\lib\core</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'">$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;E:\Kings and Bandits\projecteqemu-read-only\zlib\include;E:\Kings and Bandits\mysql;c:\perl\lib\core</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'">$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;E:\Kings and Bandits\projecteqemu-read-only\zlib\lib;E:\Kings and Bandits\mysql;c:\perl\lib\core</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;E:\Kings and Bandits\projecteqemu-read-only\zlib\include;E:\Kings and Bandits\mysql;c:\perl\lib\core</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;E:\Kings and Bandits\projecteqemu-read-only\zlib\lib;E:\Kings and Bandits\mysql;c:\perl\lib\core</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\perl\lib\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EMBPERL;EMBPERL_PLUGIN;SHAREMEM;i386;_WIN32_WINNT=0x0400;ZONE;INVERSEXY;WIN32;_CONSOLE;FIELD_ITEMS;EQDEBUG=5;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\..\Build\ZonePerl/Zone.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\..\Build\ZonePerl/</AssemblerListingLocation>
+      <ObjectFileName>.\..\Build\ZonePerl/</ObjectFileName>
+      <ProgramDataBaseFileName>.\..\Build\ZonePerl/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;wsock32.lib;zlib.lib;mysqlclient.lib;advapi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../build/ZonePerl.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\perl\lib\core;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\..\Build/ZonePerl.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <Midl>
+      <TypeLibraryName>.\..\Build/Zone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>C:\perl\lib\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EMBPERL;EMBPERL_PLUGIN;SHAREMEM;i386;CATCH_CRASH;_WIN32_WINNT=0x0400;NDEBUG;ZONESERVER;ZONE;INVERSEXY;WIN32;_CONSOLE;FIELD_ITEMS;EQDEBUG=5;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\../Build/Zone/Release/Zone.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../Build/Zone/Release/</AssemblerListingLocation>
+      <ObjectFileName>.\../Build/Zone/Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../Build/Zone/Release/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;wsock32.lib;zlib.lib;mysqlclient.lib;advapi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\../Build/Zone.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\perl\lib\core;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc;MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../Build/Zone.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>../Build/Zone.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <Midl>
+      <TypeLibraryName>.\../Build/Zone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>C:\perl\lib\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EMBPERL;EMBPERL_PLUGIN;SHAREMEM;i386;CATCH_CRASH;_WIN32_WINNT=0x0400;NDEBUG;ZONESERVER;ZONE;INVERSEXY;WIN32;_CONSOLE;FIELD_ITEMS;EQDEBUG=5;EQBOTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\../Build/Zone/Release/Zone.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../Build/Zone/Release/</AssemblerListingLocation>
+      <ObjectFileName>.\../Build/Zone/Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../Build/Zone/Release/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;wsock32.lib;zlib.lib;mysqlclient.lib;advapi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\../Build/Zone.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\perl\lib\core;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc;MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../Build/Zone.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>../Build/Zone.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <Midl>
+      <TypeLibraryName>.\../Build/Zone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\perl\lib\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EMBPERL;EMBPERL_PLUGIN;SHAREMEM;i386;_WIN32_WINNT=0x0400;ZONE;INVERSEXY;WIN32;_CONSOLE;FIELD_ITEMS;EQDEBUG=5;EQBOTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\..\Build\ZonePerl/Zone.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\..\Build\ZonePerl/</AssemblerListingLocation>
+      <ObjectFileName>.\..\Build\ZonePerl/</ObjectFileName>
+      <ProgramDataBaseFileName>.\..\Build\ZonePerl/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;wsock32.lib;zlib.lib;mysqlclient.lib;advapi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../build/ZonePerl.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\perl\lib\core;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\..\Build/ZonePerl.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <Midl>
+      <TypeLibraryName>.\..\Build/Zone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AA.cpp" />
+    <ClCompile Include="aggro.cpp" />
+    <ClCompile Include="attack.cpp" />
+    <ClCompile Include="beacon.cpp" />
+    <ClCompile Include="bonuses.cpp" />
+    <ClCompile Include="client.cpp" />
+    <ClCompile Include="client_logs.cpp" />
+    <ClCompile Include="client_mods.cpp" />
+    <ClCompile Include="client_packet.cpp" />
+    <ClCompile Include="client_process.cpp" />
+    <ClCompile Include="command.cpp" />
+    <ClCompile Include="doors.cpp" />
+    <ClCompile Include="effects.cpp" />
+    <ClCompile Include="embparser.cpp" />
+    <ClCompile Include="embperl.cpp" />
+    <ClCompile Include="embxs.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="..\common\EQEMuError.cpp" />
+    <ClCompile Include="exp.cpp" />
+    <ClCompile Include="faction.cpp" />
+    <ClCompile Include="fearpath.cpp" />
+    <ClCompile Include="forage.cpp" />
+    <ClCompile Include="groups.cpp" />
+    <ClCompile Include="guild.cpp" />
+    <ClCompile Include="guild_mgr.cpp" />
+    <ClCompile Include="hate_list.cpp" />
+    <ClCompile Include="horse.cpp" />
+    <ClCompile Include="inventory.cpp" />
+    <ClCompile Include="loottables.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="mob.cpp" />
+    <ClCompile Include="MobAI.cpp" />
+    <ClCompile Include="net.cpp" />
+    <ClCompile Include="npc.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="pathing.cpp" />
+    <ClCompile Include="perl_client.cpp" />
+    <ClCompile Include="perl_entity.cpp" />
+    <ClCompile Include="perl_groups.cpp" />
+    <ClCompile Include="perl_mob.cpp" />
+    <ClCompile Include="perl_npc.cpp" />
+    <ClCompile Include="perl_object.cpp" />
+    <ClCompile Include="perl_perlpacket.cpp" />
+    <ClCompile Include="perl_PlayerCorpse.cpp" />
+    <ClCompile Include="perl_raids.cpp" />
+    <ClCompile Include="perlpacket.cpp" />
+    <ClCompile Include="perlparser.cpp" />
+    <ClCompile Include="petitions.cpp" />
+    <ClCompile Include="pets.cpp" />
+    <ClCompile Include="PlayerCorpse.cpp" />
+    <ClCompile Include="..\common\ptimer.cpp" />
+    <ClCompile Include="questmgr.cpp" />
+    <ClCompile Include="raids.cpp" />
+    <ClCompile Include="spawn2.cpp" />
+    <ClCompile Include="spawngroup.cpp" />
+    <ClCompile Include="spdat.cpp" />
+    <ClCompile Include="special_attacks.cpp" />
+    <ClCompile Include="spell_effects.cpp" />
+    <ClCompile Include="spells.cpp" />
+    <ClCompile Include="tasks.cpp" />
+    <ClCompile Include="titles.cpp" />
+    <ClCompile Include="tradeskills.cpp" />
+    <ClCompile Include="trading.cpp" />
+    <ClCompile Include="trap.cpp" />
+    <ClCompile Include="tribute.cpp" />
+    <ClCompile Include="watermap.cpp" />
+    <ClCompile Include="waypoints.cpp" />
+    <ClCompile Include="worldserver.cpp" />
+    <ClCompile Include="zone.cpp" />
+    <ClCompile Include="zone_logsys.cpp" />
+    <ClCompile Include="ZoneConfig.cpp" />
+    <ClCompile Include="zonedb.cpp" />
+    <ClCompile Include="zonedbasync.cpp" />
+    <ClCompile Include="zoning.cpp" />
+    <ClCompile Include="..\common\patches\Anniversary.cpp" />
+    <ClCompile Include="..\common\patches\Client62.cpp" />
+    <ClCompile Include="..\common\patches\patches.cpp" />
+    <ClCompile Include="..\common\patches\Titanium.cpp" />
+    <ClCompile Include="..\common\BasePacket.cpp" />
+    <ClCompile Include="..\common\classes.cpp" />
+    <ClCompile Include="..\common\Condition.cpp" />
+    <ClCompile Include="..\common\CRC16.cpp" />
+    <ClCompile Include="..\common\crc32.cpp" />
+    <ClCompile Include="..\common\database.cpp" />
+    <ClCompile Include="..\common\dbasync.cpp" />
+    <ClCompile Include="..\common\dbcore.cpp" />
+    <ClCompile Include="..\common\DBMemLeak.cpp" />
+    <ClCompile Include="..\common\debug.cpp" />
+    <ClCompile Include="..\common\emu_opcodes.cpp" />
+    <ClCompile Include="..\common\EMuShareMem.cpp" />
+    <ClCompile Include="..\common\EmuTCPConnection.cpp" />
+    <ClCompile Include="..\common\EmuTCPServer.cpp" />
+    <ClCompile Include="..\common\EQEmuConfig.cpp" />
+    <ClCompile Include="..\common\EQPacket.cpp" />
+    <ClCompile Include="..\common\EQStream.cpp" />
+    <ClCompile Include="..\common\EQStreamFactory.cpp" />
+    <ClCompile Include="..\common\EQStreamIdent.cpp" />
+    <ClCompile Include="..\common\EQStreamProxy.cpp" />
+    <ClCompile Include="..\common\eqtime.cpp" />
+    <ClCompile Include="..\common\extprofile.cpp" />
+    <ClCompile Include="..\common\guild_base.cpp" />
+    <ClCompile Include="..\common\guilds.cpp" />
+    <ClCompile Include="..\common\Item.cpp" />
+    <ClCompile Include="..\common\logsys.cpp" />
+    <ClCompile Include="..\common\logsys_eqemu.cpp" />
+    <ClCompile Include="..\common\md5.cpp" />
+    <ClCompile Include="..\common\misc.cpp" />
+    <ClCompile Include="..\common\MiscFunctions.cpp" />
+    <ClCompile Include="..\common\moremath.cpp" />
+    <ClCompile Include="..\common\Mutex.cpp" />
+    <ClCompile Include="..\common\opcodemgr.cpp" />
+    <ClCompile Include="..\common\packet_dump.cpp" />
+    <ClCompile Include="..\common\packet_dump_file.cpp" />
+    <ClCompile Include="..\common\packet_functions.cpp" />
+    <ClCompile Include="..\common\races.cpp" />
+    <ClCompile Include="..\common\rdtsc.cpp" />
+    <ClCompile Include="..\common\rulesys.cpp" />
+    <ClCompile Include="..\common\serverinfo.cpp" />
+    <ClCompile Include="..\common\shareddb.cpp" />
+    <ClCompile Include="..\common\SharedLibrary.cpp" />
+    <ClCompile Include="..\common\StructStrategy.cpp" />
+    <ClCompile Include="..\common\TCPConnection.cpp" />
+    <ClCompile Include="..\common\TCPServer.cpp" />
+    <ClCompile Include="..\common\timeoutmgr.cpp" />
+    <ClCompile Include="..\common\timer.cpp" />
+    <ClCompile Include="..\common\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\common\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\common\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\common\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\common\unix.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugBots|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelaseBots|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\common\worldconn.cpp" />
+    <ClCompile Include="..\common\XMLParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="beacon.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="client_packet.h" />
+    <ClInclude Include="command.h" />
+    <ClInclude Include="doors.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="..\common\EQEMuError.h" />
+    <ClInclude Include="event_codes.h" />
+    <ClInclude Include="faction.h" />
+    <ClInclude Include="features.h" />
+    <ClInclude Include="..\common\files.h" />
+    <ClInclude Include="Forage.h" />
+    <ClInclude Include="groups.h" />
+    <ClInclude Include="hate_list.h" />
+    <ClInclude Include="loottable.h" />
+    <ClInclude Include="map.h" />
+    <ClInclude Include="mob.h" />
+    <ClInclude Include="net.h" />
+    <ClInclude Include="npc.h" />
+    <ClInclude Include="NpcAI.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="petitions.h" />
+    <ClInclude Include="pets.h" />
+    <ClInclude Include="PlayerCorpse.h" />
+    <ClInclude Include="raids.h" />
+    <ClInclude Include="skills.h" />
+    <ClInclude Include="spawn2.h" />
+    <ClInclude Include="spawngroup.h" />
+    <ClInclude Include="spdat.h" />
+    <ClInclude Include="titles.h" />
+    <ClInclude Include="trap.h" />
+    <ClInclude Include="watermap.h" />
+    <ClInclude Include="worldserver.h" />
+    <ClInclude Include="zone.h" />
+    <ClInclude Include="zonedb.h" />
+    <ClInclude Include="zonedbasync.h" />
+    <ClInclude Include="zonedump.h" />
+    <ClInclude Include="..\common\classes.h" />
+    <ClInclude Include="..\common\CRC16.h" />
+    <ClInclude Include="..\common\crc32.h" />
+    <ClInclude Include="..\common\database.h" />
+    <ClInclude Include="..\common\dbasync.h" />
+    <ClInclude Include="..\common\dbcore.h" />
+    <ClInclude Include="..\common\DBMemLeak.h" />
+    <ClInclude Include="..\common\debug.h" />
+    <ClInclude Include="..\common\deity.h" />
+    <ClInclude Include="..\common\emu_opcodes.h" />
+    <ClInclude Include="..\common\emu_oplist.h" />
+    <ClInclude Include="..\common\EMuShareMem.h" />
+    <ClInclude Include="..\common\eq_packet_structs.h" />
+    <ClInclude Include="..\common\EQCheckTable.h" />
+    <ClInclude Include="..\common\EQOpcodes.h" />
+    <ClInclude Include="..\common\EQPacket.h" />
+    <ClInclude Include="..\common\EQStream.h" />
+    <ClInclude Include="..\common\EQStreamFactory.h" />
+    <ClInclude Include="..\common\eqtime.h" />
+    <ClInclude Include="..\common\Item.h" />
+    <ClInclude Include="..\common\Kaiyodo-LList.h" />
+    <ClInclude Include="..\common\linked_list.h" />
+    <ClInclude Include="..\common\md5.h" />
+    <ClInclude Include="..\common\misc.h" />
+    <ClInclude Include="..\common\MiscFunctions.h" />
+    <ClInclude Include="..\common\moremath.h" />
+    <ClInclude Include="..\common\Mutex.h" />
+    <ClInclude Include="..\common\opcodemgr.h" />
+    <ClInclude Include="..\common\packet_dump.h" />
+    <ClInclude Include="..\common\packet_dump_file.h" />
+    <ClInclude Include="..\common\packet_functions.h" />
+    <ClInclude Include="..\common\queue.h" />
+    <ClInclude Include="..\common\races.h" />
+    <ClInclude Include="..\common\rdtsc.h" />
+    <ClInclude Include="..\common\Seperator.h" />
+    <ClInclude Include="..\common\serverinfo.h" />
+    <ClInclude Include="..\common\servertalk.h" />
+    <ClInclude Include="..\common\SharedLibrary.h" />
+    <ClInclude Include="..\common\TCPConnection.h" />
+    <ClInclude Include="..\common\timer.h" />
+    <ClInclude Include="..\common\types.h" />
+    <ClInclude Include="..\common\unix.h" />
+    <ClInclude Include="..\common\version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\readme.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

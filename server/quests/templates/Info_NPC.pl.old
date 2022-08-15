@@ -1,0 +1,75 @@
+sub EVENT_SAY
+{
+
+if($text=~/Hail/i){
+$var = quest::saylink("team experience bonus");
+$var2 = quest::saylink("kingdom related");
+quest::say("Hello! Are you looking for $var or $var2 information?");
+}
+
+if($text=~/team experience bonus/i){
+
+my $halasBonus = quest::getteamexpbonus(2);
+my $freeportBonus = quest::getteamexpbonus(3);
+my $rivervaleBonus = quest::getteamexpbonus(4);
+my $banditBonus = quest::getteamexpbonus(5);
+
+$halasPaid = "<c \"#00FF00\">OK</c>";
+$freeportPaid = "<c \"#00FF00\">OK</c>";
+$rivervalePaid = "<c \"#00FF00\">OK</c>";
+$banditsPaid = "<c \"#00FF00\">OK</c>";
+
+my $halasUpkeepPaid = quest::getisupkeeppaid(2);
+my $freeportUpkeepPaid = quest::getisupkeeppaid(3);
+my $rivervaleUpkeepPaid = quest::getisupkeeppaid(4);
+
+if ( $halasBonus < 1 ) { $halasPaid = "<c \"#FCFF00\">Kingdom Under Attack</c>"; }
+if ( $freeportBonus < 1 ) { $freeportPaid = "<c \"#FCFF00\">Kingdom Under Attack</c>"; }
+if ( $rivervaleBonus < 1 ) { $rivervalePaid = "<c \"#FCFF00\">Kingdom Under Attack</c>"; }
+
+if ( $halasUpkeepPaid < 1 ) { $halasPaid = "<c \"#FF0000\">Upkeep Not Paid</c>"; }
+if ( $freeportUpkeepPaid < 1 ) { $freeportPaid = "<c \"#FF0000\">Upkeep Not Paid</c>"; }
+if ( $rivervaleUpkeepPaid < 1 ) { $rivervalePaid = "<c \"#FF0000\">Upkeep Not Paid</c>"; }
+
+quest::popup("Team Information","<c \"#FF0000\">Team XP Bonus Rate</c><br>Evil Team: $halasBonus% - ($halasPaid)<br>Good Team: $freeportBonus% - ($freeportPaid)<br>Neutral Team: $rivervaleBonus% - ($rivervalePaid)<br>Bandits Bonus: $banditBonus% - ($banditsPaid)",0,0,120);
+}
+
+if($text=~/kingdom related/i){
+my $qeynosNewbTaxes = quest::getcitynewbietaxrate(1);
+my $qeynosCitTaxes = quest::getcitycitizentaxrate(1);
+my $qeynosUpkeepPaid = quest::getisupkeeppaid(1);
+my $qeynosUpkeepCost = quest::getcityupkeepcost(1);
+
+my $halasNewbTaxes = quest::getcitynewbietaxrate(2);
+my $halasCitTaxes = quest::getcitycitizentaxrate(2);
+my $halasUpkeepPaid = quest::getisupkeeppaid(2);
+my $halasUpkeepCost = quest::getcityupkeepcost(2);
+
+my $freeportNewbTaxes = quest::getcitynewbietaxrate(3);
+my $freeportCitTaxes = quest::getcitycitizentaxrate(3);
+my $freeportUpkeepPaid = quest::getisupkeeppaid(3);
+my $freeportUpkeepCost = quest::getcityupkeepcost(3);
+
+my $rivervaleNewbTaxes = quest::getcitynewbietaxrate(4);
+my $rivervaleCitTaxes = quest::getcitycitizentaxrate(4);
+my $rivervaleUpkeepPaid = quest::getisupkeeppaid(4);
+my $rivervaleUpkeepCost = quest::getcityupkeepcost(4);
+
+$qeynosPaid = "<c \"#00FF00\">YES</c>";
+$halasPaid = "<c \"#00FF00\">YES</c>";
+$freeportPaid = "<c \"#00FF00\">YES</c>";
+$rivervalePaid = "<c \"#00FF00\">YES</c>";
+
+if ( $qeynosUpkeepPaid < 1 ) { $qeynosPaid = "<c \"#FF0000\">NO</c>"; }
+if ( $halasUpkeepPaid < 1 ) { $halasPaid = "<c \"#FF0000\">NO</c>"; }
+if ( $freeportUpkeepPaid < 1 ) { $freeportPaid = "<c \"#FF0000\">NO</c>"; }
+if ( $rivervaleUpkeepPaid < 1 ) { $rivervalePaid = "<c \"#FF0000\">NO</c>"; }
+
+$qeynosPaid .= "<br>Cost (per 72 min, 1 EQ day, in copper): $qeynosUpkeepCost";
+$halasPaid .= "<br>Cost (per 72 min, 1 EQ day, in copper): $halasUpkeepCost";
+$freeportPaid .= "<br>Cost (per 72 min, 1 EQ day, in copper): $freeportUpkeepCost";
+$rivervalePaid .= "<br>Cost (per 72 min, 1 EQ day, in copper): $rivervaleUpkeepCost";
+
+quest::popup("Kingdom Related Information","<c \"#FF0000\">Qeynos</c><br><c \"#5dc3c2\">Upkeep Info</c><br>Paid Last Day: $qeynosPaid<br><c \"#5dc3c2\">Tax Rates</c><br>Guest Rate: $qeynosNewbTaxes %<br>Citizen Rate: $qeynosCitTaxes %<br><br><c \"#FF0000\">Halas</c><br><c \"#5dc3c2\">Upkeep Info</c><br>Paid Last Day: $halasPaid<br><c \"#5dc3c2\">Tax Rates</c><br>Guest Rate: $halasNewbTaxes %<br>Citizen Rate: $halasCitTaxes %<br><br><c \"#FF0000\">Freeport</c><br><c \"#5dc3c2\">Upkeep Info</c><br>Paid Last Day: $freeportPaid<br><c \"#5dc3c2\">Tax Rates</c><br>Guest Rate: $freeportNewbTaxes %<br>Citizen Rate: $freeportCitTaxes %<br><br><c \"#FF0000\">Rivervale</c><br><c \"#5dc3c2\">Upkeep Info</c><br>Paid Last Day: $rivervalePaid<br><c \"#5dc3c2\">Tax Rates</c><br>Guest Rate: $rivervaleNewbTaxes %<br>Citizen Rate: $rivervaleCitTaxes %<br><br>",0,0,120);
+}
+}

@@ -1,0 +1,39 @@
+sub EVENT_SAY { 
+if($text=~/Hail/i){
+if ( $client->GetPVPFlag() == 0 )
+{
+quest::say("Hello $name!  I am here to send players to their city but it seems you are not one!  Maybe you should talk to the Priest of Order.");
+}
+else
+{
+if ( $client->GetPVPFlag() == 5 )
+{
+#$link = quest::saylink("head to Butcherblock Camp");
+#$link2 = quest::saylink("head to Eruds Crossing Camp");
+quest::say("Hello $name, you are a bandit, thus you have no home!  SAD FOR YOU!!!!");
+}
+else
+{
+$link = quest::saylink("return");
+quest::say("Hello $name!  Would you like to $link home?");
+}
+}
+}
+#elsif($text=~/head to Eruds Crossing Camp/i){
+#if ( $client->GetPVPFlag() == 5 ) { $client->MovePC(98,768.8,-1520.4,7.7,184.1); }
+#}
+#elsif($text=~/head to Butcherblock Camp/i){
+#if ( $client->GetPVPFlag() == 5 ) { $client->MovePC(68,2753.5,1139.2,0.8,156.4); }
+#}
+elsif($text=~/return/i){
+
+if ( $client->GetPVPFlag() == 1 ) { $client->MovePC(2,176.2,293.6,47.7,75.2); }
+elsif ( $client->GetPVPFlag() == 3 ) { $client->MovePC(9,-52.1,-108,-10.2,130.9); }
+elsif ( $client->GetPVPFlag() == 2 ) { $client->MovePC(29,-290.6,116.2,3.8,127.1); }
+elsif ( $client->GetPVPFlag() == 4 ) { $client->MovePC(19,-172.2,52.7,-.3,213); }
+elsif ( $client->GetPVPFlag() == 5 ) { $client->MovePC(68,2753.5,1139.2,0.8,156.4); }
+}
+
+}
+#END of FILE Zone:nexus  ID:152013 -- Fani_Dertrimas 
+

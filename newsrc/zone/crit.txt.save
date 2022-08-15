@@ -1,0 +1,126 @@
+attack.cpp:			mlog(COMBAT__DAMAGE, "Final damage after all reductions: %d (critical hit not determined if attacking client)", damage);
+attack.cpp:		if ( !isCritHit ) // crit hit is handled for pvp in Mob::TryCriticalHit
+attack.cpp:	int critChance = RuleI(Combat, MeleeBaseCritChance);
+attack.cpp:	uint16 critMod = 200;
+attack.cpp:	if (damage < 1) //We can't critical hit if we don't hit.
+attack.cpp:		critChance += 4;
+attack.cpp:		critChance += 8;
+attack.cpp:		critChance += 12;
+attack.cpp:		critChance += 16;
+attack.cpp:		critChance += 20;
+attack.cpp:		if(critChance == 0) //If we have a bonus to crit in items or spells but no actual chance to crit
+attack.cpp:			critChance = (CritBonus / 100) + 1; //Give them a small one so skills and items appear to have some effect.
+attack.cpp:			critChance += (critChance * CritBonus / 100); //crit chance is a % increase to your reg chance
+attack.cpp:	if (critChance > 0) {
+attack.cpp:		if (MakeRandomInt(0, 99) < critChance) {
+attack.cpp:			critMod += GetCritDmgMob(skill) * 2; // To account for base crit mod being 200 not 100
+attack.cpp:			damage = (damage * critMod) / 100;
+attack.cpp:			entity_list.MessageClose(this, false, 200, MT_CritMelee, "%s scores a critical hit!(%d)", GetCleanName(), damage);
+attack.cpp:	int critChance = RuleI(Combat, MeleeBaseCritChance);
+attack.cpp:		critChance += RuleI(Combat, ClientBaseCritChance);
+attack.cpp:	uint16 critMod = 200; 
+attack.cpp:			critChance += RuleI(Combat, BerserkBaseCritChance);
+attack.cpp:			critMod = 400;
+attack.cpp:			critChance += RuleI(Combat, WarBerBaseCritChance);
+attack.cpp:		critChance += 6;
+attack.cpp:			critChance = 35;
+attack.cpp:			critChance = 10;
+attack.cpp:		critChance += GetCriticalChanceBonus(skill, true); // These add straight on
+attack.cpp:		if(critChance == 0) //If we have a bonus to crit in items or spells but no actual chance to crit
+attack.cpp:			critChance = (CritBonus / 100) + 1; //Give them a small one so skills and items appear to have some effect.
+attack.cpp:			critChance += (critChance * CritBonus / 100); //crit chance is a % increase to your reg chance
+attack.cpp:				critMod += 33;
+attack.cpp:				critMod += 66;
+attack.cpp:				critMod += 100;
+attack.cpp:	if(critChance > 0){
+attack.cpp:		if(MakeRandomInt(0, 99) < critChance)
+attack.cpp:				damage = (damage * (critMod * 2.65)) / 100;
+attack.cpp:					critMod += AAdmgmod * 3; //AndMetal: guessing
+attack.cpp:			critMod += GetCritDmgMob(skill) * 2; // To account for base crit mod being 200 not 100
+attack.cpp:			// KaB - Red69 - Zek / Implementation of crit reduction for pvp
+attack.cpp:				damage = (damage * critMod) / 150;
+attack.cpp:				damage = (damage * critMod) / 100;
+attack.cpp:					entity_list.MessageClose(this, false, 200, MT_CritMelee, "%s scores a critical hit!(%d)", GetCleanName(), damage);
+attack.cpp:			return true; // we did some type of crit hit
+bot.cpp:	if(damage < 1) //We can't critical hit if we don't hit.
+bot.cpp:	int critChance = RuleI(Combat, MeleeBaseCritChance);
+bot.cpp:	critChance += RuleI(Combat, ClientBaseCritChance);
+bot.cpp:	uint16 critMod = 200; 
+bot.cpp:		critChance += 6;
+bot.cpp:		critChance += RuleI(Combat, BerserkBaseCritChance);
+bot.cpp:		critMod = 400;
+bot.cpp:		critChance += RuleI(Combat, WarBerBaseCritChance);
+bot.cpp:		critChance += 12;
+bot.cpp:		critChance += 10;
+bot.cpp:		critChance += 8;
+bot.cpp:		critChance += 7;
+bot.cpp:		critChance += 4;
+bot.cpp:		critChance += 2;
+bot.cpp:		if(critChance == 0) //If we have a bonus to crit in items or spells but no actual chance to crit
+bot.cpp:			critChance = (CritBonus / 100) + 1; //Give them a small one so skills and items appear to have some effect.
+bot.cpp:			critChance += (critChance * CritBonus / 100); //crit chance is a % increase to your reg chance
+bot.cpp:				critMod += 100;
+bot.cpp:				critMod += 66;
+bot.cpp:				critMod += 33;
+bot.cpp:	if(critChance > 0){
+bot.cpp:		if(MakeRandomInt(0, 99) < critChance)
+bot.cpp:				damage = (damage * (critMod * 2.65)) / 100;
+bot.cpp:			//		critMod += AAdmgmod * 3; //AndMetal: guessing
+bot.cpp:			damage = (damage * critMod) / 100;
+bot.cpp:				entity_list.MessageClose(this, false, 200, MT_CritMelee, "%s scores a critical hit!(%d)", GetCleanName(), damage);
+bot.cpp:	//spell crits, dont make sense if cast on self.
+bot.cpp:		//crit damage modifiers
+bot.cpp:			mlog(SPELLS__CRITS, "Attempting spell crit. Spell: %s (%d), Value: %d, Modifier: %d, Chance: %d, Ratio: %d", spells[spell_id].name, spell_id, value, modifier, chance, ratio);
+bot.cpp:				mlog(SPELLS__CRITS, "Spell crit successful. Final damage modifier: %d, Final Damage: %d", modifier, (value * modifier) / 100);
+bot.cpp:				entity_list.MessageClose(this, false, 100, MT_SpellCrits, "%s delivers a critical blast! (%d)", GetName(), ((-value * modifier) / 100));	
+bot.cpp:				mlog(SPELLS__CRITS, "Spell crit failed. Final Damage Modifier: %d, Final Damage: %d", modifier, (value * modifier) / 100);
+client.cpp:	//If we meet all the criteria:
+client_packet.cpp:		int criticalchance = 0;
+client_packet.cpp:			criticalchance = 5;
+client_packet.cpp:			criticalchance = 10;
+client_packet.cpp:			criticalchance = 25;
+client_packet.cpp:		criticalchance += 5*GetAA(aaMendingoftheTranquil);
+client_packet.cpp:		if(MakeRandomInt(0,99) < criticalchance){
+command.cpp:		command_add("findnpctype","[search criteria] - Search database NPC types",100,command_findnpctype) ||
+command.cpp:		command_add("findzone","[search criteria] - Search database zones",100,command_findzone) ||
+command.cpp:		command_add("itemsearch","[search criteria] - Search for an item",10,command_itemsearch) ||
+command.cpp:      c->Message(0, "Usage: #findnpctype [search criteria]");
+command.cpp:		c->Message(0, "Usage: #findzone [search criteria]");
+command.cpp:		const char *search_criteria=sep->argplus[1];
+command.cpp:		if (Seperator::IsNumber(search_criteria)) {
+command.cpp:			item = database.GetItem(atoi(search_criteria));
+command.cpp:				c->Message(0, "Item #%s not found", search_criteria);
+command.cpp:		//int iSearchLen = strlen(search_criteria)+1;
+command.cpp:		strn0cpy(sCriteria, search_criteria, sizeof(sCriteria));
+effects.cpp:	// chance: critital chance %
+effects.cpp:	//spell crits, dont make sense if cast on self.
+effects.cpp:		//Improved Harm Touch is a guaranteed crit if you have at least one level of SCF.
+effects.cpp:			mlog(SPELLS__CRITS, "Attempting spell crit. Spell: %s (%d), Value: %d, Modifier: %d, Chance: %d, Ratio: %d", spells[spell_id].name, spell_id, value, modifier, chance, ratio);
+effects.cpp:				mlog(SPELLS__CRITS, "Spell crit successful. Final damage modifier: %d, Final Damage: %d", modifier, (value * modifier / 100) - spell_dmg);
+effects.cpp:				entity_list.MessageClose(this, false, 100, MT_SpellCrits, "%s delivers a critical blast! (%d)", GetName(), (-value * modifier / 100) + spell_dmg);	
+effects.cpp:				mlog(SPELLS__CRITS, "Spell crit failed. Final Damage Modifier: %d, Final Damage: %d", modifier, (value * modifier / 100) - spell_dmg);
+MobAI.cpp:						int aa_skill = GetOwner()->CastToClient()->GetAA(aaElementalAlacrity);
+nanMobAI.cpp:							aa_skill = GetOwner()->CastToClient()->GetAA(aaWardersAlacrity);
+mob.cpp:	int critDmg_mod = 0;
+mob.cpp:	critDmg_mod += this->itembonuses.CritDmgMob[HIGHEST_SKILL+1] + this->spellbonuses.CritDmgMob[HIGHEST_SKILL+1] + 
+mob.cpp:		critDmg_mod += this->aabonuses.CritDmgMob[HIGHEST_SKILL+1] + this->aabonuses.CritDmgMob[skill];
+mob.cpp:	if(critDmg_mod < -100)
+mob.cpp:		critDmg_mod = -100;
+mob.cpp:	return critDmg_mod;
+mob.cpp:	int critical_chance = 0;
+mob.cpp:		critical_chance += this->itembonuses.CriticalHitChance[HIGHEST_SKILL+1] + this->spellbonuses.CriticalHitChance[HIGHEST_SKILL+1] + 
+mob.cpp:		critical_chance += this->aabonuses.CriticalHitChance[HIGHEST_SKILL+1] + this->aabonuses.CriticalHitChance[skill];
+mob.cpp:	if(critical_chance < -100)
+mob.cpp:		critical_chance = -100;
+mob.cpp:	return critical_chance;
+oldcode.cpp:		// Auto crit
+oldcode.cpp:		// +15% to crit chance
+spell_effects.cpp:	int critChance = 0;
+spell_effects.cpp:	critChance += itembonuses.CriticalDoTChance + spellbonuses.CriticalDoTChance + aabonuses.CriticalDoTChance;
+spell_effects.cpp:	// however, no chance to crit unless they've trained atleast one level in the AA first
+spell_effects.cpp:	if (GetClass() == NECROMANCER && critChance > 0){
+spell_effects.cpp:		critChance += 5;
+spell_effects.cpp:	if (critChance > 0){
+spell_effects.cpp:		if (MakeRandomFloat(0, 99) < critChance)
+tradeskills.cpp:		// above critical still stands.
+zoning.cpp:	//check some critial rules to see if this char needs to be booted from the zone

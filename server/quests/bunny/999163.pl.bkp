@@ -1,0 +1,54 @@
+sub EVENT_SPAWN {
+my $max = 3;
+my $min = 1;
+my $rnd = int(rand($max)) + $min;
+quest::settimer(1,$rnd);
+}
+
+sub EVENT_TIMER {
+	if ( $timer eq "1" )
+	{
+	quest::stoptimer(1);
+	my $max = 3;
+	my $min = 1;
+	my $rnd = int(rand($max)) + $min;
+	if ( $rnd == 1 )
+	{
+	$npc->DoAnim(9,0);
+	}
+	else
+	{
+	$npc->DoAnim(13,0);
+	}
+	quest::settimer(1,$rnd);
+	}
+}
+
+sub EVENT_COMBAT {
+	$npc->AddLootGroup(2);
+
+	if ( $combat_state == 1 )
+	{
+	  quest::stoptimer(1);
+	}
+	else
+	{
+		my $max = 3;
+		my $min = 1;
+		my $rnd = int(rand($max)) + $min;
+	  quest::settimer(1,$rnd);
+	}
+
+}
+
+sub EVENT_WAYPOINT_ARRIVE { quest::stoptimer(1); }
+sub EVENT_WAYPOINT_DEPART {
+my $max = 3;
+my $min = 1;
+my $rnd = int(rand($max)) + $min;
+quest::settimer(1,$rnd);
+}
+
+sub EVENT_DEATH {
+quest::stoptimer(1);
+}

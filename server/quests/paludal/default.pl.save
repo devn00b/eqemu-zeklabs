@@ -1,0 +1,87 @@
+
+sub EVENT_DEATH {
+$devval = $client->GetLevel();
+my $random_result = int(rand(350));
+my $rndpts = 30;
+my $ptstogive = int(rand($rndpts));
+#Lets setup so we can have this zone open day 1
+#if the level cap is <35 we give them a max of 2 points.
+$devmax = quest::GetRule("Character:MaxLevel");
+
+if ($devmax < 35)
+{
+$ptstogive = int(rand(20));
+}
+
+
+#if they try and kill a pet use this logic:
+#if a pet then
+#if they have less than 10 poins 
+#if they have 0 points nuke and return
+#if above not true then take all the points they have, and nuke
+#if they have more than 10 pts take 10 points and nuke.
+$devpet = $npc->GetPetType();
+
+if($devpet < 3 && $client->Admin() <1 )
+{
+#quest::say("You killed a pet so you get no points, also flagged your acct for further review of possible hacks. If your a clean player no worries.");
+return;
+}
+
+if($client->GetPVPCareerPoints() <2000 && $ulevel <= 20) {
+#quest::say("hi! $random_result was rand");
+if($random_result <30){
+if($ptstogive eq '0') {
+$ptstogive = 1;
+}
+
+
+
+       $g = $client->GetGroup();
+
+                if(!$g)
+                {
+quest::say("-Solo Points- $name, you have earned $ptstogive!");
+$client->AddPVPPoints($ptstogive);
+return;
+
+                }
+                else
+                {
+                        for($i = 0; $i < 6; ++$i)
+                        {
+                                $c = $g->GetMember($i);
+
+                                if($c)
+                                {
+
+if($c->GetPVPCareerPoints() > 1500 )
+{
+return;
+}
+
+if($c->GetLevel() >=21)
+{
+return;
+}
+
+$name = $c->GetName();
+$ptstogivegrp = $ptstogive / 2;
+$roundedpts = int ( $ptstogivegrp + 0.5 ); 
+$c->AddPVPPoints($roundedpts);
+quest::say("-Group Points- $rounded points given to $name!");
+                                }
+                        }
+return;
+                }
+}
+quest::say("No Points for You");
+return;
+}
+
+if($client->GetPVPCareerPoints() > 1500 ) {
+return;
+}
+}
+
+

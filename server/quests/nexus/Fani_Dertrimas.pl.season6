@@ -1,0 +1,14 @@
+sub EVENT_SAY { 
+if ( $client->GetPVPFlag() == 0 )
+{
+quest::say("Hello $name!  I am here to send players to their city but it seems you are not one!  Maybe you should talk to the Priest of Order.");
+}
+else
+{
+$team = $client->GetPVPFlag();
+$flag = undef; # send flag undefined to not restrict to 2 minute timer re-use
+plugin::citytranslocator_say($npc,$team,$client,$text,$flag,$zonemin);
+}
+}
+#END of FILE Zone:nexus  ID:152013 -- Fani_Dertrimas 
+

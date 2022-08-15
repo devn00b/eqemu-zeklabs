@@ -1,0 +1,1041 @@
+
+# plugin::createguardstatus_popup($npc,$npcid,$teamid);
+# autoreturns extra unused items on success
+sub handlescarlet_say {
+  my $text = shift;
+  my $teamid = shift;
+  my $zonemin = shift;
+  if ($text=~/Hail/i){
+  quest::say("Hello there, $name. We have scouted a new land, would you like to [visit] there?");
+  }
+  elsif($text=~/visit/i)
+  {
+	  quest::say("Be Safe!");
+	  if ( $zonemin < 10 )
+	  {
+		if ( $teamid == 2 )
+		{ quest::movepc(175, -745.6, -1411, -60, 50); }
+		else
+		{ quest::movepc(175, 1461.4, -1674.3, -47.0, 63); }
+	  }
+	  elsif ( $zonemin < 20 )
+	  {
+		if ( $teamid == 2 )
+		{ quest::movepc(175, 1461.4, -1674.3, -47.0, 63); }
+		else
+		{ quest::movepc(175, -745.6, -1411, -60, 50); }
+	  }
+	  elsif ( $zonemin < 30 )
+	  {
+		if ( $teamid == 2 )
+		{ quest::movepc(175, 1761.8, 467.3, -30.7, 198); }
+		else
+		{ quest::movepc(175, 1542.7, 1850.4, -101.9, 152); }
+	  }
+	  elsif ( $zonemin < 40 )
+	  {
+		if ( $teamid == 2 )
+		{ quest::movepc(175, 1542.7, 1850.4, -101.9, 152); }
+		else
+		{ quest::movepc(175, 1761.8, 467.3, -30.7, 198); }
+	  }
+	  elsif ( $zonemin < 50 )
+	  {
+
+		if ( $teamid == 2 )
+		{ quest::movepc(175, 1761.8, 467.3, -30.7, 198); }
+		else
+		{ quest::movepc(175, 214.4, 1705.3, -24.5, 114); }
+	  }
+	  elsif ( $zonemin < 61)
+	  {
+		if ( $teamid == 2 )
+		{ quest::movepc(175, 214.4, 1705.3, -24.5, 114); }
+		else
+		{ quest::movepc(175, -745.6, -1411, -60, 50); }
+	  }
+	  #$rnd = quest::ChooseRandom(0,1,2,3,4);
+	  #if ( $rnd == 0 ) { quest::movepc(175, -745.6, -1411, -60, 50); }
+	  #elsif ( $rnd == 1 ) { quest::movepc(175, 1461.4, -1674.3, -47.0, 63); }
+	 # elsif ( $rnd == 2 ) { quest::movepc(175, 1761.8, 467.3, -30.7, 198); }
+	 # elsif ( $rnd == 3 ) { quest::movepc(175, 1542.7, 1850.4, -101.9, 152); }
+	  #elsif ( $rnd == 4 ) { quest::movepc(175, 214.4, 1705.3, -24.5, 114); }
+  }
+}
+
+sub createguardstatus_popup {
+	my $npc = shift;
+	my $npcid = shift;
+	my $teamid = shift;
+	
+        $hpregen = plugin::createstatusfield(0,$npc->GetMobHPRegen(),$teamid,$npcid,"hpregen");
+
+        $manaregen = plugin::createstatusfield(0,$npc->GetMobManaRegen(),$teamid,$npcid,"manaregen");
+        $levels = plugin::createstatusfield(0,$npc->GetLevel(),$teamid,$npcid,"level");
+        $ac = plugin::createstatusfield(0,$npc->GetAC(),$teamid,$npcid,"ac");
+        
+	$hptext = plugin::createstatusfield($npc->GetHP(),$npc->GetMaxHP(),$teamid,$npcid,"hp");
+        $manatext = plugin::createstatusfield($npc->GetMana(),$npc->GetMaxMana(),$teamid,$npcid,"mana");
+
+	my $name = $npc->GetCleanName();
+
+	my $spells = plugin::parsestatusspells($npc);
+
+	quest::popup("NPC Guard Status ($name - $npcid)","<c \"#479eab\">NPC Guard Card Bonuses</c><br>  <c \"#B8E6E6\">HP</c>: $hptext<br> <c \"#B8E6E6\">Mana</c>: $manatext<br> <c \"#B8E6E6\">HP Regen</c>: $hpregen<br><c \"#B8E6E6\">Mana Regen</c>: $manaregen<br> <c \"#B8E6E6\">AC</c>: $ac<br> <c \"#B8E6E6\">Level</c>: $levels<br>$spells",0,0,120);
+
+     return 1;
+}
+
+sub createstatusfield {
+	my $curValue = shift;
+	my $fieldValue = shift;
+	my $teamid = shift;
+	my $npcid = shift;
+	my $fieldName = shift;
+	
+	my $bonusValue = quest::getguardfield($teamid,$npcid,$fieldName);
+	my $value = "";
+
+	my $frontTxt = "";
+	if ( $curValue > 0 )
+	{
+		$frontTxt .= $curValue . "/";
+	}
+	$frontTxt .= $fieldValue;
+
+	if ( $bonusValue > 0 )
+	{
+    		$value = $frontTxt . " (<c \"#4fd613\">+" . $bonusValue  . "</c>)";
+	}
+	else
+	{
+    		$value = $frontTxt . " (<c \"#ffffff\">" . $bonusValue . "</c>)";
+	}
+    return $value;
+}
+
+sub parsestatusspells {
+	my $npc = shift;
+
+	my $spells = "<br><c \"#B8E6E6\">Spell Lists Available:</c>";
+	$hitSpells = 0;
+	if ( $npc->HasSpellList(1) ) {
+		$spells .= "<br>Cleric Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(2) ) {
+		$spells .= "<br>Wizard Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(3) ) {
+		$spells .= "<br>Necromancer Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(4) ) {
+		$spells .= "<br>Magician Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(5) ) {
+		$spells .= "<br>Enchanter Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(6) ) {
+		$spells .= "<br>Shaman Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(7) ) {
+		$spells .= "<br>Druid Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(8) ) {
+		$spells .= "<br>Paladin Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(9) ) {
+		$spells .= "<br>Shadowknight Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(10) ) {
+		$spells .= "<br>Ranger Spells";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(1019) ) {
+		$spells .= "<br>Circle Ports Tier 1";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(1020) ) {
+		$spells .= "<br>Circle Ports Tier 2";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(1021) ) {
+		$spells .= "<br>Circle Ports Tier 3";
+		$hitSpells = 1;
+	}
+	if ( $npc->HasSpellList(40) ) {
+		$spells .= "<br>(GM) Fright's AE";
+		$hitSpells = 1;
+	}
+
+	if ( $hitSpells == 0 ) {
+		$spells .= "<br>None Available";
+	}
+	return $spells;
+}
+
+sub guardevent_say {
+	my $npc = shift;
+	my $teamid = shift;
+	my $client = shift;
+	my $text = shift;
+	my $npcid = $npc->GetNPCTypeID();
+	my $name = $client->GetName();
+	my $guildID = quest::getguardfield($teamid,0, "guildid");
+	my $ownerID = quest::getguardfield($teamid,0, "charid");
+	my $ownerTeam = quest::getguardfield($teamid,0, "ownerteamid");
+
+	my $playerPVP = $client->GetPVPFlag();
+	if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+	{
+		if($text=~/Hail/i){
+		my $link = quest::saylink("status");
+		quest::say("Hello $name, are you here for a guard $link check?");
+		
+			my $spellShrink = $npc->HasSpell(345);
+			if ( $spellShrink )
+			{
+				my $beshrunk = quest::saylink("shrunk");
+	
+				quest::say("Would you like to be $beshrunk?");
+			}
+
+
+#begin circle spells
+#tier 1
+if ( $npc->HasSpellList(1019) )
+{
+my $trans = quest::saylink("port to Misty");
+my $trans2 = quest::saylink("port to Commons");
+my $trans3 = quest::saylink("port to Lavastorm");
+my $trans4 = quest::saylink("port to Surefall Glade");
+my $trans6 = quest::saylink("port to Wakening Lands");
+my $trans7 = quest::saylink("port to Cobalt Scar");
+quest::say("..do you need a $trans, $trans2, $trans3, $trans4, $trans6 or $trans7?");
+}
+
+#tier 2 & 3
+if ( $npc->HasSpellList(1020) && $npc->HasSpellList(1021) )
+{
+my $trans = quest::saylink("port to Karana");
+my $trans2 = quest::saylink("port to Ro");
+my $trans3 = quest::saylink("port to Feerrott");
+my $trans4 = quest::saylink("port to Iceclad");
+my $trans6 = quest::saylink("port to the Combines");
+my $trans7 = quest::saylink("port to Toxxulia");
+my $trans8 = quest::saylink("port to Steamfont");
+my $trans9 = quest::saylink("port to Butcher");
+my $trans10 = quest::saylink("port to Great Divide");
+quest::say("..do you need a $trans, $trans2, $trans3, $trans4, $trans6, $trans7, $trans8, $trans9 or $trans10?");
+}
+else
+{
+#tier 2 stand-alone
+if ( $npc->HasSpellList(1020) )
+{
+my $trans = quest::saylink("port to Karana");
+my $trans2 = quest::saylink("port to Ro");
+my $trans3 = quest::saylink("port to Feerrott");
+my $trans4 = quest::saylink("port to Iceclad");
+my $trans6 = quest::saylink("port to the Combines");
+quest::say("..do you need a $trans, $trans2, $trans3, $trans4 or $trans6?");
+}
+
+#tier 3 stand-alone
+if ( $npc->HasSpellList(1021) )
+{
+my $trans = quest::saylink("port to Toxxulia");
+my $trans2 = quest::saylink("port to Steamfont");
+my $trans3 = quest::saylink("port to Butcher");
+my $trans4 = quest::saylink("port to Great Divide");
+my $trans6 = quest::saylink("port to the Combines");
+quest::say("..do you need a $trans, $trans2, $trans3, $trans4 or $trans6?");
+}
+} #end circle spells
+
+
+		} #end hail
+		elsif($text=~/shrunk/i){
+			my $spellShrink = $npc->HasSpell(345);
+			if ( $spellShrink )
+			{
+				quest::selfcast(345);
+			}
+		}#end shrunk
+		else
+		{
+
+
+if($text=~/port/i) {
+my $qglobals = plugin::var('qglobals');
+$flag = $qglobals->{portflag};
+if ( defined($flag) && $flag == 1 )
+{
+quest::say("You must wait 10 minutes before I can port you again.");
+}
+else
+{
+if($text=~/port to Misty/i){
+my $circleMisty = $npc->HasSpell(558);
+if ( $circleMisty )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(558);
+}
+} #end hail
+elsif($text=~/port to Commons/i){
+my $hasCircle = $npc->HasSpell(551);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(551);
+}
+} #end hail
+elsif($text=~/port to Lavastorm/i){
+my $hasCircle = $npc->HasSpell(554);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(554);
+}
+} #end hail
+elsif($text=~/port to Surefall Glade/i){
+my $hasCircle = $npc->HasSpell(2020);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(2020);
+}
+} #end hail
+elsif($text=~/port to Wakening Lands/i){
+my $hasCircle = $npc->HasSpell(1398);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(1398);
+}
+} #end hail
+elsif($text=~/port to Cobalt Scar/i){
+my $hasCircle = $npc->HasSpell(1440);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(1440);
+}
+} #end hail
+elsif($text=~/port to Karana/i){
+my $hasCircle = $npc->HasSpell(550);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(550);
+}
+} #end hail
+elsif($text=~/port to Ro/i){
+my $hasCircle = $npc->HasSpell(555);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(555);
+}
+} #end hail
+elsif($text=~/port to Feerrott/i){
+my $hasCircle = $npc->HasSpell(556);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(556);
+}
+} #end hail
+elsif($text=~/port to Iceclad/i){
+my $hasCircle = $npc->HasSpell(1434);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(1434);
+}
+} #end hail
+elsif($text=~/port to the Combines/i){
+my $hasCircle = $npc->HasSpell(1517);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(1517);
+}
+} #end hail
+elsif($text=~/port to Toxxulia/i){
+my $hasCircle = $npc->HasSpell(552);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(552);
+}
+} #end hail
+elsif($text=~/port to Steamfont/i){
+my $hasCircle = $npc->HasSpell(557);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(557);
+}
+} #end hail
+elsif($text=~/port to Butcher/i){
+my $hasCircle = $npc->HasSpell(553);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(553);
+}
+} #end hail
+elsif($text=~/port to Great Divide/i){
+my $hasCircle = $npc->HasSpell(1438);
+if ( $hasCircle )
+{
+quest::say("Good luck $name!");
+quest::setglobal("portflag","1",5,"M10");
+quest::selfcast(1438);
+}
+} #end hail
+}
+}
+
+		}
+
+		if($text=~/status/i){
+		createguardstatus_popup($npc,$npcid,$teamid);
+		} #end status
+
+	} #end friendly
+	else
+	{
+		return 0;
+	}
+
+	return 1;
+}
+
+sub bankerevent_say {
+	my $npc = shift;
+	my $teamid = shift;
+	my $client = shift;
+	my $text = shift;
+	my $npcid = $npc->GetNPCTypeID();
+	my $name = $client->GetName();
+	my $guildID = quest::getguardfield($teamid,0, "guildid");
+my $ownerID = quest::getguardfield($teamid,0, "charid");
+	my $playerPVP = $client->GetPVPFlag();
+	my $ownerTeam = quest::getguardfield($teamid,0, "ownerteamid");
+	my $playerGuild = $client->GuildID();
+	my $charID = $client->CharacterID();
+	if ( $client->Admin() > 80 )
+	{
+		$playerGuild = $guildID;
+		$charID = $ownerID;
+	}
+
+if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+{
+if ( $charID == $ownerID )
+{
+my $status = quest::saylink("status");
+my $cityStatus = quest::saylink("city status");
+my $tasks = quest::saylink("tasks");
+my $follow = quest::saylink("follow");
+my $away = quest::saylink("go away");
+my $incGuestTaxes = quest::saylink("increase guest taxes");
+my $decGuestTaxes = quest::saylink("decrease guest taxes");
+my $incCitizenTaxes = quest::saylink("increase citizen taxes");
+my $decCitizenTaxes = quest::saylink("decrease citizen taxes");
+my $relinquish = quest::saylink("relinquish ownership");
+my $citymode = quest::getcitymode($teamid);
+my $setmodehostile = quest::saylink("set city to hostile mode");
+my $setmodefriendly = quest::saylink("set city to friendly mode");
+my $setmoderestrictive = quest::saylink("set city to restrictive mode");
+
+if($text=~/Hail/i){ quest::say("Hello your majesty, let me know if you are here to check my $status, want me to $follow or $away, $relinquish or handle $tasks."); }
+if($text=~/Tasks/i){
+quest::say("Would you like to $cityStatus, $incGuestTaxes, $decGuestTaxes, $incCitizenTaxes, or $decCitizenTaxes."); 
+if ( $citymode == 0 ){
+quest::say("City is currently set to hostile mode, would you like to $setmodefriendly or $setmoderestrictive?"); 
+}
+elsif( $citymode == 1 )
+{
+quest::say("City is currently set to friendly mode, would you like to $setmodehostile or $setmoderestrictive?"); 
+}
+elsif( $citymode == 2 )
+{
+quest::say("City is currently set to restrictive mode, would you like to $setmodefriendly or $setmodehostile?"); 
+}
+}
+
+if($text=~/Go away/i){
+quest::say("Goodbye your majesty, may you stay protected."); 
+quest::sfollow(); }
+
+if($text=~/Follow/i){
+$id = $client->GetID();
+quest::say("Ofcourse your majesty, right away."); quest::follow($id);
+}
+
+if($text=~/City status/i){
+my $newbTaxes = quest::getcitynewbietaxrate($teamid);
+my $citTaxes = quest::getcitycitizentaxrate($teamid);
+my $bankReserve = quest::getcitybankreserve($teamid);
+my $cityUpkeepCost = quest::getcityupkeepcost($teamid);
+quest::popup("City Status","<c \"#FF0000\">Tax Rates</c><br>Guest Rate: $newbTaxes %<br>Citizen Rate: $citTaxes %<br><br><br><c \"#FF0000\">Hourly Earnings (Copper)</c>: $cityUpkeepCost",0,0,120);
+}
+elsif($text=~/Increase Guest Taxes/i){
+my $var = quest::getcitynewbietaxrate($teamid);
+$var += 5;
+if ( $var > 50 )
+{
+quest::say("Apologies your majesty, but any higher than a 50 percent tax rate will not be acceptable in the city.");
+}
+else
+{
+quest::popup("Manuscript to Increase Taxes on Guests","You have requested that the taxes for those who are not citizens of your kingdom will be set to $var.  Are you sure you wish to do this?",1,60);
+}
+}
+elsif($text=~/Decrease Guest Taxes/i){
+my $var = quest::getcitynewbietaxrate($teamid);
+$var -= 5;
+if ( $var < 0 )
+{
+quest::say("Apologies your majesty, but you cannot have a negative tax rate.");
+}
+else
+{
+quest::popup("Manuscript to Decrease Taxes on Guests","You have requested that the taxes for those who are not citizens of your kingdom will be set to $var.  Are you sure you wish to do this?",2,60);
+}
+}
+elsif($text=~/Increase Citizen Taxes/i){
+my $var = quest::getcitycitizentaxrate($teamid);
+$var += 5;
+if ( $var > 50 )
+{
+quest::say("Apologies your majesty, but any higher than a 50 percent tax rate will not be acceptable in the city.");
+}
+else
+{
+quest::popup("Manuscript to Increase Taxes on Citizens","You have requested that the taxes for citizens of your kingdom will be set to $var.  Are you sure you wish to do this?",3,60);
+}
+}
+elsif($text=~/Decrease Citizen Taxes/i){
+my $var = quest::getcitycitizentaxrate($teamid);
+$var -= 1;
+if ( $var < 0 )
+{
+quest::say("Apologies your majesty, but you cannot have a negative tax rate.");
+}
+else
+{
+quest::popup("Manuscript to Decrease Taxes","You have requested that the taxes for citizens of your kingdom will be set to $var.  Are you sure you wish to do this?",4,60);
+}
+}
+elsif($text=~/Relinquish Ownership/i){
+quest::popup("Relinquish City Ownership","You have requested to relinquish ownership of the city.  Your guild will lose all control of the city, city bank and your guild may be hostile to the city depending on how recently you conquered the city.  The guards will repop after this decree is issued.  Are you sure you want to do this?",6,60);
+}
+elsif($text=~/set city to hostile mode/i){
+quest::setcitymode($teamid,0);
+quest::say("City has been set to hostile mode.");
+}
+elsif($text=~/set city to friendly mode/i){
+quest::setcitymode($teamid,1);
+quest::say("City has been set to friendly mode.");
+}
+elsif($text=~/set city to restrictive mode/i){
+quest::setcitymode($teamid,2);
+quest::say("City has been set to restrictive mode.");
+}
+elsif($text=~/status/i){
+createguardstatus_popup($npc,$npcid,$teamid);
+} #end status
+} #end city owner
+
+else
+{
+if($text=~/status/i){
+createguardstatus_popup($npc,$npcid,$teamid);
+} #end status
+else
+{
+my $status = quest::saylink("status");
+if($text=~/Hail/i){ quest::say("Greetings, are you here for a $status check?"); }
+}
+}
+}
+	return 1;
+}
+
+sub bankpopup_response {
+	my $teamid = shift;
+	my $client = shift;
+	my $popupid = shift;
+
+
+	my $guildID = quest::getguardfield($teamid,0, "guildid");
+	my $ownerID = quest::getguardfield($teamid,0, "charid");
+	my $ownerTeam = quest::getguardfield($teamid,0, "ownerteamid");
+	my $playerPVP = $client->GetPVPFlag();
+
+	my $playerGuild = $client->GuildID();
+	my $charID = $client->CharacterID();
+	if ( $client->Admin() > 80 )
+	{
+		$playerGuild = $guildID;
+		$charID = $ownerID;
+	}
+
+if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+{
+if ( $charID == $ownerID )
+{
+if ( $popupid eq "1" ) #increase city guests/newbies taxes
+{
+my $var = quest::getcitynewbietaxrate($teamid);
+$var += 5;
+if ( $var < 51 ) {
+quest::say("Taxes for guests to the city are now $var percent of the cost.");
+quest::setcitynewbietaxrate($teamid,$var); }
+}
+
+if ( $popupid eq "2" ) #decrease city guests/newbies taxes
+{
+my $var = quest::getcitynewbietaxrate($teamid);
+$var -= 5;
+
+if ( $var > -1 ) {
+quest::say("Taxes for guests to the city are now $var percent of the cost.");
+quest::setcitynewbietaxrate($teamid,$var); }
+}
+
+if ( $popupid eq "3" ) #increase city citizens taxes
+{
+my $var = quest::getcitycitizentaxrate($teamid);
+$var += 5;
+if ( $var < 51  ) {
+quest::say("Taxes for citizens to the city are now $var percent of the cost.");
+quest::setcitycitizentaxrate($teamid,$var); }
+}
+
+if ( $popupid eq "4" ) #decrease city citizens taxes
+{
+my $var = quest::getcitycitizentaxrate($teamid);
+$var -= 5;
+if ( $var > -1 ) {
+quest::say("Taxes for citizens to the city are now $var percent of the cost.");
+quest::setcitycitizentaxrate($teamid,$var); }
+}
+
+if ( $popupid eq "5" ) #withdrawal money from bank
+{
+my $var = quest::getcitybankreserve($teamid);
+if ( $var > 0 ) {
+quest::say("Here is the $var copper from the bank your majesty.");
+quest::givecash($var,0,0,0,1);
+quest::setcitybankreserve($teamid,0); }
+}
+
+if ( $popupid eq "6" ) #relinquish city
+{
+quest::say("City ownership is being relinquished.");
+quest::setkingdomowner($teamid,0,0,0);
+}
+
+}
+} #king & pvpflag
+
+	return 1;
+}
+sub setupguard_enter {
+	my $teamid = shift;
+	my $npc = shift;
+
+	$x = $npc->GetX();
+	$y = $npc->GetY();
+	$z = $npc->GetZ();
+	quest::set_proximity($x - 25, $x + 25, $y - 25, $y + 25, $z - 5, $z + 5);
+	my $npcid = $npc->GetNPCTypeID();
+		
+	quest::loadguardtype($teamid,$npc->GetNPCTypeID());
+}
+sub enterguard_area {
+	my $teamid = shift;
+	my $client = shift;
+	my $npc = shift;
+	
+	my $guildID = quest::getguardfield($teamid,0, "guildid");
+	my $ownerID = quest::getguardfield($teamid,0, "charid");
+	my $ownerTeam = quest::getguardfield($teamid,0, "ownerteamid");
+	my $playerPVP = $client->GetPVPFlag();
+
+#if ( $client->CharacterID() == 123 )
+#{
+#my $qglobals = plugin::var('qglobals');
+#$grokmolflag = $qglobals->{grokmolflag};
+#if ( !$grokmolflag )
+#{
+#my $max = 10;
+#my $min = 1;
+#my $rnd = int(rand($max)) + $min;
+#if ( $rnd > 8 )
+#{
+#quest::say("...what is that smell...?");
+#}
+#quest::setglobal("grokmolflag","1",2,"M10");
+#$npc->DoAnim(61,0);
+#return;
+#}
+#}
+
+if ( ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) && $npc->CheckLoS($client) == 1 ) #check if on the proper team or an admin
+{
+if ( $client->CharacterID() == $ownerID )
+{
+my $qglobals = plugin::var('qglobals');
+$kingsalute = $qglobals->{kingsalute};
+if ( !$kingsalute )
+{
+quest::setglobal("kingsalute","1",2,"M10");
+quest::say("It is very nice to see you your majesty.");
+}
+$npc->DoAnim(62,0);
+}
+elsif( $client->GuildRank() == 1 )
+{
+my $qglobals = plugin::var('qglobals');
+$officersalute = $qglobals->{officersalute};
+if ( !$officersalute )
+{
+quest::setglobal("officersalute","1",2,"M10");
+quest::say("Good day sir.");
+}
+$npc->DoAnim(67,0);
+}
+else
+{
+$npc->FaceTarget($client);
+my $max = 3;
+my $min = 1;
+my $rnd = int(rand($max)) + $min;
+if ( $rnd > 1 )
+{ $npc->DoAnim(66,0); } else { $npc->DoAnim(29,0); }
+}
+}
+	return 1;
+}
+
+
+sub citytranslocator_say {
+	my $npc = shift;
+	my $teamid = shift;
+	my $client = shift;
+	my $text = shift;
+	my $flag = shift;
+	my $zonemin = shift;
+	my $maxLocations = 9;
+
+	my $npcid = $npc->GetNPCTypeID();
+	my $guildID = quest::getguardfield($teamid,0, "guildid");
+	my $ownerTeam = quest::getguardfield($teamid,0, "ownerteamid");
+	my $responseText = "";
+	
+	#for global flag
+	my $flagName = "citytranslocatorflag";
+	my $flagValue = "1";
+	my $flagType = 5;
+	my $flagTime = "M2";
+
+	my $playerPVP = $client->GetPVPFlag();
+	my $name = $client->GetName();
+	if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+	{
+my $qglobals = plugin::var('qglobals');
+$flag = $qglobals->{$flagName};
+if ( defined($flag) && $flag == 1 && !$client->GetGM() )
+{
+quest::say("$name, you must wait 2 minutes before I can port you again.");
+return;
+}
+
+#begin big if statement
+
+
+	my $teamFreeport = quest::getguardfield(3,0, "ownerteamid"); #freeport
+	my $teamFelwithe = quest::getguardfield(7,0, "ownerteamid"); #felwithe
+	my $teamErudin = quest::getguardfield(8,0, "ownerteamid"); #erudin
+
+	my $teamQeynos = quest::getguardfield(1,0, "ownerteamid"); #qeynos
+	my $teamRivervale = quest::getguardfield(4,0, "ownerteamid"); #rivervale
+
+	my $greatdivideCamp = quest::getguardfield(9,0, "ownerteamid");
+
+	my $toxCamp = quest::getguardfield(10,0, "ownerteamid");
+	my $gfayCamp = quest::getguardfield(11,0, "ownerteamid");
+	my $lavaCamp = quest::getguardfield(12,0, "ownerteamid");
+
+	my $guildCamp = quest::findcampteamid($client->GuildID());
+
+if ($text =~/Guild Camp/i ){
+	if ( $guildCamp > 0 )
+	{
+		my $campAlive = quest::getcitymode($guildCamp);
+		if ( $campAlive == 96 )
+		{
+			quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+			my $x = quest::getteamlocation($guildCamp,"x");
+			my $y = quest::getteamlocation($guildCamp,"y");
+			my $z = quest::getteamlocation($guildCamp,"z");
+			my $zoneid = quest::getteamlocation($guildCamp,"zoneid");
+			$client->MovePC($zoneid,$x, $y, $z, 0);
+		}
+		else
+		{
+			quest::say("Guild camp is unavailable.");
+		}
+	}
+	else
+	{
+		quest::say("No guild camp exists for you.");
+	}
+}
+elsif ($text =~/Freeport/i && ( $client->GetPVPFlag() == $teamFreeport || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(9,-52.1,-108,-10.2,130.9);
+}
+elsif ($text =~/Felwithe/i && ( $client->GetPVPFlag() == $teamFelwithe || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(61,0,0,0,0);
+}
+elsif ($text =~/Erudin/i && ( $client->GetPVPFlag() == $teamErudin || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(24,-340,-924,66.7,78);
+}
+elsif ($text =~/Qeynos/i && ( $client->GetPVPFlag() == $teamQeynos  || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(1,-151.7,106,4.8,222.4);
+}
+elsif ($text =~/Rivervale/i && ( $client->GetPVPFlag() == $teamRivervale || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(19,-163.2,44.2,1.0,80.2);
+}
+elsif (($text =~/Tox Camp/i || $text =~/Toxxulia Camp/i || $text =~/Toxxulia Forest Camp/i) && ( $client->GetPVPFlag() == $toxCamp || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(38,1078.7,-980.1,-45.7,190.6);
+}
+elsif ($text =~/Greater Faydark Camp/i && ( $client->GetPVPFlag() == $gfayCamp || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(54,-1676.2,1667.4,69.2,230.9);
+}
+elsif ($text =~/Lavastorm Camp/i && ( $client->GetPVPFlag() == $lavaCamp || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(27,-500.3,176.6,99.1,112.9);
+}
+elsif ($text =~/Great Divide Camp/i && ( $client->GetPVPFlag() == $greatdivideCamp || $client->GetGM() ) ){
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(118,-1904.9,-4001.5,39.4,233.4);
+}
+elsif ($text =~/Everfrost Camp/i ){
+if ( $client->GetPVPFlag() == 3 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(30,-3446.7,2695.1,-36.5,191.2);
+}
+elsif ( $client->GetPVPFlag() == 2 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(30,-5462.1,-839.0,191.0,127.2);
+}
+}
+elsif ($text =~/Warrens Camp/i ){
+if ( $client->GetPVPFlag() == 3 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(101,-849.8,658.3,-75.2,64.9);
+}
+elsif ( $client->GetPVPFlag() == 2 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(101,943.3,-292.3,-107.2,18.2);
+}
+}
+elsif ($text =~/Caverns of Exile/i ){
+if ( $client->GetPVPFlag() == 3 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(278,-733.4,628.8,3.8,82.5);
+}
+elsif ( $client->GetPVPFlag() == 2 )
+{
+quest::setglobal($flagName,$flagValue,$flagType,$flagTime);
+$client->MovePC(278,315.8,-300.3,-14.2,47.8);
+}
+}
+elsif($text=~/visit scarlet/i)
+  {
+          plugin::handlescarlet_say($text,$teamid,$zonemin);
+}
+elsif($text=~/Hail/i){
+if ( $client->GetPVPFlag() == 0 )
+{
+quest::say("Hello $name!  I am here to send players to their city but it seems you are not one!  Speak to Soulbinder Manrider to be gated to your bind, or otherwise use the teleporters in the corridors of nexus.");
+}
+else
+{
+$link = quest::saylink("Freeport");
+$link2 = quest::saylink("Felwithe");
+$link3 = quest::saylink("Erudin");
+$link4 = quest::saylink("Qeynos");
+$link5 = quest::saylink("Rivervale");
+$link6 = quest::saylink("Tox Camp");
+$link7 = quest::saylink("Greater Faydark Camp");
+$link8 = quest::saylink("Lavastorm Camp");
+$link9 = quest::saylink("Great Divide Camp");
+$link10 = quest::saylink("Everfrost Camp");
+$link11 = quest::saylink("Warrens Camp");
+$link12 = quest::saylink("Visit Scarlet");
+$link13 = quest::saylink("Caverns of Exile");
+$link14 = quest::saylink("Guild Camp");
+
+$zones = "You may return to ";
+
+	if ( $guildCamp > 0 )
+	{
+		my $campAlive = quest::getcitymode($guildCamp);
+		if ( $campAlive == 96 )
+		{
+			$zones = $zones . $link14;
+		}
+	}
+	if ( $client->GetPVPFlag() == $teamFreeport )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link;
+	}
+	if ( $client->GetPVPFlag() == $teamFelwithe )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link2;
+	}
+	if ( $client->GetPVPFlag() == $teamErudin )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link3;
+	}
+	if ( $client->GetPVPFlag() == $teamQeynos )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link4;
+	}
+	if ( $client->GetPVPFlag() == $teamRivervale )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link5;
+	}
+	if ( $client->GetPVPFlag() == $toxCamp )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link6;
+	}
+	if ( $client->GetPVPFlag() == $gfayCamp )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link7;
+	}
+	if ( $client->GetPVPFlag() == $lavaCamp )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link8;
+	}
+	if ( $client->GetPVPFlag() == $greatdivideCamp )
+	{
+		$length = length $zones;
+		if ( $length > 19 ) { $zones = $zones . " or "; }
+		$zones = $zones . $link9;
+	}
+
+		#$length = length $zones;
+		#if ( $length > 19 ) { $zones = $zones . " or "; }
+		#$zones = $zones . $link10;
+
+		#$length = length $zones;
+		#if ( $length > 19 ) { $zones = $zones . " or "; }
+		#$zones = $zones . $link11;
+
+                #$length = length $zones;
+                #if ( $length > 19 ) { $zones = $zones . " or "; }
+                #$zones = $zones . $link12;
+
+                #$length = length $zones;
+                #if ( $length > 19 ) { $zones = $zones . " or "; }
+                #$zones = $zones . $link13;
+
+	if ( length $zones < 19 )
+	{
+		$zones = "Hello $name!  I am here to send players to their city but it seems you are not one!";
+	}
+	quest::say("$zones");
+}
+}
+
+#end big if statement
+
+	}
+	else
+	{
+		quest::say("I cannot assist you.");
+	}	
+     return 1;
+}
+
+#this causes problems if it is before anything else, code might not work
+#use Switch 'Perl6';
+#sub getcityname {
+#	my $teamid = shift;
+#	given($teamid)
+#	{
+#		when 1 	{ return 'Qeynos Kingdom' }
+#		when 2 	{ return 'Halas Kingdom' }
+#		when 3 	{ return 'Freeport Kingdom' }
+#		when 4 	{ return 'Rivervale Kingdom' }
+#		when 5 	{ return 'Bandits' }
+#		when 6 	{ return 'Thurgadin Kingdom' }
+#		when 7 	{ return 'Felwithe Kingdom' }
+#		when 8 	{ return 'Erudin Kingdom' }
+#		when 9 	{ return 'Great Divide Encampment' }
+#		else 	{ return 'Unknown' }
+#	}
+#return 'Unknown';
+#}
+
+1;

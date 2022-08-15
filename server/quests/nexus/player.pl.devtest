@@ -1,0 +1,131 @@
+sub EVENT_ENTERZONE { 
+    my $client   = plugin::val('$client');
+    my $qglobals = plugin::var('qglobals');
+
+##devn00b force discord players to have a title/lastname so they can be targeted.
+##Devn00b: S7 Disabled
+$devnoobdisable=5;
+    if ( $client->GetPVPFlag() == 5 && $devnoobdisable < 1 ){
+# && $client->Admin() < 1 ) {
+
+        #give discord players spell haste.
+        #$selfbuff = 3531;
+
+        $casterbuff  = 5193;
+        $casterbuffb = 5194;
+
+        #SK/PAL/WAR
+        $tankbuff  = 5196;
+        $tankbuffb = 5195;
+
+        #MONK/ROG/RNG/BRD
+        $dpsbuff  = 5191;
+        $dpsbuffb = 5192;
+
+        if (   defined $qglobals->{akanon_racestarted}
+            && defined $qglobals->{akanon_race_playerflag} )
+        {
+            $casterbuff  = 0;
+            $casterbuffb = 0;
+
+            #SK/PAL/WAR
+            $tankbuff  = 0;
+            $tankbuffb = 0;
+
+            #MONK/ROG/RNG/BRD
+            $dpsbuff  = 0;
+            $dpsbuffb = 0;
+        }
+
+#set title every time they zone since it doesnt notify client its not annoying. Also we cant check for specific title being shown =/
+
+        $client->SetTitleSuffix( "of Discord", 1 );
+
+        #get player lastname. only updates on zone...lame
+        $bonkers = $client->GetLastName();
+
+        #this is the lastname we expect
+        $bonked = "Discord Player";
+
+        #this is the # of points we take for being a dick.
+        $imadick = -100;
+
+#if their lastname doesnt match what we expect (IE THEY CHANGED IT) Then we need to set it and punish them for being dicks.
+        if ( $bonkers ne $bonked ) {
+            quest::say("Your last name $bonkers needs to remain $bonked otherwise....");
+            quest::say("Since you are attempting to break the rules, I have taken $imadick points! You also get no buff.");
+            quest::say("Oh since I am an asshole, im sending you to nexus too");
+            quest::shout2("Oh look at me I think I'm so smart changing my last name as a discord player." );
+
+            #punish them harshly for attempting to cheat.
+            $client->AddPVPPoints($imadick);
+
+            #set lastname
+            quest::surname("Discord Player");
+
+            #force them back to nexus
+            $backtonexus = 2734;
+            quest::selfcast($backtonexus);
+        }
+
+        #lastname is OK then lets do this shit
+        #lets give them the spell haste
+        #quest::selfcast($selfbuff);
+
+#lets decide who gets what buff since whats good for casters sucks for tanks etc.
+        if (   $class eq "Necromancer"
+            or $class eq "Enchanter"
+            or $class eq "Magician"
+            or $class eq "Wizard"
+            or $class eq "Druid"
+            or $class eq "Shaman"
+            or $class eq "Cleric" )
+        {
+
+          #if less than 31 give them low buff. over 30 so 31, give them highbuff
+            if ( $ulevel < 31 ) {
+                quest::selfcast($casterbuff);
+            }
+            if ( $ulevel > 30 ) {
+                quest::selfcast($casterbuffb);
+            }
+        }
+
+        if (   $class eq "Warrior"
+            or $class eq "Shadowknight"
+            or $class eq "Paladin" )
+        {
+          #quest::selfcast($tankbuff);
+          #if less than 31 give them low buff. over 30 so 31, give them highbuff
+            if ( $ulevel < 31 ) {
+                quest::selfcast($tankbuff);
+            }
+            if ( $ulevel > 30 ) {
+                quest::selfcast($tankbuffb);
+            }
+        }
+
+        if (   $class eq "Monk"
+            or $class eq "Rogue"
+            or $class eq "Ranger"
+            or $class eq "Bard" )
+        {
+
+          #if less than 31 give them low buff. over 30 so 31, give them highbuff
+            if ( $ulevel < 31 ) {
+                quest::selfcast($dpsbuff);
+            }
+            if ( $ulevel > 30 ) {
+                quest::selfcast($dpsbuffb);
+            }
+
+           #quest::selfcast($dpsbuff);
+        }
+
+    }
+
+###### END DEVS SHIT ##########
+
+}
+
+

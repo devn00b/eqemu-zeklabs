@@ -1,0 +1,413 @@
+Client.o: Client.cpp Client.h ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/opcodemgr.h \
+ ../common/Mutex.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/EQStreamType.h ../common/EQStreamFactory.h \
+ ../common/../common/EQStream.h ../common/../common/EQStreamType.h \
+ ../common/../common/EQPacket.h ../common/../common/BasePacket.h \
+ ../common/../common/types.h ../common/../common/op_codes.h \
+ ../common/../common/emu_opcodes.h ../common/../common/EQStreamIntf.h \
+ ../common/../common/Mutex.h ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h \
+ ../common/../common/../common/types.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h \
+ EQCryptoAPI.h ErrorLog.h ../common/Mutex.h LoginServer.h Config.h \
+ Database.h DatabaseMySQL.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ DatabasePostgreSQL.h Encryption.h Options.h ServerManager.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/queue.h ../common/MiscFunctions.h ../common/timer.h \
+ ../common/EmuTCPServer.h ../common/TCPServer.h ../common/servertalk.h \
+ ../common/../common/types.h ../common/../common/packet_functions.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/packet_dump.h \
+ WorldServer.h ClientManager.h LoginStructures.h \
+ ../common/MiscFunctions.h
+ClientManager.o: ClientManager.cpp ClientManager.h ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/opcodemgr.h \
+ ../common/Mutex.h ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/EQStreamType.h ../common/EQStreamFactory.h \
+ ../common/../common/EQStream.h ../common/../common/EQStreamType.h \
+ ../common/../common/EQPacket.h ../common/../common/BasePacket.h \
+ ../common/../common/types.h ../common/../common/op_codes.h \
+ ../common/../common/emu_opcodes.h ../common/../common/EQStreamIntf.h \
+ ../common/../common/Mutex.h ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h \
+ ../common/../common/../common/types.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h Client.h \
+ EQCryptoAPI.h ErrorLog.h ../common/Mutex.h LoginServer.h Config.h \
+ Database.h DatabaseMySQL.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ DatabasePostgreSQL.h Encryption.h Options.h ServerManager.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/queue.h ../common/MiscFunctions.h ../common/timer.h \
+ ../common/EmuTCPServer.h ../common/TCPServer.h ../common/servertalk.h \
+ ../common/../common/types.h ../common/../common/packet_functions.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/packet_dump.h \
+ WorldServer.h
+Config.o: Config.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h Config.h ErrorLog.h \
+ ../common/Mutex.h
+DatabaseMySQL.o: DatabaseMySQL.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h Database.h DatabaseMySQL.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h ErrorLog.h ../common/Mutex.h LoginServer.h \
+ Config.h DatabasePostgreSQL.h Encryption.h Options.h ServerManager.h \
+ ../common/EQStreamFactory.h ../common/../common/EQStream.h \
+ ../common/../common/EQStreamType.h ../common/../common/EQPacket.h \
+ ../common/../common/BasePacket.h ../common/../common/types.h \
+ ../common/../common/op_codes.h ../common/../common/emu_opcodes.h \
+ ../common/../common/emu_oplist.h ../common/../common/EQStreamIntf.h \
+ ../common/../common/Mutex.h ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/emu_opcodes.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h ../common/EmuTCPServer.h ../common/TCPServer.h \
+ ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/packet_dump.h \
+ WorldServer.h Client.h ../common/opcodemgr.h ../common/EQStreamType.h \
+ EQCryptoAPI.h ClientManager.h
+ErrorLog.o: ErrorLog.cpp ErrorLog.h ../common/Mutex.h \
+ ../common/../common/unix.h ../common/../common/types.h
+Main.o: Main.cpp ../common/debug.h ../common/logsys.h ../common/types.h \
+ ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h LoginServer.h ErrorLog.h \
+ ../common/Mutex.h Config.h Database.h DatabaseMySQL.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h DatabasePostgreSQL.h Encryption.h \
+ Options.h ServerManager.h ../common/EQStreamFactory.h \
+ ../common/../common/EQStream.h ../common/../common/EQStreamType.h \
+ ../common/../common/EQPacket.h ../common/../common/BasePacket.h \
+ ../common/../common/types.h ../common/../common/op_codes.h \
+ ../common/../common/emu_opcodes.h ../common/../common/emu_oplist.h \
+ ../common/../common/EQStreamIntf.h ../common/../common/Mutex.h \
+ ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/emu_opcodes.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h ../common/EmuTCPServer.h ../common/TCPServer.h \
+ ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/packet_dump.h \
+ WorldServer.h Client.h ../common/opcodemgr.h ../common/EQStreamType.h \
+ EQCryptoAPI.h ClientManager.h ../common/types.h ../common/timer.h
+ServerManager.o: ServerManager.cpp ServerManager.h ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQStreamFactory.h \
+ ../common/../common/EQStream.h ../common/../common/EQStreamType.h \
+ ../common/../common/EQPacket.h ../common/../common/BasePacket.h \
+ ../common/../common/types.h ../common/../common/op_codes.h \
+ ../common/../common/emu_opcodes.h ../common/../common/emu_oplist.h \
+ ../common/../common/EQStreamIntf.h ../common/../common/Mutex.h \
+ ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/emu_opcodes.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h ../common/EmuTCPServer.h ../common/TCPServer.h \
+ ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/packet_dump.h \
+ WorldServer.h Client.h ../common/opcodemgr.h ../common/EQStreamType.h \
+ EQCryptoAPI.h LoginServer.h ErrorLog.h ../common/Mutex.h Config.h \
+ Database.h DatabaseMySQL.h /usr/include/mysql/mysql.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_com.h \
+ /usr/include/mysql/mysql_time.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
+ DatabasePostgreSQL.h Encryption.h Options.h ClientManager.h \
+ LoginStructures.h
+WorldServer.o: WorldServer.cpp WorldServer.h ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQStreamFactory.h \
+ ../common/../common/EQStream.h ../common/../common/EQStreamType.h \
+ ../common/../common/EQPacket.h ../common/../common/BasePacket.h \
+ ../common/../common/types.h ../common/../common/op_codes.h \
+ ../common/../common/emu_opcodes.h ../common/../common/emu_oplist.h \
+ ../common/../common/EQStreamIntf.h ../common/../common/Mutex.h \
+ ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/emu_opcodes.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/timer.h ../common/EmuTCPServer.h ../common/TCPServer.h \
+ ../common/servertalk.h ../common/../common/types.h \
+ ../common/../common/packet_functions.h \
+ ../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/packet_dump.h ErrorLog.h \
+ ../common/Mutex.h LoginServer.h Config.h Database.h DatabaseMySQL.h \
+ /usr/include/mysql/mysql.h /usr/include/mysql/mysql_version.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/my_list.h /usr/include/mysql/typelib.h \
+ /usr/include/mysql/my_alloc.h DatabasePostgreSQL.h Encryption.h \
+ Options.h ServerManager.h Client.h ../common/opcodemgr.h \
+ ../common/EQStreamType.h EQCryptoAPI.h ClientManager.h LoginStructures.h
+BasePacket.o: ../common/BasePacket.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/BasePacket.h \
+ ../common/misc.h ../common/packet_dump.h ../common/../common/types.h
+Condition.o: ../common/Condition.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/Condition.h
+CRC16.o: ../common/CRC16.cpp
+crc32.o: ../common/crc32.cpp ../common/crc32.h ../common/types.h
+debug.o: ../common/debug.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/MiscFunctions.h ../common/../common/types.h
+emu_opcodes.o: ../common/emu_opcodes.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/emu_opcodes.h \
+ ../common/emu_oplist.h
+EmuTCPConnection.o: ../common/EmuTCPConnection.cpp \
+ ../common/../common/debug.h ../common/../common/logsys.h \
+ ../common/../common/types.h ../common/../common/logtypes.h \
+ ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/EmuTCPConnection.h ../common/TCPConnection.h ../common/unix.h \
+ ../common/types.h ../common/Mutex.h ../common/queue.h \
+ ../common/MiscFunctions.h ../common/timer.h ../common/EmuTCPServer.h \
+ ../common/TCPServer.h ../common/../common/servertalk.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/packet_functions.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/../common/version.h \
+ ../common/../common/../common/eq_constants.h \
+ ../common/../common/../common/skills.h \
+ ../common/../common/../common/eq_old_structs.h \
+ ../common/../common/packet_dump.h
+EmuTCPServer.o: ../common/EmuTCPServer.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EmuTCPServer.h \
+ ../common/TCPServer.h ../common/EmuTCPConnection.h \
+ ../common/TCPConnection.h ../common/unix.h ../common/Mutex.h \
+ ../common/queue.h ../common/MiscFunctions.h ../common/timer.h
+EQPacket.o: ../common/EQPacket.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/misc.h \
+ ../common/CRC16.h ../common/opcodemgr.h ../common/Mutex.h \
+ ../common/packet_dump.h ../common/../common/types.h \
+ ../common/packet_functions.h
+EQStream.o: ../common/EQStream.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQPacket.h \
+ ../common/BasePacket.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h ../common/EQStream.h \
+ ../common/EQStreamIntf.h ../common/Mutex.h \
+ ../common/../common/opcodemgr.h ../common/../common/types.h \
+ ../common/../common/Mutex.h ../common/../common/emu_opcodes.h \
+ ../common/../common/misc.h ../common/../common/Condition.h \
+ ../common/../common/debug.h ../common/../common/timer.h ../common/misc.h \
+ ../common/CRC16.h
+EQStreamFactory.o: ../common/EQStreamFactory.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/EQStreamFactory.h \
+ ../common/../common/EQStream.h ../common/../common/EQStreamType.h \
+ ../common/../common/EQPacket.h ../common/../common/BasePacket.h \
+ ../common/../common/types.h ../common/../common/op_codes.h \
+ ../common/../common/emu_opcodes.h ../common/../common/emu_oplist.h \
+ ../common/../common/EQStreamIntf.h ../common/../common/Mutex.h \
+ ../common/../common/../common/opcodemgr.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/emu_opcodes.h \
+ ../common/../common/../common/misc.h \
+ ../common/../common/../common/Condition.h \
+ ../common/../common/../common/debug.h \
+ ../common/../common/../common/timer.h ../common/../common/Condition.h \
+ ../common/../common/timeoutmgr.h ../common/../common/timer.h \
+ ../common/../common/opcodemgr.h ../common/../common/timer.h \
+ ../common/op_codes.h ../common/EQStream.h
+logsys.o: ../common/logsys.cpp ../common/logsys.h ../common/types.h \
+ ../common/logtypes.h ../common/debug.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/misc.h \
+ ../common/EQPacket.h ../common/BasePacket.h ../common/EQStreamType.h \
+ ../common/op_codes.h ../common/emu_opcodes.h ../common/emu_oplist.h
+logsys_eqemu.o: ../common/logsys_eqemu.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h
+misc.o: ../common/misc.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/misc.h
+MiscFunctions.o: ../common/MiscFunctions.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/MiscFunctions.h ../common/types.h ../common/../common/timer.h \
+ ../common/../common/seperator.h
+Mutex.o: ../common/Mutex.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/../common/Mutex.h
+opcodemgr.o: ../common/opcodemgr.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/opcodemgr.h \
+ ../common/Mutex.h ../common/emu_opcodes.h ../common/emu_oplist.h
+packet_dump.o: ../common/packet_dump.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/packet_dump.h \
+ ../common/../common/types.h ../common/EQPacket.h ../common/BasePacket.h \
+ ../common/types.h ../common/EQStreamType.h ../common/op_codes.h \
+ ../common/emu_opcodes.h ../common/emu_oplist.h \
+ ../common/../common/servertalk.h ../common/../common/../common/types.h \
+ ../common/../common/../common/packet_functions.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/../common/version.h \
+ ../common/../common/../common/eq_constants.h \
+ ../common/../common/../common/skills.h \
+ ../common/../common/../common/eq_old_structs.h
+packet_functions.o: ../common/packet_functions.cpp \
+ ../common/../common/debug.h ../common/../common/logsys.h \
+ ../common/../common/types.h ../common/../common/logtypes.h \
+ ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/packet_dump.h \
+ ../common/../common/types.h ../common/EQCheckTable.h \
+ ../common/packet_functions.h ../common/types.h
+rdtsc.o: ../common/rdtsc.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/rdtsc.h
+TCPConnection.o: ../common/TCPConnection.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h \
+ ../common/TCPConnection.h ../common/unix.h ../common/types.h \
+ ../common/Mutex.h ../common/queue.h ../common/MiscFunctions.h \
+ ../common/../common/servertalk.h ../common/../common/../common/types.h \
+ ../common/../common/../common/packet_functions.h \
+ ../common/../common/../common/types.h \
+ ../common/../common/../common/eq_packet_structs.h \
+ ../common/../common/../common/../common/version.h \
+ ../common/../common/../common/eq_constants.h \
+ ../common/../common/../common/skills.h \
+ ../common/../common/../common/eq_old_structs.h \
+ ../common/../common/timer.h ../common/../common/packet_dump.h
+TCPServer.o: ../common/TCPServer.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/TCPServer.h
+timeoutmgr.o: ../common/timeoutmgr.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/timeoutmgr.h \
+ ../common/types.h ../common/timer.h
+timer.o: ../common/timer.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/timer.h \
+ ../common/types.h
+unix.o: ../common/unix.cpp ../common/unix.h

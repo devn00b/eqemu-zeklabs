@@ -1,0 +1,104 @@
+sub EVENT_SAY { 
+$flag = $qglobals{teampvpflag};
+#red pvp guilds
+quest::say("Greetings. $name.  You may not relinquish your alignment.");
+return;
+#red pvp guilds
+
+if ( $client->GetPVPFlag() == 5 )
+{
+quest::say("Greetings. $name.  You may not relinquish your alignment.");
+return;
+}
+elsif( $client->GetPVPFlag() != 0  && defined($flag) && $flag == 1 )
+{
+quest::say("Greetings. $name.  You have recently aligned yourself to another faction and must wait seven days from changing your faction.");
+return;
+}
+
+if($text=~/Hail/i){
+my $sayjoin = quest::saylink("join");
+quest::say("Greetings. $name.  Would you like to $sayjoin in the battle?");
+}
+else
+{
+if($text=~/join/i){
+$good = quest::saylink("Side of Good");
+$evil = quest::saylink("Side of Evil");
+#$neut = quest::saylink("Side of Neutral Indifference");
+#if ( $zonetime < 1200 || $zonetime > 2000 )
+#{
+#quest::say("Shall you join the side of $good or the side of $evil ... or $neut?");
+#}
+#else
+#{
+quest::say("Shall you join the side of $good or the side of $evil?");
+#}
+}
+
+
+
+if($text=~/Side of Evil/i){
+if ( $client->GetPVPFlag() == 2 ) { quest::say("Well you seem to already be a part of this kingdom!"); }
+else
+{
+quest::say("May you help bring the world to chaos! (You have been rebound to Felwithe)");
+quest::pvpvalue("2");
+quest::setguild(-1,0);
+quest::pause(1);
+quest::setguild(2,0);
+quest::rebind(61,171.1,-32.1,3.4);
+
+quest::setglobal("teampvpflag","1",5,"D7");
+}
+}
+elsif($text=~/Side of Good/i){
+if ( $client->GetPVPFlag() == 3 ) { quest::say("Well you seem to already be a part of this kingdom!"); }
+else
+{
+quest::say("Defend your realm and defeat your foes! (You have been rebound to Erudin)");
+quest::pvpvalue("3");
+quest::setguild(-1,0);
+quest::pause(1);
+quest::setguild(3,0);
+quest::rebind(38,245.7,2161.9,-46.1);
+
+
+quest::setglobal("teampvpflag","1",5,"D7");
+}
+}
+#elsif($text=~/Side of Neutral Indifference/i && ( $zonetime < 1200 || $zonetime > 2000 ) ){
+#if ( $client->GetPVPFlag() == 4 ) { quest::say("Well you seem to already be a part of this kingdom!"); }
+#else
+#{
+#quest::say("Bring indifference in the ranks!");
+#quest::pvpvalue("4");
+#quest::setglobal("teampvpflag","1",5,"D7");
+#}
+#}
+elsif($text=~/good/i){
+$joinsidegood = quest::saylink("Side of Good");
+quest::say("The world needs defenders and you can join the $joinsidegood !");
+}
+elsif($text=~/evil/i){
+$sideofevil = quest::saylink("Side of Evil");
+quest::say("The world needs chaos and you wish to be part of it, join $sideofevil !");
+}
+#elsif($text=~/indifference/i){
+#if ( $zonetime < 1200 || $zonetime > 2000 )
+#{
+#$sideofindiff = quest::saylink("Side of Neutral Indifference");
+#quest::say("The world needs chaos and you wish to be part of it, join $sideofindiff!");
+#}
+#else
+#{
+#quest::say("What say you? This is not something I speak of at this time!  Maybe you should come back later...");
+#}
+}
+}
+
+
+
+}#end of else
+
+}

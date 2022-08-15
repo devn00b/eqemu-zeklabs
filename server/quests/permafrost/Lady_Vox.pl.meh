@@ -1,0 +1,65 @@
+# Attempt to limit players level 53 and over from engaging nagafen and vox.
+# Player will be banished to just outside the permafrost zone in everfrost.
+sub EVENT_SPAWN {
+$qglobals{kerafyrm} = undef;
+
+ if((!defined $qglobals{kerafyrm}) || (defined $qglobals{kerafyrm} && $qglobals{kerafyrm} != 3)) {
+  quest::settimer("kerafyrmvox",10);
+  quest::settimer("CheckLeash", 1);
+quest::set_proximity($x - 100, $x + 100, $y - 100, $y + 100);
+}
+
+sub EVENT_ENTER {
+#  if (($ulevel >= 53) && ($status < 80)) {
+#    quest::echo(0, "I will not fight you, but I will banish you!");
+#    quest::movepc(30,-7024,2020,-60.7);
+#  }
+}
+
+sub EVENT_AGGRO {
+#  if (($ulevel >= 53) && ($status < 80)) {
+#    quest::echo(0, "I will not fight you, but I will banish you!");
+#    quest::movepc(30,-7024,2020,-60.7);
+#  }
+		quest::settimer("CheckLeash", 1);
+}
+
+sub EVENT_TIMER {
+ if($timer eq "kerafyrmvox" && defined $qglobals{kerafyrm} && $qglobals{kerafyrm} == 1) {
+  quest::shout("The Sleeper stirs! A glorious new age for Norrath is about to begin, and my exile is about to end!");
+  quest::stoptimer("kerafyrmvox");
+}
+#checkleash additions
+	if ($timer eq "CheckLeash"){
+		my $GuardX = $npc->GetGuardPointX();
+		my $GuardY = $npc->GetGuardPointY();
+		my $GuardZ = $npc->GetGuardPointZ();
+		my $CurDist = $npc->CalculateDistance($GuardX, $GuardY, $GuardZ);
+		#quest::say("Dist: $CurDist");
+		if ($CurDist > 75)
+		{
+			$npc->SetHP(40220);
+			quest::stoptimer("CheckLeash");
+			# Get their current heading, since there is currently no way to get Guard Heading (yet)
+			my $CurH = $npc->GetHeading();
+			# Wipe the NPC's hate list as well
+			$npc->WipeHateList();
+			# Return them to their Guard Point
+			$npc->GMMove($GuardX,$GuardY,$GuardZ,$CurH);
+		}
+		else
+		{
+		quest::stoptimer("CheckLeash");
+		quest::settimer("CheckLeash", 1);
+		}
+	}
+#end leash additions
+	}
+
+sub EVENT_DEATH {
+plugin::handlenpc_epicloot($client,$npc,1);
+plugin::handlenpc_epicloot($client,$npc,1);
+
+}
+
+# EOF zone: permafrost ID: 73057 NPC: Lady_Vox

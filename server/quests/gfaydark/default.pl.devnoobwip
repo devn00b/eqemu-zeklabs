@@ -1,0 +1,47 @@
+sub EVENT_DEATH {
+
+$random_result = 0;
+$random_res = 0;
+$random_spawn 0;
+$spawn = 0;
+$spawn1 = "262,-144,-343,0.89,0";
+$spawn2 = "262,-748,2076,-42,0";
+$spawn3 = "262,1993,2195,-0.72,0";
+$spawn4 = "262,1675,939,9.27,0";
+$spawn5 = "262,1916,-1980,-37,0";
+$spawn6 = "262,558,-1106,-0.72,0";
+
+##Who are we going to spawn? <50 image >50 devn00b
+my $random_result = int(rand(600));
+##This gives you chance to spawn random 500, if its less than 10 spawn one
+#my $random_res = int(rand(3500));
+my $random_res = 3;
+my $random_spawn = int(rand(6));
+
+if ( $random_res<7) {
+plugin::Whisper("Hail!");
+if ( $random_spawn=1) {
+$spawn = $spawn1;
+}elseif
+if ( $random_spawn=2) {
+$spawn = $spawn2;
+}elseif
+if ( $random_spawn=3) {
+$spawn = $spawn3;
+}elseif
+if ( $random_spawn=4) {
+$spawn = $spawn4;
+}elseif
+if ( $random_spawn=5) {
+$spawn = $spawn5;
+}elseif
+if ( $random_spawn=6) {
+$spawn = $spawn6;
+}
+    quest::unique_spawn(127001,$spawn)
+ 
+else {
+#something here
+   }
+  }
+}

@@ -1,0 +1,109 @@
+sub EVENT_SPAWN {
+if ( defined $qglobals{fayportalopen} )
+{
+	quest::setglobal("fayportalopen",0,3,"M2");
+}
+quest::stoptimer("fayportal3min");
+quest::stoptimer("fayportal2min");
+quest::stoptimer("fayportal1min");
+quest::stoptimer("portalopen");
+
+quest::settimer("fayportal3min",1);
+}
+
+sub EVENT_POPUPRESPONSE {
+
+if ( $client->GetPVPPoints() < 1 )
+{
+quest::say("I am afraid you have no pvp points to offer.");
+return;
+}
+if ( $popupid == 1 ) #gfaydark
+{
+$client->SetPVPPoints($availpts-1);
+quest::say("Good luck $name!");
+quest::selfcast(1336);
+quest::selfcast(6214);
+$client->CastSpell(207,$userid,10,0,0);
+}
+elsif ( $popupid == 2 ) #butcher
+{
+$client->SetPVPPoints($availpts-1);
+quest::say("Good luck $name!");
+quest::selfcast(608);
+$client->CastSpell(207,$userid,10,0,0);
+}
+}
+
+sub EVENT_SAY {
+$availpts = $client->GetPVPPoints();
+$purchaselink = quest::saylink("purchase travel for Greater Faydark");
+$purchaselink2 = quest::saylink("purchase travel for Butcher Block");
+if ($text=~/purchase travel for Greater Faydark/i){
+quest::popup("Purchase Travel for Greater Faydark","<c \"#479eab\">Purchase Travel for 1 PVP point to: </c><br>  <c \"#4fd613\">Greater Faydark</c><br> <c \"#4fd613\">ARE YOU SURE?</c>",1,1,120);
+return;
+}
+elsif ($text=~/purchase travel for Butcher Block/i){
+quest::popup("Purchase Travel for Butcher Block","<c \"#479eab\">Purchase Travel for 1 PVP point to: </c><br>  <c \"#4fd613\">Butcher Block</c><br> <c \"#4fd613\">ARE YOU SURE?</c>",2,1,120);
+return;
+}
+
+if ( defined $qglobals{fayportalopen} && $fayportalopen == 1 )
+{
+
+if ($text=~/Hail/i){
+$saylink = quest::saylink("journey to Greater Faydark");
+$saylink2 = quest::saylink("journey to Butcher Block");
+quest::say("Hello $name. I do not have much time to chat. I must concentrate my energy to help others with their travel.  If you wish to $saylink or $saylink2, tell me so."); 
+}
+elsif ($text=~/journey to Greater Faydark/i){
+quest::say("Good luck $name!");
+quest::selfcast(1336);
+quest::selfcast(6214);
+$client->CastSpell(207,$userid,10,0,0);
+}
+elsif ($text=~/journey to Butcher Block/i){
+quest::say("Good luck $name!");
+quest::selfcast(608);
+$client->CastSpell(207,$userid,10,0,0);
+
+}
+}
+else
+{
+if ( $availpts > 0 )
+{
+quest::say("Hello $name.  The portal is not yet open.  Please wait a few more minutes and hail me then.  However, for a PVP point I would be willing to expedite your travel, you may $purchaselink or $purchaselink2.");
+}
+else
+{
+quest::say("Hello $name.  Sorry, but at this time the portal is not yet open.  Please wait a few more minutes and hail me then.");
+}
+
+}
+}
+
+sub EVENT_TIMER {
+if ( $timer eq "fayportal3min" ) {
+quest::stoptimer("fayportal3min");
+quest::say("Three minutes remain until the Greater Faydark portal is open, hail me at that time.");
+quest::settimer("fayportal2min",60); # cycle one minute
+}
+elsif ( $timer eq "fayportal2min" ) {
+quest::stoptimer("fayportal2min");
+quest::say("Two  minutes remain until the Greater Faydark portal is open, hail me at that time.");
+quest::settimer("fayportal1min",60); # cycle one minute
+}
+elsif ( $timer eq "fayportal1min" ) {
+quest::stoptimer("fayportal1min");
+quest::say("One minute remains until the Greater Faydark portal is open, hail me at that time.");
+quest::settimer("portalopen",60); # cycle one minute
+}
+elsif ( $timer eq "portalopen" ) {
+quest::stoptimer("portalopen");
+quest::setglobal("fayportalopen",1,3,"M2"); #when the portal is open, global is set true for 2 min.
+quest::settimer("fayportal3min",120); # wait 2 min before starting again
+quest::say("The portal is now open to Greater Faydark for two minutes, hail me to be transported.");
+}
+
+} #end of sub

@@ -1,0 +1,43 @@
+sub EVENT_SPAWN
+{
+#lets do 3 items drops, so 3 randoms so we dont drop same item 3 times
+
+#engraved Royal velium
+$rnd = quest::ChooseRandom(8957,8958,8959,8971,8972,8973,8974);
+#Misc Items CC shield, coldain skin boots/goves, OOIV, book of obo,tonpo shoulders, robe of azure, Ice Forged Shackles.
+$rndtwo = quest::ChooseRandom(25287,25026,25027,25098,14745,1283,145366,30041,145378,145379,145380,145381,145382,145383,145385,145386,145387);
+#crystal chitin armor, lodi armor, regal band, shaded torch,infestation
+$rndthree = quest::ChooseRandom(25283,25284,25285,25286,25287,25288,25289,25290,25291,5727,29206,22816,30069,2061,143063);
+
+#Add 3x loot some cash.
+$npc->AddItem($rnd,1,0);
+$npc->AddItem($rndtwo,1,0);
+$npc->AddItem($rndthree,1,0);
+$pltrnd  = int(rand 1000); 
+$gldrnd  = int(rand 900);
+$slvrnd  = int(rand 500);
+$cprrnd  = int(rand 200);
+
+$npc->AddCash($cprrnd,$silvrnd,$gldrnd,$pltrnd);
+
+$whatshout = int(rand 100);
+if ($whatshout <25){
+quest::shout("Qeynos will fall to me! It will happen!");
+}
+elsif ($whatshout>25 && $whatshout <50){
+quest::shout("Why are you mortals so stupid? You really think you can defeat me? Lord Lucan??");
+}
+elsif ($whatshout >50 && $whatshout <75) {
+quest::shout("You will all fall before me, Like Lord Bayle did long ago!");
+}
+else {
+quest::shout("Looking for 1v1. Someone 1v1 me bro! No? Cowards, Pussies, Loosers All of you.");
+}
+
+}
+
+sub EVENT_DEATH {
+   quest::faction(1073, -4000);
+}
+
+

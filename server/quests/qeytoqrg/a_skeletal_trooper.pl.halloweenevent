@@ -1,0 +1,15 @@
+sub EVENT_SPAWN
+{
+#weapon/shield: 19937,36714,9940
+$rnd = quest::ChooseRandom(19895,19896,19897,19898,19899,19900,19901,19888,19889,19890,19891,19892,19893,19894,9886,9887,9888,9889,9890,9891,9892,19881,19882,19883,19884,19885,19886,19887);
+$npc->AddItem($rnd,1);
+}
+
+sub EVENT_COMBAT
+{
+	if ( $combat_state == 1 )
+	{
+		quest::say("Begone from these lands!");
+		$npc->CastSpell(3090,$targetid);
+	}
+}

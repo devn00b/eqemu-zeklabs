@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/657/trunk/quests/plugins
+END
+GetSpawn2IDs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/487/trunk/quests/plugins/GetSpawn2IDs.pl
+END
+path_tools.pl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/604/trunk/quests/plugins/path_tools.pl
+END
+group_utility.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/455/trunk/quests/plugins/group_utility.pl
+END
+whisper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/604/trunk/quests/plugins/whisper.pl
+END
+default-actions.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/122/trunk/quests/plugins/default-actions.pl
+END
+globals.pl
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/122/trunk/quests/plugins/globals.pl
+END
+random_message.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/604/trunk/quests/plugins/random_message.pl
+END
+default.pl
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/148/trunk/quests/plugins/default.pl
+END
+anim.pl
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/604/trunk/quests/plugins/anim.pl
+END
+check_hasitem.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/49/trunk/quests/plugins/check_hasitem.pl
+END
+soulbinders.pl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/10/trunk/quests/plugins/soulbinders.pl
+END
+zone_tools.pl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/122/trunk/quests/plugins/zone_tools.pl
+END
+random_range.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/604/trunk/quests/plugins/random_range.pl
+END
+directional.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/657/trunk/quests/plugins/directional.pl
+END
+check_handin.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/10/trunk/quests/plugins/check_handin.pl
+END
+npc_tools.pl
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/149/trunk/quests/plugins/npc_tools.pl
+END
+utility.pl
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/326/trunk/quests/plugins/utility.pl
+END
+guildmasters.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/10/trunk/quests/plugins/guildmasters.pl
+END

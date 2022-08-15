@@ -1,0 +1,28 @@
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  TeamSettings.cpp -o TeamSettings.o
+TeamSettings.cpp: In function ‘bool UpdateTeamSettings(uint32, const TeamSettings_Struct*)’:
+TeamSettings.cpp:53:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+TeamSettings.cpp: In function ‘bool UpdatePVPLeaderboard(const PVPLeaderBoardEntry_Struct*)’:
+TeamSettings.cpp:90:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+TeamSettings.cpp:94:173: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+TeamSettings.cpp:103:170: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+TeamSettings.cpp:112:176: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+TeamSettings.cpp:303:190: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+TeamSettings.cpp:312:187: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+TeamSettings.cpp:321:193: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+TeamSettings.cpp: In function ‘bool UpdateGuardSettings(const GuardSettings_Struct*)’:
+TeamSettings.cpp:517:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+TeamSettings.cpp:511:6: warning: unused variable ‘i’ [-Wunused-variable]
+TeamSettings.cpp:513:7: warning: unused variable ‘replaceField’ [-Wunused-variable]
+TeamSettings.cpp: In function ‘bool UpdateGuildHateList(uint32, GuildHate_Struct*)’:
+TeamSettings.cpp:556:77: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+TeamSettings.cpp: In function ‘bool DLLLoadTeamSettings(CALLBACK_DBLoadTeamSettings, int32, sint32*, int32*)’:
+TeamSettings.cpp:666:78: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+TeamSettings.cpp:704:76: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+TeamSettings.cpp: In function ‘GuildHate_Struct* GetGuildHateList(int32, int32)’:
+TeamSettings.cpp:747:79: warning: cast from type ‘const void*’ to type ‘MMFTeamSettings_Struct*’ casts away qualifiers [-Wcast-qual]
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  DLLMain.cpp -o DLLMain.o
+mkdir -p .obj
+gcc -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  -c ../common/timer.cpp -o .obj/timer.o
+mkdir -p .obj
+gcc -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align -DDEBUG=1 -DCATCH_CRASH -g -fPIC -O2 -D_GNU_SOURCE -DINVERSEXY -DFX  -c ../common/unix.cpp -o .obj/unix.o
+gcc -g -shared -Wl,-soname,libEMuShareMem.so -o libEMuShareMem.so MMFMutex.o Doors.o Items.o Spells.o NPCFactionLists.o MMF.o Loot.o Opcodes.o SkillCaps.o Zones.o RandomLootDrop.o TeamSettings.o DLLMain.o .obj/timer.o .obj/unix.o -L. -lstdc++ 

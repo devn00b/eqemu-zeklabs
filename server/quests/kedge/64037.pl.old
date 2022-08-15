@@ -1,0 +1,5 @@
+sub EVENT_SPAWN
+{
+$rnd = quest::ChooseRandom(144526,144527,144528,144529,144530,144531,144532,144533,144534,144535);
+$npc->AddItem($rnd,1);
+}

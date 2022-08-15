@@ -1,0 +1,147 @@
+sub EVENT_SAY {
+my $careerptz = $client->GetPVPCareerPoints();
+
+if($text=~/hail/i){
+#quest::say("Welcome $name . Are you having trouble finding a guild? I'm here to recruit players like you to join devnoob in his guild. And I think you have what it takes.");
+quest::say("Since you all are giant pussies, the gods have sent me to [toughen] you up. I can set your DEFENSIVE skills to be somewhat acceptable.");
+return;
+  }
+
+
+if($text=~/toughen/i){
+
+##Defensive Skills
+#11	Block
+#15	Defense
+#19	Dodge
+#34	Parry
+#37	Riposte
+
+$devskillcap = $ulevel * 5;
+
+if($devskillcap >255){
+$devskillcap = 255;
+quest::say("Sorry you cannot have above 255 skill points. Set your cap 255.");
+}
+
+if($devskillcap <199) {
+$defcap = 200;
+}
+
+if($class eq 'Warrior'){
+quest::say("You are a warrior");
+#return;
+}
+
+if($class eq 'Cleric'){
+quest::say("You are a Cleric");
+}
+
+if($class eq 'Paladin'){
+quest::say("You are a Paladin");
+}
+
+if($class eq 'Ranger'){
+quest::say("You are a Ranger");
+}
+
+if($class eq 'Shadow Knight'){
+quest::say("You are a Shadow Knight");
+}
+
+if($class eq 'Druid'){
+quest::say("You are a Druid");
+}
+
+if($class eq 'Monk'){
+quest::say("You are a Monk");
+}
+
+if($class eq 'Bard'){
+quest::say("You are a Bard");
+}
+
+if($class eq 'Rogue'){
+quest::say("You are a Rogue");
+}
+
+if($class eq 'Shaman'){
+quest::say("You are a Shaman");
+}
+
+if($class eq 'Necromancer'){
+quest::say("You are a Necromancer");
+}
+
+if($class eq 'Wizard'){
+quest::say("You are a Wizard");
+}
+
+if($class eq 'Magician'){
+quest::say("You are a Mage ");
+}
+
+if($class eq 'Enchanter'){
+quest::say("You are a Enchanter");
+}
+
+if($class eq 'Beastlord'){
+#dodge cap 125
+#block cap 150
+#riposte 150
+
+if($devskillcap >124) {
+$dcap = 125;
+$bcap = 150;
+$rcap = 150;
+$shitcap = $bcap - 45;
+quest::say("The following skills exceeded the cap so set them as follows: Dodge: $dcap / Block: $bcap / Riposte: $rcap...$shitcap");
+}
+quest::say("bcap: $bcap");
+quest::addskill(11, $bcap);
+quest::addskill(19, $dcap);
+quest::addskill(37, $rcap);
+quest::addskill(15, $defcap);
+return;
+}
+
+if($class eq 'Berserker'){
+#dodge cap 125
+#block cap 0
+#riposte 150
+#parry 0
+
+if($devskillcap >124) {
+$dcap = 125;
+$bcap = 150;
+$rcap = 200;
+$shitcap = $bcap - 45;
+$defcap = 200;
+
+if($rcap >200){
+$rcap = $rcap - 55;
+}
+
+quest::say("The following skills exceeded the cap so set them as follows: Dodge: $dcap / Block: $bcap / Riposte: $rcap.");
+}
+
+quest::say("You are a Berserker");
+quest::addskill(11, $bcap);
+quest::addskill(19, $dcap);
+quest::addskill(37, $rcap);
+quest::addskill(15, $defcap);
+return;
+}
+##Defensive Skills
+#11     Block
+#15     Defense
+#19     Dodge
+#34     Parry
+#37     Riposte
+
+
+quest::say("Your Cap is $devskillcap and your class is $class");
+}
+
+quest::say("Sorry What?");
+} 

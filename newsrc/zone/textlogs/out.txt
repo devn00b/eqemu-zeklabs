@@ -1,0 +1,117 @@
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated  -Wcomment -Wcast-align -Wl,-Map,zone.map -O -g -march=native -pthread -pipe -D_GNU_SOURCE -DINVERSEXY -DFX -DZONE -DEQDEBUG=0 -DTCPN_DEBUG=1 -DCATCH_CRASH -DNO_PIDLOG -DSHAREMEM -DFIELD_ITEMS -DCOMBINED -DREVERSE_AGGRO -DAPP_OPCODE_SIZE=2 -Di386 -DEMBPERL -DEMBPERL_PLUGIN -DHAS_UNION_SEMUN -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing  -g  -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fstack-protector -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -I/usr/lib/perl/5.14/CORE  client.cpp -o client.o
+In file included from ../common/common_profile.h:22:0,
+                 from ../common/debug.h:93,
+                 from client.cpp:18:
+../common/../zone/features.h:127:0: warning: "REVERSE_AGGRO" redefined [enabled by default]
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../KingsBandits/../zone/../common/EQPacket.h:29:0,
+                 from ../KingsBandits/../zone/../common/database.h:29,
+                 from ../KingsBandits/../zone/../common/shareddb.h:6,
+                 from ../KingsBandits/../zone/zonedb.h:4,
+                 from ../KingsBandits/KingsBandits.h:2,
+                 from client.cpp:30:
+../KingsBandits/../zone/../common/emu_opcodes.h:45:20: warning: extra tokens at end of #ifdef directive [enabled by default]
+In file included from ../KingsBandits/../zone/client.h:37:0,
+                 from ../KingsBandits/KingsBandits.h:3,
+                 from client.cpp:30:
+../KingsBandits/../zone/npc.h: In member function ‘void NPC::ClearQuestItems(bool)’:
+../KingsBandits/../zone/npc.h:362:14: warning: unused variable ‘inst’ [-Wunused-variable]
+../KingsBandits/../zone/npc.h: In member function ‘void NPC::ClearQuestDeleteItems(bool)’:
+../KingsBandits/../zone/npc.h:375:14: warning: unused variable ‘inst’ [-Wunused-variable]
+In file included from client.cpp:30:0:
+../KingsBandits/KingsBandits.h: In static member function ‘static char* KingsBandits::GetKingdomName(int)’:
+../KingsBandits/KingsBandits.h:92:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:95:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:98:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:101:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:109:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:112:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:115:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:118:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:121:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:124:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:127:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:130:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:133:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../KingsBandits/KingsBandits.h:136:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+In file included from ../KingsBandits/KingsBandits.h:3:0,
+                 from client.cpp:30:
+../KingsBandits/../zone/client.h: In constructor ‘Client::Client(EQStreamInterface*)’:
+../KingsBandits/../zone/client.h:1358:8: warning: ‘Client::RespawnFromHoverTimer’ will be initialized after [-Wreorder]
+../KingsBandits/../zone/client.h:1347:8: warning:   ‘Timer Client::underattack_timer’ [-Wreorder]
+client.cpp:95:1: warning:   when initialized here [-Wreorder]
+In file included from ../KingsBandits/KingsBandits.h:3:0,
+                 from client.cpp:30:
+../KingsBandits/../zone/client.h:1348:8: warning: ‘Client::flushattacktarget_timer’ will be initialized after [-Wreorder]
+../KingsBandits/../zone/client.h:1278:8: warning:   ‘Timer Client::ReplayTimer’ [-Wreorder]
+client.cpp:95:1: warning:   when initialized here [-Wreorder]
+client.cpp: In member function ‘bool Client::Save(int8, bool, bool)’:
+client.cpp:523:10: warning: unused variable ‘instID’ [-Wunused-variable]
+client.cpp:584:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:596:50: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+client.cpp: In member function ‘void Client::ChannelMessageReceived(int8, int8, int8, const char*, const char*)’:
+client.cpp:877:41: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:885:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:917:101: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:975:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:1019:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:1067:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:1082:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp: In member function ‘void Client::SendManaUpdatePacket()’:
+client.cpp:1852:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp: In member function ‘void Client::LogMerchant(Client*, Mob*, int32, int32, const Item_Struct*, bool)’:
+client.cpp:2624:118: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:2628:118: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp: In member function ‘void Client::LogLoot(Client*, Corpse*, const Item_Struct*)’:
+client.cpp:2648:143: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:2659:119: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:2662:119: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp: In member function ‘float Client::CalcPriceMod(Mob*, bool)’:
+client.cpp:3277:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:3283:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp: In member function ‘void Client::AddCityRevenue(uint32)’:
+client.cpp:3403:75: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+client.cpp: In member function ‘void Client::Sacrifice(Client*)’:
+client.cpp:3980:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:4017:44: error: cannot allocate an object of abstract type ‘Corpse’
+In file included from masterentity.h:9:0,
+                 from client.cpp:53:
+PlayerCorpse.h:29:7: note:   because the following virtual functions are pure within ‘Corpse’:
+In file included from ../KingsBandits/../zone/client.h:36:0,
+                 from ../KingsBandits/KingsBandits.h:3,
+                 from client.cpp:30:
+../KingsBandits/../zone/mob.h:521:15: note: 	virtual void Mob::Death(Mob*, sint32, int16, SkillType, int32)
+client.cpp: In member function ‘void Client::SendWindow(int32, int32, int32, int, Client*, const char*, const char*, ...)’:
+client.cpp:4159:70: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp: In member function ‘uint32 Client::UpdatePVPKillStats(Client*, bool*)’:
+client.cpp:4957:122: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:4957:151: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:4957:179: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp: In member function ‘void Client::UpdatePVPStats(Client*, bool*)’:
+client.cpp:5046:61: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:5047:66: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:5050:17: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+client.cpp:5052:18: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+client.cpp: In member function ‘void Client::SendRewards()’:
+client.cpp:5893:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:5912:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp: In member function ‘void Client::SendAdventureDetails()’:
+client.cpp:6497:35: warning: unused variable ‘ad’ [-Wunused-variable]
+client.cpp: In member function ‘void Client::CheckLDoNHail(Mob*)’:
+client.cpp:6624:41: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp: In member function ‘void Client::NPCSpawn(NPC*, const char*, uint32)’:
+client.cpp:6759:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp: In member function ‘void Client::LogPlayerMessage(int32, char*, char*, Mob*)’:
+client.cpp:6947:74: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp:6953:74: warning: cast from type ‘const char*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+client.cpp: In member function ‘void Client::RecordReplayFrame()’:
+client.cpp:6971:22: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+client.cpp:6971:22: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+client.cpp: In member function ‘void Client::WipeCharacter()’:
+client.cpp:7012:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:7015:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+client.cpp:7018:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+In file included from client.cpp:30:0:
+../KingsBandits/KingsBandits.h: In static member function ‘static char* KingsBandits::GetKingdomName(int)’:
+../KingsBandits/KingsBandits.h:142:2: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [client.o] Error 1

@@ -1,0 +1,135 @@
+root       370  0.0  0.0  23268  1316 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       372  0.4  0.0 427392 20668 pts/68   Ssl+ Apr01  14:50 ./zone
+root       373  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       375  0.4  0.0 492924 20720 pts/93   Ssl+ Apr01  14:50 ./zone
+root       376  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       379  0.4  0.0 427392 20668 pts/94   Ssl+ Apr01  14:58 ./zone
+root       380  0.0  0.0  23268  1316 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       383  0.4  0.0 427392 20668 pts/95   Ssl+ Apr01  14:51 ./zone
+root       386  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       389  0.4  0.0 427392 20668 pts/96   Ssl+ Apr01  14:49 ./zone
+root       394  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       397  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       400  0.4  0.0 427392 20672 pts/97   Ssl+ Apr01  14:50 ./zone
+root       401  0.4  0.0 492928 20668 pts/98   Ssl+ Apr01  14:44 ./zone
+root       403  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       405  0.4  0.0 427392 20668 pts/99   Ssl+ Apr01  15:02 ./zone
+root       406  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       410  0.4  0.0 427392 20668 pts/100  Ssl+ Apr01  15:02 ./zone
+root       412  0.0  0.0  23268  1316 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       416  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       420  0.4  0.0 427392 20668 pts/101  Ssl+ Apr01  14:44 ./zone
+root       421  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       424  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       427  0.4  0.0 427392 20668 pts/102  Ssl+ Apr01  14:43 ./zone
+root       429  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       435  0.4  0.0 492924 20672 pts/103  Ssl+ Apr01  14:42 ./zone
+root       436  0.0  0.0  23268  1316 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       440  0.4  0.0 492924 20676 pts/104  Ssl+ Apr01  14:48 ./zone
+root       442  0.4  0.0 487300 20648 pts/105  Ssl+ Apr01  14:40 ./zone
+root       452  0.4  0.0 427392 20672 pts/106  Ssl+ Apr01  14:49 ./zone
+root       454  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       458  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       460  0.4  0.0 427392 20672 pts/107  Ssl+ Apr01  14:55 ./zone
+root       463  0.4  0.0 492924 20676 pts/108  Ssl+ Apr01  14:49 ./zone
+root       465  0.0  0.0  23268  1316 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       469  0.4  0.0 427392 20668 pts/109  Ssl+ Apr01  14:48 ./zone
+root       472  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       477  0.4  0.0 427392 20668 pts/110  Ssl+ Apr01  14:45 ./zone
+root       478  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       482  0.0  0.0  23268  1316 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       484  0.4  0.1 561100 30520 pts/112  Ssl+ Apr01  16:49 ./zone
+root       485  0.0  0.0  23268  1312 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       487  0.4  0.0 493280 23232 pts/113  Ssl+ Apr01  14:56 ./zone
+root       489  0.4  0.0 427392 20668 pts/114  Ssl+ Apr01  14:50 ./zone
+root       495  0.0  0.0  23268  1316 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       501  0.4  0.0 427392 20672 pts/115  Ssl+ Apr01  14:56 ./zone
+root       510  0.0  0.0  23268  1316 ?        Ss   Apr01   0:00 SCREEN -d -m ./zone
+root       523  0.5  0.1 564416 48532 pts/119  Ssl+ Apr01  18:19 ./zone
+root     22326  1.0  0.0 489412 19160 pts/0    Sl+  17:47   0:17 /home/eqemu_host/server/zone2 tutorial
+root     22346  1.3  0.1 569220 46620 pts/6    Sl+  Apr02  21:07 ./zone freportw
+root     22879  0.0  0.0  23268  1316 ?        Ss   16:17   0:00 SCREEN -d -m ./zone
+root     22880  2.0  0.1 560240 34856 pts/30   Ssl+ 16:17   2:24 ./zone
+root     25463  2.3  0.1 492500 25580 pts/3    Sl+  17:52   0:30 /home/eqemu_host/server/zone2 soldungb
+root     25486  3.0  0.1 494668 27808 pts/116  Sl+  17:52   0:38 /home/eqemu_host/server/zone2 soldunga
+root     26700  0.0  0.0   7844   896 pts/70   S+   18:14   0:00 grep ./zone
+root     31935  1.7  0.1 562512 38144 pts/4    Sl+  Apr01  59:22 ./zone akanon
+root     31939  1.6  0.7 580432 183824 pts/9   Sl+  Apr01  54:41 ./zone bazaar
+root     31944  1.1  0.1 489804 35920 pts/10   Sl+  Apr01  39:02 ./zone befallen
+root     31947  1.1  0.1 560208 30080 pts/11   Sl+  Apr01  37:44 ./zone beholder
+root     31955  1.0  0.1 562552 33500 pts/12   Sl+  Apr01  35:11 ./zone blackburrow
+root     31961  3.5  0.1 563436 48340 pts/13   Sl+  Apr01 119:22 ./zone butcher
+root     31967  1.3  0.1 561580 37612 pts/14   Sl+  Apr01  43:59 ./zone cauldron
+root     31973  3.0  0.2 564532 52072 pts/15   Sl+  Apr01 103:00 ./zone cazicthule
+root     31979  1.3  0.4 591488 107148 pts/16  Sl+  Apr01  45:34 ./zone commons
+root     31987  2.0  0.5 570152 146092 pts/17  Sl+  Apr01  67:56 ./zone crushbone
+root     31999  1.1  0.6 659896 168820 pts/20  Sl+  Apr01  37:15 ./zone erudsxing
+root     32002  1.0  0.1 563044 34640 pts/19   Sl+  Apr01  34:35 ./zone erudnext
+root     32007  1.3  0.1 565584 39004 pts/18   Sl+  Apr01  46:16 ./zone eastkarana
+root     32016  2.6  0.7 573404 174608 pts/22  Sl+  Apr01  88:56 ./zone everfrost
+root     32023  2.4  0.2 566572 53924 pts/24   Sl+  Apr01  80:58 ./zone feerrott
+root     32029  1.2  0.1 507400 37916 pts/23   Sl+  Apr01  40:28 ./zone fearplane
+root     32035  0.9  0.1 491188 30244 pts/21   Sl+  Apr01  31:07 ./zone erudnint
+root     32048  1.3  0.1 564128 40420 pts/26   Sl+  Apr01  45:14 ./zone freporte
+root     32051  0.9  0.1 559972 40648 pts/25   Sl+  Apr01  32:49 ./zone felwitheb
+root     32052  1.5  0.2 632692 65172 pts/27   Sl+  Apr01  50:36 ./zone felwithea
+root     32070  0.9  0.1 560332 34016 pts/28   Sl+  Apr01  31:36 ./zone freportn
+root     32075  5.2  0.5 594624 139072 pts/31  Rl+  Apr01 176:14 ./zone gfaydark
+root     32092  3.4  0.3 573200 75276 pts/33   Sl+  Apr01 115:25 ./zone gukbottom
+root     32094  1.1  0.1 556944 34972 pts/32   Sl+  Apr01  39:08 ./zone grobb
+root     32097  1.9  0.3 573652 75708 pts/34   Sl+  Apr01  67:11 ./zone guktop
+root     32108  0.9  0.1 558716 30908 pts/35   Sl+  Apr01  33:18 ./zone halas
+root     32113  1.3  0.1 497340 32652 pts/36   Sl+  Apr01  44:16 ./zone hateplane
+root     32121  0.9  0.1 497820 27476 pts/37   Sl+  Apr01  30:46 ./zone airplane
+root     32123  1.5  0.1 562968 33504 pts/38   Sl+  Apr01  52:07 ./zone highkeep
+root     32134  1.0  0.2 492456 59320 pts/39   Sl+  Apr01  34:19 ./zone highpass
+root     32141  1.6  0.1 505852 38336 pts/40   Sl+  Apr01  55:05 ./zone hole
+root     32148  1.6  0.3 568152 74344 pts/41   Sl+  Apr01  56:10 ./zone innothule
+root     32155  0.9  0.1 557276 27896 pts/43   Sl+  Apr01  32:20 ./zone kaladimb
+root     32159  0.8  0.1 553148 27280 pts/42   Sl+  Apr01  30:09 ./zone kaladima
+root     32310  1.6  0.1 562368 43104 pts/44   Sl+  Apr01  54:19 ./zone kithicor
+root     32314  1.0  0.1 566764 35900 pts/45   Sl+  Apr01  37:01 ./zone lakerathe
+root     32318  2.0  0.5 596784 142808 pts/46  Sl+  Apr01  69:40 ./zone lavastorm
+root     32323  1.7  0.1 627936 47544 pts/47   Sl+  Apr01  57:25 ./zone lfaydark
+root     32338  1.6  0.1 561152 43212 pts/48   Sl+  Apr01  56:09 ./zone mistmoore
+root     32341  2.2  0.3 572344 81128 pts/50   Sl+  Apr01  75:56 ./zone najena
+root     32346  3.2  0.3 578580 84144 pts/51   Sl+  Apr01 110:00 ./zone nektulos
+root     32357  1.1  0.1 564684 37456 pts/52   Sl+  Apr01  39:28 ./zone neriaka
+root     32361  1.9  0.1 559408 39104 pts/49   Sl+  Apr01  67:16 ./zone misty
+root     32373  1.2  0.1 561368 34624 pts/53   Sl+  Apr01  41:18 ./zone neriakb
+root     32377  1.2  0.1 564564 32636 pts/54   Sl+  Apr01  41:15 ./zone neriakc
+root     32391  2.0  1.0 717336 266308 pts/55  Sl+  Apr01  69:29 ./zone northkarana
+root     32404  1.7  0.2 560916 66128 pts/58   Sl+  Apr01  58:07 ./zone oot
+root     32405  1.2  0.1 558128 32704 pts/56   Sl+  Apr01  42:19 ./zone nro
+root     32418  1.1  0.1 557904 32764 pts/57   Sl+  Apr01  39:58 ./zone oggok
+root     32430  1.2  0.1 561496 32860 pts/59   Sl+  Apr01  40:39 ./zone paineel
+root     32437  1.7  0.1 497668 30552 pts/60   Sl+  Apr01  60:09 ./zone permafrost
+root     32441  2.2  0.2 573336 54808 pts/62   Sl+  Apr01  76:57 ./zone qey2hh1
+root     32447  1.6  0.1 571884 43840 pts/61   Sl+  Apr01  55:36 ./zone qeynos
+root     32459  1.9  0.1 564624 43564 pts/63   Sl+  Apr01  64:03 ./zone qeynos2
+root     32470  1.5  0.2 573448 60400 pts/64   Sl+  Apr01  53:27 ./zone qeytoqrg
+root     32479  1.0  0.1 556796 33196 pts/65   Sl+  Apr01  36:03 ./zone qrg
+root     32480  1.5  0.1 562112 41464 pts/66   Sl+  Apr01  52:32 ./zone rivervale
+root     32484  3.5  0.1 564784 42400 pts/67   Sl+  Apr01 119:34 ./zone rathemtn
+root     32499  3.3  0.1 561600 42076 pts/69   Sl+  Apr01 112:26 ./zone runnyeye
+root     32516  2.5  0.4 578932 121416 pts/71  Sl+  Apr01  86:01 ./zone southkarana
+root     32529  1.9  0.2 568324 64224 pts/72   Sl+  Apr01  65:28 ./zone sro
+root     32531  2.1  0.1 559512 41000 pts/73   Sl+  Apr01  74:02 ./zone steamfont
+root     32543  1.6  0.1 563452 36648 pts/74   Sl+  Apr01  54:05 ./zone unrest
+root     32547  2.1  0.1 566656 38468 pts/75   Sl+  Apr01  70:53 ./zone tox
+root     32551  0.9  0.4 497172 122912 pts/76  Sl+  Apr01  30:56 ./zone soltemple
+root     32567  1.5  0.1 564672 40744 pts/77   Sl+  Apr01  51:44 ./zone oasis
+root     32570  2.4  0.3 574328 95896 pts/78   Sl+  Apr01  83:50 ./zone ecommons
+root     32586  2.2  0.3 576212 79160 pts/79   Sl+  Apr01  76:06 ./zone paw
+root     32595  0.9  0.1 555436 28936 pts/81   Sl+  Apr01  33:29 ./zone kerraridge
+root     32599  0.9  0.1 491936 25604 pts/80   Sl+  Apr01  32:41 ./zone kedge
+root     32605  1.3  0.1 499392 28612 pts/83   Sl+  Apr01  45:26 ./zone warrens
+root     32606  1.1  0.1 562172 27760 pts/82   Sl+  Apr01  38:38 ./zone qcat
+root     32621  2.0  0.1 500580 34872 pts/84   Sl+  Apr01  68:56 ./zone stonebrunt
+root     32623  0.8  0.1 561424 34128 pts/85   Sl+  Apr01  27:13 ./zone arena
+root     32647  0.9  0.4 490388 118272 pts/87  Sl+  Apr01  31:19 ./zone guildhall
+root     32653  3.1  1.6 824192 401464 pts/88  Sl+  Apr01 106:46 ./zone nexus
+root     32667  1.5  0.6 562316 161668 pts/90  Sl+  Apr01  52:15 ./zone miragulchamber
+root     32669  2.9  0.3 660332 92372 pts/91   Sl+  Apr01 100:05 ./zone westwastelands
+root     32678  2.0  0.3 583996 85948 pts/89   Sl+  Apr01  68:19 ./zone rujb
+root     32688  1.1  0.1 492568 28824 pts/92   Sl+  Apr01  37:08 ./zone bothunder

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1437/trunk/EQEmuServer/EQEmuLoginServer/login_util
+END
+tblLoginServerAccounts.sql
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/842/trunk/EQEmuServer/EQEmuLoginServer/login_util/tblLoginServerAccounts.sql
+END
+tblServerListType.sql
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/842/trunk/EQEmuServer/EQEmuLoginServer/login_util/tblServerListType.sql
+END
+login.ini
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1437/trunk/EQEmuServer/EQEmuLoginServer/login_util/login.ini
+END
+EQEmuLoginServerDBInstall.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1437/trunk/EQEmuServer/EQEmuLoginServer/login_util/EQEmuLoginServerDBInstall.sql
+END
+login_opcodes.conf
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/777/trunk/EQEmuServer/EQEmuLoginServer/login_util/login_opcodes.conf
+END
+tblWorldServerRegistration.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1436/trunk/EQEmuServer/EQEmuLoginServer/login_util/tblWorldServerRegistration.sql
+END
+tblServerAdminRegistration.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/842/trunk/EQEmuServer/EQEmuLoginServer/login_util/tblServerAdminRegistration.sql
+END
+EQEmuLoginServerPostgreDBInstall.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1437/trunk/EQEmuServer/EQEmuLoginServer/login_util/EQEmuLoginServerPostgreDBInstall.sql
+END
+login_opcodes_sod.conf
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1299/trunk/EQEmuServer/EQEmuLoginServer/login_util/login_opcodes_sod.conf
+END

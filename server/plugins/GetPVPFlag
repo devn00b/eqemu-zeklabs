@@ -1,0 +1,594 @@
+if ( $dropball == 2 || defined $qglobals->{arena_ball_owner} )
+$charidball = $qglobals->{arena_ball_owner};
+$name = $client->GetName();
+$x = $client->GetX();
+$y = $client->GetY();
+$z = $client->GetZ();
+$h = $client->GetHeading();
+$client->DelGlobal("arena_hill_allowed");
+$client->SetGlobal("arena_ball_disable","1",5,"M15");
+$client->NukeItem(52760);
+$client = $entity_list->GetClientByCharID($cur);
+my @newchar = ( $client->GetName() . "(" . $client->GetLevel() . ")" );
+$client = $entity_list->GetClientByCharID($cur);
+my @newchar = ( $client->CharacterID() );
+          $member = $group->GetMember($count);
+		$isdisabled = $member->CheckGlobal("arena_instance_disable");
+			return $member->GetName();
+          $member = $group->GetMember($count);
+		$countval = $member->GetGlobal("arena_instance_count");
+		$member->SetGlobal("arena_instance_count",$countval,5,"H6");
+					$member->Message(13,"You have reached the maximum times you can enter an instanced arena match ($maxInstanceCount), you will now be on a 6 hour cooldown (if you decline you will not be able to re-enter).");
+					$member->SetGlobal("arena_instance_disable","1",5,"H6");
+					$member->Message(13,"Accepted into queue, match number $countval of $maxInstanceCount allowed in a 6 hour period.");
+if ( !defined $curClient || !defined $curClient->GetGroup() )
+my $group = $curClient->GetGroup();
+          $member = $group->GetMember($count);
+	  if ( defined $member && $member->CharacterID() != $curClient->CharacterID() )
+		$isPlayerOn = plugin::hasArenaPlayer(\@groupListArray, $member->CharacterID());
+		$charName = $member->GetName();
+          $member = $group->GetMember($count);
+		$lvl = $member->GetLevel();
+          $member = $group->GetMember($count);
+$origclient = $entity_list->GetClientByCharID($charid);
+$group1 = $entity_list->GetGroupByClient($origclient);
+$client->Message(13,"[Arena-GroupVersus] You have no group!");
+				$client = $entity_list->GetClientByCharID($cur);
+				if ( defined $client && $client->GetLevel() == $origclient->GetLevel() && ( $client->GuildID() != $origclient->GuildID() || $client->GuildID() == 4294967295 || $origclient->GuildID() == 4294967295  ) )
+				$group2 = $entity_list->GetGroupByClient($client);
+					$diff = $avgLvlGroup2 - $avgLvlGroup1;
+						$diff *= -1;
+						return $client->CharacterID();
+$origclient->Message(13,"[GroupVGroup Arena] No opponent is available at this time.");
+$origclient = $entity_list->GetClientByCharID($charid);
+$client = $entity_list->GetClientByCharID($cur);
+if ( defined $client && $client->GetLevel() == $origclient->GetLevel() && ( $client->GuildID() != $origclient->GuildID() || $client->GuildID() == 4294967295 || $origclient->GuildID() == 4294967295  ) )
+return $client->CharacterID();
+$origclient->Message(13,"[1V1 Arena] No opponent is available at this time.");
+$origclient = $entity_list->GetClientByCharID($charid);
+$client = $entity_list->GetClientByCharID($cur);
+if ( defined $client && $client->GetLevel() == $origclient->GetLevel() && ( $client->GuildID() != $origclient->GuildID() || $client->GuildID() == 4294967295 || $origclient->GuildID() == 4294967295  ) )
+$otherName = $client->GetName();
+$myName = $origclient->GetName();
+return $client->CharacterID();
+$otherName = $secondClient->GetName();
+$myName = $firstClient->GetName();
+		@player1Loc = (72.3,-2476.3,3.8,192.6);
+		@player2Loc = (-471.1,-2473.3,3.8,63.2);
+		@player1Loc = (447.4, -386.0, 3.8, 0.2);
+		@player1Loc = (146.7, -93.0, 3.8, 243.2);
+		@player2Loc = (-281.1, -259.2, 3.8, 25.5);
+		@player1Loc = (14.8, -681.3, 2.5, 255.1);
+		@player2Loc = (14.5, 1646.8, -66.5, 131.0);
+		@player1Loc = (-237.5, 603.7, -81.5, 192.8);
+		@player2Loc = (-432.1, 603.3, -90.0, 63.8);
+		@player1Loc = (-897.0, 108.8, 509.2, 156.9);
+		@player2Loc = (-987.9, 15.6, 511.9, 28.1);
+		@player1Loc = (-179.9, -847.0, -175.5, 191.8);
+		@player2Loc = (-322.2, -848.7, -175.5, 64.9);
+	quest::we(13,"[Arena-GroupVersus] Two groups have been chosen!  Lead by $myName and $otherName in $longname!");
+	$firstClient->Message(13,"Your opponent group has been established, lead by $otherName in $longname!");
+	$secondClient->Message(13,"Your opponent group has been established, lead by $myName!");
+	quest::we(13,"[Arena-1vs1] Two opponents have been chosen!  $myName versus $otherName in $longname!");
+	$firstClient->Message(13,"Your opponent has been established as $otherName in $longname!");
+	$secondClient->Message(13,"Your opponent has been established as $myName!");
+$instid = $firstClient->CreateInstance($zone,1,1800);
+$firstClient->Message(13,"Instances are currently unavailable!");
+$secondClient->Message(13,"Instances are currently unavailable!");
+$firstClient->BuffFadeAll();
+$secondClient->BuffFadeAll();
+$firstClient->SetHP($firstClient->GetMaxHP());
+$secondClient->SetHP($client->GetMaxHP());
+$firstClient->SetMana($firstClient->GetMaxMana());
+$secondClient->SetMana($client->GetMaxMana());
+$firstClient->AddToInstance($instid); 
+$secondClient->AddToInstance($instid); 
+$firstClient->SetGlobal("arenamatch_instance", $instid, 5, "M30");
+$secondClient->SetGlobal("arenamatch_instance", $instid, 5, "M30");
+$firstClient->SetGlobal("notranslocateallowed", "1", 5, "M20");
+$firstClient->SetGlobal("noteleportallowed", "1", 5, "M20");
+$firstClient->SetGlobal("nogateallowed", "1", 5, "M20");
+$secondClient->SetGlobal("notranslocateallowed", "1", 5, "M20");
+$secondClient->SetGlobal("noteleportallowed", "1", 5, "M20");
+$secondClient->SetGlobal("nogateallowed", "1", 5, "M20");
+$firstClient->DelGlobal("arenamatch_opponentgroup");
+$secondClient->DelGlobal("arenamatch_opponentgroup");
+$firstClient->DelGlobal("arenamatch_opponentgroupcount");
+$secondClient->DelGlobal("arenamatch_opponentgroupcount");
+$firstClient->SetGlobal("arenamatch_opponent", $secondClient->CharacterID(), 5, "M30");
+$secondClient->SetGlobal("arenamatch_opponent", $firstClient->CharacterID(), 5, "M30");
+$firstClient->SetGlobal("arenamatch_opponentgroup", $group2->GetID(), 5, "M30");
+$secondClient->SetGlobal("arenamatch_opponentgroup", $group1->GetID(), 5, "M30");
+$firstClient->SetGlobal("arenamatch_opponentgroupcount", $groupcount, 5, "M30");
+$secondClient->SetGlobal("arenamatch_opponentgroupcount", $groupcount, 5, "M30");
+		  $member = $group1->GetMember($count);
+				$member->SetGlobal("arenamatch_opponentgroupcount", $groupcount, 5, "M30");
+				$member->SetGlobal("arenamatch_opponentgroup", $group2->GetID(), 5, "M30");
+				$member->SetGlobal("arenamatch_opponent", $secondClient->CharacterID(), 5, "M30");
+				$member->SetGlobal("notranslocateallowed", "1", 5, "M20");
+				$member->SetGlobal("noteleportallowed", "1", 5, "M20");
+				$member->SetGlobal("nogateallowed", "1", 5, "M20");
+				$member->AddToInstance($instid); 
+				$member->BuffFadeAll();
+				$member->SetHP($member->GetMaxHP());
+				$member->SetMana($member->GetMaxMana());
+				$member->SetGlobal("arenamatch_instance", $instid, 5, "M30");
+				$member->MovePCInstance($rndZoneID,$instid, $p1x, $p1y, $p1z, $p1h);
+		  $member = $group2->GetMember($count);
+				$member->SetGlobal("arenamatch_opponentgroupcount", $groupcount, 5, "M30");
+				$member->SetGlobal("arenamatch_opponentgroup", $group1->GetID(), 5, "M30");
+				$member->SetGlobal("arenamatch_opponent", $firstClient->CharacterID(), 5, "M30");
+				$member->SetGlobal("notranslocateallowed", "1", 5, "M20");
+				$member->SetGlobal("noteleportallowed", "1", 5, "M20");
+				$member->SetGlobal("nogateallowed", "1", 5, "M20");
+				$member->AddToInstance($instid); 
+				$member->BuffFadeAll();
+				$member->SetHP($member->GetMaxHP());
+				$member->SetMana($member->GetMaxMana());
+				$member->SetGlobal("arenamatch_instance", $instid, 5, "M30");
+				$member->MovePCInstance($rndZoneID,$instid, $p2x, $p2y, $p2z, $p2h);
+$firstClient->MovePCInstance($rndZoneID,$instid, $p1x, $p1y, $p1z, $p1h);
+$secondClient->MovePCInstance($rndZoneID,$instid, $p2x, $p2y, $p2z, $p2h);
+	$opponent = $qglobals->{arenamatch_opponent};
+	$instid = $qglobals->{arenamatch_instance};
+	$opponentgroup = $qglobals->{arenamatch_opponentgroup};
+	$deadgroup = $deadClient->GetGroup();
+		$newgroupid = $deadgroup->GetID();
+	$otherclient = $entity_list->GetClientByCharID($killedby_charid);
+	if ( defined $otherclient && ( $opponent == $otherclient->CharacterID() || $isgroupmatch == 1 ) )
+		$deadname = $deadClient->GetName();
+		$othername = $otherclient->GetName();
+				if ( $otherclient->GetLevel() < 30 )
+					#$otherclient->AddPVPPoints(4);
+					#$otherclient->Message(13,"You received 4 pvp points for the arena fight.");
+					#$otherclient->SummonItem(132487);
+					#$otherclient->SummonItem(132487);
+					#$otherclient->AddPVPPoints(10);
+					#$otherclient->Message(13,"You received 10 pvp points for the arena fight.");
+					#$otherclient->SummonItem(142842);
+					#$deadClient->AddPVPPoints(2);
+					#$deadClient->SummonItem(132487);
+					#$deadClient->Message(13,"You received 2 pvp points for the arena fight.");
+					quest::we(13,"[Arena-GroupVersus] $deadname has been defeated by $othername!");
+					quest::we(13,"[Arena-1vs1] $deadname has been defeated by $othername!");
+					quest::we(13,"[Arena-GroupVersus-NoCredit] $deadname has been defeated by $othername!");
+					quest::we(13,"[Arena-1vs1-NoCredit] $deadname has been defeated by $othername!");
+	if ( $member->GetPetID() > 0 )
+		my $npc = $entity_list->GetMobByID($member->GetPetID());
+			$npc->BuffFadeAll();
+			$npc->SetHP($npc->GetMaxHP());
+$opponent = $qglobals->{arenamatch_opponent};
+$groupcount = $qglobals->{arenamatch_opponentgroupcount};
+$groupid = $qglobals->{arenamatch_opponentgroup};
+$group1 = $client->GetGroup();
+$group2 = $entity_list->GetGroupByID($groupid);
+$opponentClient = $entity_list->GetClientByCharID($opponent);
+$client->DelGlobal("notranslocateallowed");
+$client->DelGlobal("nogateallowed");
+$client->DelGlobal("noteleportallowed");
+	my $charLevel = $client->GetLevel();
+	#lvl 25-35 mobs
+	#lvl 35-45 mobs
+	#lvl 45-55 mobs
+	#lvl 55-65 mobs
+$name = $client->GetName();
+for (my $xOffset=-$campWidth;$xOffset<$campWidth+1;$xOffset+=$cellSpacing)
+for (my $yOffset=-$campHeight;$yOffset<$campHeight+1;$yOffset+=$cellSpacing)
+if ( $bestZ < -999000 )
+$npcname = "CAMPGUARD-" . $npcid . "-" . ceil($newX) . "-" . ceil($newY);
+if ( $bestZ == -999999 )
+$canSee = $npc->CheckLoSToLoc($newX,$newY,$bestZ);
+		my $rcount = $hashref->{$k};
+					$client->SummonItem($k, $ItemHash{$r}[1], $ItemHash{$r}[2]);
+				$rcount--;
+		delete $hashref->{$k};
+        $itemid1=$client->GetItemIDAt($slot1);
+        $itemid1=$client->GetItemIDAt($slot1);
+        $itemid1=$client->GetItemIDAt($slot1);
+        $itemid1=$client->GetItemIDAt($slot1);
+        $itemid1=$client->GetItemIDAt($slot1);
+        $itemid1=$client->GetItemIDAt($slot1);
+	my $MobX = $npc->GetX();
+	my $MobY = $npc->GetY();
+	my $MobZ = $npc->GetZ();
+	my $MoBH = $npc->GetHeading();
+	$npc->SetEntityVariable(60, $MobX);	# Set X Base Integer
+	$npc->SetEntityVariable(61, $MobY); # Set Y Base Integer
+	$npc->SetEntityVariable(62, $MobZ); # Set Z Base Integer
+	$npc->SetEntityVariable(63, $MobH); # Set H Base Integer - Store for return
+	my $GetLeashX = $npc->GetEntityVariable(60);
+	my $GetLeashY = $npc->GetEntityVariable(61);
+	my $GetLeashZ = $npc->GetEntityVariable(62);
+	my $StoredHeading = $npc->GetEntityVariable(63);
+	my $MobX = $npc->GetX();
+	my $MobY = $npc->GetY();
+	my $MobZ = $npc->GetZ();
+	my $DifferenceX = $GetLeashX - $MobX;
+	my $DifferenceY = $GetLeashY - $MobY;
+	my $DifferenceZ = $GetLeashZ - $MobZ;
+	$npc->GMMove($GetLeashX, $GetLeashY, $GetLeashZ, $StoredHeading); #Returns back to original point if mob goes beyond the throttled integer range
+		return -1;
+			return -1;
+			return -1;
+# var - Access a quest-related game variable from within any context
+    return $entity_list->GetMobID(plugin::val('mobid'));
+    # Step back through the call stack until we get access to the main (non-plugin) variables
+# val - Shortcut that returns the read-only -value- of a quest-related game variable instead of a reference to it
+# setVal - Shortcut that sets a scalar quest-related game variable from within any context... works well with val()
+    if ((!defined($itemcount->{$req})) || ($itemcount->{$req} < $required{$req}))
+    if ((!defined($itemcount->{$req})) || ($itemcount->{$req} < $required{$req}))
+    if ($required{$req} < $itemcount->{$req})
+      $itemcount->{$req} -= $required{$req};
+      delete $itemcount->{$req};
+    $coin2 -= $coin1;
+#$client->Message(14,"Something drops at your feet: $x, $y.");
+quest::creategroundobject($rndItem, $client->GetX(), $client->GetY(), $client->GetZ(), $client->GetHeading(), 300000, 0, "akanon_race_playerflag");
+$diffx = $x - int($client->GetX());
+$diffy = $y - int($client->GetY());
+if ( $diffx < 0 ) { $diffx = -$diffx; }
+if ( $diffy < 0 ) { $diffy = -$diffy; }
+#$client->Message(14,"Something drops at your feet: $x, $y.");
+quest::creategroundobject($rndItem, $client->GetX(), $client->GetY(), $client->GetZ(), $client->GetHeading(), 300000, 0, "akanon_race_playerflag");
+        $hpregen = plugin::createstatusfield(0,$npc->GetMobHPRegen(),$teamid,$npcid,"hpregen");
+        $manaregen = plugin::createstatusfield(0,$npc->GetMobManaRegen(),$teamid,$npcid,"manaregen");
+        $levels = plugin::createstatusfield(0,$npc->GetLevel(),$teamid,$npcid,"level");
+        $ac = plugin::createstatusfield(0,$npc->GetAC(),$teamid,$npcid,"ac");
+	$hptext = plugin::createstatusfield($npc->GetHP(),$npc->GetMaxHP(),$teamid,$npcid,"hp");
+        $manatext = plugin::createstatusfield($npc->GetMana(),$npc->GetMaxMana(),$teamid,$npcid,"mana");
+	my $name = $npc->GetCleanName();
+	quest::popup("NPC Guard Status ($name - $npcid)","<c \"#479eab\">NPC Guard Card Bonuses</c><br>  <c \"#B8E6E6\">HP</c>: $hptext<br> <c \"#B8E6E6\">Mana</c>: $manatext<br> <c \"#B8E6E6\">HP Regen</c>: $hpregen<br><c \"#B8E6E6\">Mana Regen</c>: $manaregen<br> <c \"#B8E6E6\">AC</c>: $ac<br> <c \"#B8E6E6\">Level</c>: $levels<br>$spells<br>$omitspells",0,0,120);
+	if ( $npc->HasSpellList(1) ) {
+	if ( $npc->HasSpellList(2) ) {
+	if ( $npc->HasSpellList(3) ) {
+	if ( $npc->HasSpellList(4) ) {
+	if ( $npc->HasSpellList(5) ) {
+	if ( $npc->HasSpellList(6) ) {
+	if ( $npc->HasSpellList(7) ) {
+	if ( $npc->HasSpellList(8) ) {
+	if ( $npc->HasSpellList(9) ) {
+	if ( $npc->HasSpellList(10) ) {
+	if ( $npc->HasSpellList(1019) ) {
+	if ( $npc->HasSpellList(1020) ) {
+	if ( $npc->HasSpellList(1021) ) {
+	if ( $npc->HasSpellList(40) ) {
+	if ( $npc->HasSpellGroupOmit(1) ) {
+	if ( $npc->HasSpellGroupOmit(4) ) {
+	if ( $npc->HasSpellGroupOmit(59) ) {
+	my $npcid = $npc->GetNPCTypeID();
+	my $name = $client->GetName();
+	my $playerPVP = $client->GetPVPFlag();
+	if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+			my $spellShrink = $npc->HasSpell(345);
+if ( $npc->HasSpellList(1019) )
+if ( $npc->HasSpellList(1020) && $npc->HasSpellList(1021) )
+#tier 2 stand-alone
+if ( $npc->HasSpellList(1020) )
+#tier 3 stand-alone
+if ( $npc->HasSpellList(1021) )
+			my $spellShrink = $npc->HasSpell(345);
+if ( defined ($qglobals->{akanon_race_playerflag}) )
+$flag = $qglobals->{portflag};
+my $circleMisty = $npc->HasSpell(558);
+my $hasCircle = $npc->HasSpell(551);
+my $hasCircle = $npc->HasSpell(554);
+my $hasCircle = $npc->HasSpell(2020);
+my $hasCircle = $npc->HasSpell(1398);
+my $hasCircle = $npc->HasSpell(1440);
+my $hasCircle = $npc->HasSpell(550);
+my $hasCircle = $npc->HasSpell(555);
+my $hasCircle = $npc->HasSpell(556);
+my $hasCircle = $npc->HasSpell(1434);
+my $hasCircle = $npc->HasSpell(1517);
+my $hasCircle = $npc->HasSpell(552);
+my $hasCircle = $npc->HasSpell(557);
+my $hasCircle = $npc->HasSpell(553);
+my $hasCircle = $npc->HasSpell(1438);
+	my $npcid = $npc->GetNPCTypeID();
+	my $name = $client->GetName();
+	my $playerPVP = $client->GetPVPFlag();
+	my $playerGuild = $client->GuildID();
+	my $charID = $client->CharacterID();
+	if ( $client->Admin() > 80 )
+if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+$id = $client->GetID();
+$var -= 5;
+$var -= 1;
+	my $playerPVP = $client->GetPVPFlag();
+	my $playerGuild = $client->GuildID();
+	my $charID = $client->CharacterID();
+	if ( $client->Admin() > 80 )
+if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+$var -= 5;
+if ( $var > -1 ) {
+$var -= 5;
+if ( $var > -1 ) {
+	$x = $npc->GetX();
+	$y = $npc->GetY();
+	$z = $npc->GetZ();
+	quest::set_proximity($x - 25, $x + 25, $y - 25, $y + 25, $z - 5, $z + 5);
+	my $npcid = $npc->GetNPCTypeID();
+	quest::loadguardtype($teamid,$npc->GetNPCTypeID());
+	my $playerPVP = $client->GetPVPFlag();
+#if ( $client->CharacterID() == 2014 || $client->CharacterID() == 2030 || $client->CharacterID() == 2035 || $client->CharacterID() == 2036 || $client->CharacterID() == 2038 )
+#$npc->AddToHateList($client,1);
+#if ( $client->CharacterID() == 123 )
+#$grokmolflag = $qglobals->{grokmolflag};
+#$npc->DoAnim(61,0);
+#if ( ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) && $npc->CheckLoS($client) == 1 )
+if ( ( $guildID > 0 && $guildID == $client->GuildID() ) && $npc->CheckLoS($client) == 1 ) #check if on the proper team or an admin
+if ( $client->CharacterID() == $ownerID )
+$kingsalute = $qglobals->{kingsalute};
+$npc->DoAnim(62,0);
+elsif( $client->GuildRank() == 1 )
+$officersalute = $qglobals->{officersalute};
+$npc->DoAnim(67,0);
+$npc->FaceTarget($client);
+{ $npc->DoAnim(66,0); } else { $npc->DoAnim(29,0); }
+	my $npcid = $npc->GetNPCTypeID();
+	my $playerPVP = $client->GetPVPFlag();
+	my $name = $client->GetName();
+	if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+$flag = $qglobals->{$flagName};
+if ( defined ($qglobals->{akanon_race_playerflag}) )
+if ( defined($flag) && $flag == 1 && !$client->GetGM() )
+	my $guildCamp = quest::findcampteamid($client->GuildID());
+			$client->MovePC($zoneid,$x, $y, $z, 0);
+elsif ($text =~/Halas/i && ( $client->GuildID() == $teamHalas || $client->GetGM() ) ){
+$client->MovePC(29,171.7,191.9,29.8,192);
+elsif ($text =~/Freeport/i && ( $client->GuildID() == $teamFreeport || $client->GetGM() ) ){
+$client->MovePC(9,-52.1,-108,-10.2,130.9);
+elsif ($text =~/Felwithe/i && ( $client->GuildID() == $teamFelwithe || $client->GetGM() ) ){
+$client->MovePC(61,0,0,0,0);
+elsif ($text =~/Erudin/i && ( $client->GuildID() == $teamErudin || $client->GetGM() ) ){
+$client->MovePC(24,-340,-924,66.7,78);
+elsif ($text =~/Qeynos/i && ( $client->GuildID() == $teamQeynos  || $client->GetGM() ) ){
+$client->MovePC(1,-151.7,106,4.8,222.4);
+elsif ($text =~/Rivervale/i && ( $client->GuildID() == $teamRivervale || $client->GetGM() ) ){
+$client->MovePC(19,-163.2,44.2,1.0,80.2);
+elsif (($text =~/Tox Camp/i || $text =~/Toxxulia Camp/i || $text =~/Toxxulia Forest Camp/i) && ( $client->GuildID() == $toxCamp || $client->GetGM() ) ){
+$client->MovePC(38,1078.7,-980.1,-45.7,190.6);
+elsif ($text =~/Greater Faydark Camp/i && ( $client->GuildID() == $gfayCamp || $client->GetGM() ) ){
+$client->MovePC(54,-1676.2,1667.4,69.2,230.9);
+elsif ($text =~/Lavastorm Camp/i && ( $client->GuildID() == $lavaCamp || $client->GetGM() ) ){
+$client->MovePC(27,-500.3,176.6,99.1,112.9);
+elsif ($text =~/Great Divide Camp/i && ( $client->GuildID() == $greatdivideCamp || $client->GetGM() ) ){
+$client->MovePC(118,-1904.9,-4001.5,39.4,233.4);
+if ( $client->GetPVPFlag() == 3 )
+$client->MovePC(30,-3446.7,2695.1,-36.5,191.2);
+elsif ( $client->GetPVPFlag() == 2 )
+$client->MovePC(30,-5462.1,-839.0,191.0,127.2);
+if ( $client->GetPVPFlag() == 3 )
+$client->MovePC(101,-849.8,658.3,-75.2,64.9);
+elsif ( $client->GetPVPFlag() == 2 )
+$client->MovePC(101,943.3,-292.3,-107.2,18.2);
+if ( $client->GetPVPFlag() == 3 )
+$client->MovePC(278,-733.4,628.8,3.8,82.5);
+elsif ( $client->GetPVPFlag() == 2 )
+$client->MovePC(278,315.8,-300.3,-14.2,47.8);
+if ( $client->GetPVPFlag() == 0 )
+	if ( $client->GuildID() == $teamFreeport )
+	if ( $client->GuildID() == $teamHalas )
+	if ( $client->GuildID() == $teamFelwithe )
+	if ( $client->GuildID() == $teamErudin )
+	if ( $client->GuildID() == $teamQeynos )
+	if ( $client->GuildID() == $teamRivervale )
+	if ( $client->GuildID() == $toxCamp )
+	if ( $client->GuildID() == $gfayCamp )
+	if ( $client->GuildID() == $lavaCamp )
+	if ( $client->GuildID() == $greatdivideCamp )
+		{ quest::movepc(175, -745.6, -1411, -60, 50); }
+		{ quest::movepc(175, 1461.4, -1674.3, -47.0, 63); }
+		{ quest::movepc(175, 1461.4, -1674.3, -47.0, 63); }
+		{ quest::movepc(175, -745.6, -1411, -60, 50); }
+		{ quest::movepc(175, 1761.8, 467.3, -30.7, 198); }
+		{ quest::movepc(175, 1542.7, 1850.4, -101.9, 152); }
+		{ quest::movepc(175, 1542.7, 1850.4, -101.9, 152); }
+		{ quest::movepc(175, 1761.8, 467.3, -30.7, 198); }
+		{ quest::movepc(175, 1761.8, 467.3, -30.7, 198); }
+		{ quest::movepc(175, 214.4, 1705.3, -24.5, 114); }
+		{ quest::movepc(175, 214.4, 1705.3, -24.5, 114); }
+		{ quest::movepc(175, -745.6, -1411, -60, 50); }
+	  #if ( $rnd == 0 ) { quest::movepc(175, -745.6, -1411, -60, 50); }
+	  #elsif ( $rnd == 1 ) { quest::movepc(175, 1461.4, -1674.3, -47.0, 63); }
+	 # elsif ( $rnd == 2 ) { quest::movepc(175, 1761.8, 467.3, -30.7, 198); }
+	 # elsif ( $rnd == 3 ) { quest::movepc(175, 1542.7, 1850.4, -101.9, 152); }
+	  #elsif ( $rnd == 4 ) { quest::movepc(175, 214.4, 1705.3, -24.5, 114); }
+        $hpregen = plugin::createstatusfield(0,$npc->GetMobHPRegen(),$teamid,$npcid,"hpregen");
+        $manaregen = plugin::createstatusfield(0,$npc->GetMobManaRegen(),$teamid,$npcid,"manaregen");
+        $levels = plugin::createstatusfield(0,$npc->GetLevel(),$teamid,$npcid,"level");
+        $ac = plugin::createstatusfield(0,$npc->GetAC(),$teamid,$npcid,"ac");
+	$hptext = plugin::createstatusfield($npc->GetHP(),$npc->GetMaxHP(),$teamid,$npcid,"hp");
+        $manatext = plugin::createstatusfield($npc->GetMana(),$npc->GetMaxMana(),$teamid,$npcid,"mana");
+	my $name = $npc->GetCleanName();
+	quest::popup("NPC Guard Status ($name - $npcid)","<c \"#479eab\">NPC Guard Card Bonuses</c><br>  <c \"#B8E6E6\">HP</c>: $hptext<br> <c \"#B8E6E6\">Mana</c>: $manatext<br> <c \"#B8E6E6\">HP Regen</c>: $hpregen<br><c \"#B8E6E6\">Mana Regen</c>: $manaregen<br> <c \"#B8E6E6\">AC</c>: $ac<br> <c \"#B8E6E6\">Level</c>: $levels<br>$spells",0,0,120);
+	if ( $npc->HasSpellList(1) ) {
+	if ( $npc->HasSpellList(2) ) {
+	if ( $npc->HasSpellList(3) ) {
+	if ( $npc->HasSpellList(4) ) {
+	if ( $npc->HasSpellList(5) ) {
+	if ( $npc->HasSpellList(6) ) {
+	if ( $npc->HasSpellList(7) ) {
+	if ( $npc->HasSpellList(8) ) {
+	if ( $npc->HasSpellList(9) ) {
+	if ( $npc->HasSpellList(10) ) {
+	if ( $npc->HasSpellList(1019) ) {
+	if ( $npc->HasSpellList(1020) ) {
+	if ( $npc->HasSpellList(1021) ) {
+	if ( $npc->HasSpellList(40) ) {
+	my $npcid = $npc->GetNPCTypeID();
+	my $name = $client->GetName();
+	my $playerPVP = $client->GetPVPFlag();
+	if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+			my $spellShrink = $npc->HasSpell(345);
+if ( $npc->HasSpellList(1019) )
+if ( $npc->HasSpellList(1020) && $npc->HasSpellList(1021) )
+#tier 2 stand-alone
+if ( $npc->HasSpellList(1020) )
+#tier 3 stand-alone
+if ( $npc->HasSpellList(1021) )
+			my $spellShrink = $npc->HasSpell(345);
+$flag = $qglobals->{portflag};
+my $circleMisty = $npc->HasSpell(558);
+my $hasCircle = $npc->HasSpell(551);
+my $hasCircle = $npc->HasSpell(554);
+my $hasCircle = $npc->HasSpell(2020);
+my $hasCircle = $npc->HasSpell(1398);
+my $hasCircle = $npc->HasSpell(1440);
+my $hasCircle = $npc->HasSpell(550);
+my $hasCircle = $npc->HasSpell(555);
+my $hasCircle = $npc->HasSpell(556);
+my $hasCircle = $npc->HasSpell(1434);
+my $hasCircle = $npc->HasSpell(1517);
+my $hasCircle = $npc->HasSpell(552);
+my $hasCircle = $npc->HasSpell(557);
+my $hasCircle = $npc->HasSpell(553);
+my $hasCircle = $npc->HasSpell(1438);
+	my $npcid = $npc->GetNPCTypeID();
+	my $name = $client->GetName();
+	my $playerPVP = $client->GetPVPFlag();
+	my $playerGuild = $client->GuildID();
+	my $charID = $client->CharacterID();
+	if ( $client->Admin() > 80 )
+if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+$id = $client->GetID();
+$var -= 5;
+$var -= 1;
+	my $playerPVP = $client->GetPVPFlag();
+	my $playerGuild = $client->GuildID();
+	my $charID = $client->CharacterID();
+	if ( $client->Admin() > 80 )
+if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+$var -= 5;
+if ( $var > -1 ) {
+$var -= 5;
+if ( $var > -1 ) {
+	$x = $npc->GetX();
+	$y = $npc->GetY();
+	$z = $npc->GetZ();
+	quest::set_proximity($x - 25, $x + 25, $y - 25, $y + 25, $z - 5, $z + 5);
+	my $npcid = $npc->GetNPCTypeID();
+	quest::loadguardtype($teamid,$npc->GetNPCTypeID());
+	my $playerPVP = $client->GetPVPFlag();
+#if ( $client->CharacterID() == 123 )
+#$grokmolflag = $qglobals->{grokmolflag};
+#$npc->DoAnim(61,0);
+if ( ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) && $npc->CheckLoS($client) == 1 ) #check if on the proper team or an admin
+if ( $client->CharacterID() == $ownerID )
+$kingsalute = $qglobals->{kingsalute};
+$npc->DoAnim(62,0);
+elsif( $client->GuildRank() == 1 )
+$officersalute = $qglobals->{officersalute};
+$npc->DoAnim(67,0);
+$npc->FaceTarget($client);
+{ $npc->DoAnim(66,0); } else { $npc->DoAnim(29,0); }
+	my $npcid = $npc->GetNPCTypeID();
+	my $playerPVP = $client->GetPVPFlag();
+	my $name = $client->GetName();
+	if ( $client->Admin() > 0 || ( $ownerTeam > 0 && $ownerTeam == $playerPVP ) ) #check if on the proper team or an admin
+$flag = $qglobals->{$flagName};
+if ( defined($flag) && $flag == 1 && !$client->GetGM() )
+	my $guildCamp = quest::findcampteamid($client->GuildID());
+			$client->MovePC($zoneid,$x, $y, $z, 0);
+elsif ($text =~/Freeport/i && ( $client->GetPVPFlag() == $teamFreeport || $client->GetGM() ) ){
+$client->MovePC(9,-52.1,-108,-10.2,130.9);
+elsif ($text =~/Felwithe/i && ( $client->GetPVPFlag() == $teamFelwithe || $client->GetGM() ) ){
+$client->MovePC(61,0,0,0,0);
+elsif ($text =~/Erudin/i && ( $client->GetPVPFlag() == $teamErudin || $client->GetGM() ) ){
+$client->MovePC(24,-340,-924,66.7,78);
+elsif ($text =~/Qeynos/i && ( $client->GetPVPFlag() == $teamQeynos  || $client->GetGM() ) ){
+$client->MovePC(1,-151.7,106,4.8,222.4);
+elsif ($text =~/Rivervale/i && ( $client->GetPVPFlag() == $teamRivervale || $client->GetGM() ) ){
+$client->MovePC(19,-163.2,44.2,1.0,80.2);
+elsif (($text =~/Tox Camp/i || $text =~/Toxxulia Camp/i || $text =~/Toxxulia Forest Camp/i) && ( $client->GetPVPFlag() == $toxCamp || $client->GetGM() ) ){
+$client->MovePC(38,1078.7,-980.1,-45.7,190.6);
+elsif ($text =~/Greater Faydark Camp/i && ( $client->GetPVPFlag() == $gfayCamp || $client->GetGM() ) ){
+$client->MovePC(54,-1676.2,1667.4,69.2,230.9);
+elsif ($text =~/Lavastorm Camp/i && ( $client->GetPVPFlag() == $lavaCamp || $client->GetGM() ) ){
+$client->MovePC(27,-500.3,176.6,99.1,112.9);
+elsif ($text =~/Great Divide Camp/i && ( $client->GetPVPFlag() == $greatdivideCamp || $client->GetGM() ) ){
+$client->MovePC(118,-1904.9,-4001.5,39.4,233.4);
+if ( $client->GetPVPFlag() == 3 )
+$client->MovePC(30,-3446.7,2695.1,-36.5,191.2);
+elsif ( $client->GetPVPFlag() == 2 )
+$client->MovePC(30,-5462.1,-839.0,191.0,127.2);
+if ( $client->GetPVPFlag() == 3 )
+$client->MovePC(101,-849.8,658.3,-75.2,64.9);
+elsif ( $client->GetPVPFlag() == 2 )
+$client->MovePC(101,943.3,-292.3,-107.2,18.2);
+if ( $client->GetPVPFlag() == 3 )
+$client->MovePC(278,-733.4,628.8,3.8,82.5);
+elsif ( $client->GetPVPFlag() == 2 )
+$client->MovePC(278,315.8,-300.3,-14.2,47.8);
+if ( $client->GetPVPFlag() == 0 )
+	if ( $client->GetPVPFlag() == $teamFreeport )
+	if ( $client->GetPVPFlag() == $teamFelwithe )
+	if ( $client->GetPVPFlag() == $teamErudin )
+	if ( $client->GetPVPFlag() == $teamQeynos )
+	if ( $client->GetPVPFlag() == $teamRivervale )
+	if ( $client->GetPVPFlag() == $toxCamp )
+	if ( $client->GetPVPFlag() == $gfayCamp )
+	if ( $client->GetPVPFlag() == $lavaCamp )
+	if ( $client->GetPVPFlag() == $greatdivideCamp )
+			delete $itemcount->{$i};
+				$itemcount->{$i} = 1;
+  quest::set_proximity($x - 100, $x + 100, $y - 100, $y + 100);
+		my $GuardX = $npc->GetGuardPointX();
+		my $GuardY = $npc->GetGuardPointY();
+		my $GuardZ = $npc->GetGuardPointZ();
+		my $CurDist = $npc->CalculateDistance($GuardX, $GuardY, $GuardZ);
+			#$npc->SetHP(33349);
+			my $CurH = $npc->GetHeading();
+			$npc->WipeHateList();
+			$npc->GMMove($GuardX,$GuardY,$GuardZ,$CurH);
+	@npclist = $entity_list->GetNPCList();
+		my $NPC_TYPEid = $cur->GetNPCTypeID(); 
+if ( $rnd2 > 0 ) { $npc->AddItem($rnd2,1); }
+$npc->AddItem($rnd,5);
+$npc->AddItem($rnd,1);
+	$client->AddPVPPoints(1);
+	$client->Message(15,"***You have been awarded a PVP point for leaving Nexus during the incentive period.");
+	if ( $client->GetLevel() < 30 )
+		$hasManaHPRegen = $client->FindBuff(2176); #spiritual light
+		$hasSoW = $client->FindBuff(1776); #spirit of wolf
+	elsif ( $client->GetLevel() < 40 )
+		$hasManaHPRegen = $client->FindBuff(2176); #spiritual light
+			$client->CastSpell(2176,$userid,10,0,0);
+		$hasSoW = $client->FindBuff(1776); #spirit of wolf
+	elsif ( $client->GetLevel() < 50 )
+		$hasManaHPRegen = $client->FindBuff(2177); #spiritual blessing
+		$hasSoW = $client->FindBuff(1776); #spirit of wolf
+	elsif ( $client->GetLevel() < 60 )
+		$hasManaHPRegen = $client->FindBuff(2177); #spiritual blessing
+		$hasSoW = $client->FindBuff(1776); #spirit of wolf
+		$hasManaHPRegen = $client->FindBuff(3460); #spiritual dominion
+		$hasSoW = $client->FindBuff(1776); #spirit of wolf
+				$playerclass = $client->GetClass();
+					if ( $client->HasItem($itemnum) == -1 && $client->HasItem(10909) == -1 && $client->HasItem(10910) == -1 )
+						$npc->AddItem($itemnum);
+					elsif ( $client->HasItem($itemnum) == -1 )
+						$npc->AddItem($itemnum);
+my $group = $client->GetGroup();
+			my $tmpclient = $group->GetMember($i);
+				$playerclass = $client->GetClass();
+					if ( $client->HasItem($itemnum) == -1 )
+						$npc->AddItem($itemnum);
+my $group = $client->GetGroup();
+			my $tmpclient = $group->GetMember($i);
+				$playerclass = $client->GetClass();
+					if ( $client->GetLevel() >= 55 && $client->HasItem($itemnum) == -1 )
+						$npc->AddItem($itemnum);
+my $group = $client->GetGroup();
+			my $tmpclient = $group->GetMember($i);
+if ( $npc->IsEngaged() == 0 )
+$name = $npc->GetCleanName();
+quest::creategroundobject($rndItem, $mob->GetX(), $mob->GetY(), $mob->GetZ(), $mob->GetHeading(), 300000, 0, "treasuregoblin_drops");
+$diffx = $x - int($mob->GetX());
+$diffy = $y - int($mob->GetY());
+if ( $diffx < 0 ) { $diffx = -$diffx; }
+if ( $diffy < 0 ) { $diffy = -$diffy; }
+quest::creategroundobject($rndItem, $mob->GetX(), $mob->GetY(), $mob->GetZ(), $mob->GetHeading(), 300000, 0, "treasuregoblin_drops");
+				$playerclass = $client->GetClass();
+					if ( $client->GetLevel() >= 55 && $client->HasItem($itemnum) == -1 )
+						$npc->AddItem($itemnum);
+my $group = $client->GetGroup();
+			my $tmpclient = $group->GetMember($i);

@@ -1,0 +1,773 @@
+use feature qw/switch/;
+
+sub addArenaPlayer {
+my @charListArray = @{$_[0]};
+my @charid = @{$_[1]};
+push @charListArray, @charid;
+return @charListArray;
+}
+
+sub getArenaPlayer {
+my @charListArray = @{$_[0]};
+
+my $last = pop @charListArray;
+return $last;
+}
+
+sub removeArenaPlayer {
+my @charListArray = @{$_[0]};
+my $charid = $_[1];
+
+my @newCharList = ( );
+for($i=0;$i<scalar @charListArray;$i++)
+{
+$cur = $charListArray[$i];
+if ( $cur != $charid )
+{
+my @newchar = ( $cur );
+push @newCharList, @newchar;
+}
+}
+
+return @newCharList;
+}
+
+sub hasArenaPlayer {
+my @charListArray = @{$_[0]};
+my $charid = $_[1];
+for($i=0;$i<scalar @charListArray;$i++)
+{
+$cur = $charListArray[$i];
+if ( $cur == $charid )
+{
+return 1;
+}
+}
+
+return 0;
+}
+
+sub getArenaList {
+my @charListArray = @{$_[0]};
+my $entity_list = $_[1];
+
+my @newCharList = ( );
+
+for($i=0;$i<scalar @charListArray;$i++)
+{
+$cur = $charListArray[$i];
+
+$client = $entity_list->GetClientByCharID($cur);
+if ( defined $client )
+{
+my @newchar = ( $client->GetName() . "(" . $client->GetLevel() . ")" );
+push @newCharList, @newchar;
+}
+}
+
+return @newCharList;
+}
+
+sub rebuildArenaList {
+my @charListArray = @{$_[0]};
+my $entity_list = $_[1];
+
+my @newCharList = ( );
+
+for($i=0;$i<scalar @charListArray;$i++)
+{
+$cur = $charListArray[$i];
+
+$client = $entity_list->GetClientByCharID($cur);
+if ( defined $client )
+{
+my @newchar = ( $client->CharacterID() );
+push @newCharList, @newchar;
+}
+}
+
+
+return @newCharList;
+}
+
+sub getGroupInstanceStatus {
+my $group = $_[0];
+
+if ( !defined $group )
+{
+return 0;
+}
+
+      if ($group) {
+        for ($count = 0; $count < 6; $count++) {
+          $member = $group->GetMember($count);
+	  if ( defined $member )
+	  {
+		$isdisabled = $member->CheckGlobal("arena_instance_disable");
+		if($isdisabled == 1)
+		{
+			return $member->GetName();
+		}
+	  }
+        }
+}
+
+return 0;
+}
+
+sub updateGroupInstanceStatus {
+my $group = $_[0];
+my $maxInstanceCount = $_[1];
+
+if ( !defined $group )
+{
+return 0;
+}
+
+      if ($group) {
+        for ($count = 0; $count < 6; $count++) {
+          $member = $group->GetMember($count);
+	  if ( defined $member )
+	  {
+		$countval = $member->GetGlobal("arena_instance_count");
+		$countval += 1;
+		$member->SetGlobal("arena_instance_count",$countval,5,"H6");
+				if ( $countval >= $maxInstanceCount )
+				{
+					$member->Message(13,"You have reached the maximum times you can enter an instanced arena match ($maxInstanceCount), you will now be on a 6 hour cooldown (if you decline you will not be able to re-enter).");
+					$member->SetGlobal("arena_instance_disable","1",5,"H6");
+				}
+				else
+				{
+					$member->Message(13,"Accepted into queue, match number $countval of $maxInstanceCount allowed in a 6 hour period.");
+				}
+	  }
+        }
+}
+
+return 0;
+}
+
+sub isPlayerInGroupQueued {
+my @groupListArray = @{$_[0]};
+my $curClient = $_[1];
+
+if ( !defined $curClient || !defined $curClient->GetGroup() )
+{
+return 0;
+}
+my $group = $curClient->GetGroup();
+
+      if ($group) {
+        for ($count = 0; $count < 6; $count++) {
+          $member = $group->GetMember($count);
+	  if ( defined $member && $member->CharacterID() != $curClient->CharacterID() )
+	  {
+		$isPlayerOn = plugin::hasArenaPlayer(\@groupListArray, $member->CharacterID());
+		$charName = $member->GetName();
+		if ( $isPlayerOn == 1 )
+		{
+			return 1;
+		}
+	  }
+	}
+       }
+return 0;
+}
+
+sub getGroupAverageLevel {
+my $group = $_[0];
+
+if ( !defined $group )
+{
+return 0;
+}
+
+my $result = 0;
+my $countres = 0;
+      if ($group) {
+        for ($count = 0; $count < 6; $count++) {
+          $member = $group->GetMember($count);
+	  if ( defined $member )
+	  {
+		$lvl = $member->GetLevel();
+		$result += $lvl;
+		$countres += 1;
+	  }
+        }
+}
+
+if ( $countres > 0 )
+{
+$result = int($result/$countres);
+}
+
+return $result;
+}
+
+sub getGroupActualCount {
+my $group = $_[0];
+
+if ( !defined $group )
+{
+return 0;
+}
+
+my $result = 0;
+      if ($group) {
+        for ($count = 0; $count < 6; $count++) {
+          $member = $group->GetMember($count);
+	  if ( defined $member )
+	  {
+		$result += 1;
+	  }
+        }
+}
+return $result;
+}
+
+sub findGroupArenaOpponent {
+my @charListArray = @{$_[0]};
+my $entity_list = $_[1];
+my $charid = $_[2];
+
+my $targetcharid = 0;
+$origclient = $entity_list->GetClientByCharID($charid);
+
+if ( !defined $origclient )
+{
+return 0;
+}
+$group1 = $entity_list->GetGroupByClient($origclient);
+
+if ( !defined $group1 )
+{
+$client->Message(13,"[Arena-GroupVersus] You have no group!");
+return 0;
+}
+
+$count1 = plugin::getGroupActualCount($group1);
+$avgLvlGroup1 = plugin::getGroupAverageLevel($group1);
+	for($i=0;$i<scalar @charListArray;$i++)
+	{
+		$cur = $charListArray[$i];
+
+		if ( $cur != $charid )
+		{
+				$client = $entity_list->GetClientByCharID($cur);
+				if ( defined $client && $client->GetLevel() == $origclient->GetLevel() && ( $client->GuildID() != $origclient->GuildID() || $client->GuildID() == 4294967295 || $origclient->GuildID() == 4294967295  ) )
+				{
+				$group2 = $entity_list->GetGroupByClient($client);
+
+				if ( defined $group2 )
+				{
+					$count2 = plugin::getGroupActualCount($group2);
+					$avgLvlGroup2 = plugin::getGroupAverageLevel($group2);
+					$diff = $avgLvlGroup2 - $avgLvlGroup1;
+					if ( $diff < 0 )
+					{
+						$diff *= -1;
+					}
+					if ( $count1 > 0 && $count2 == $count1 && $diff < 5 )
+					{
+						$success = plugin::sendPlayersToArena($entity_list,$origclient,$client,1,$group1,$group2,$count2);
+						if ( $success == 0 )
+						{
+						return 0;
+						}
+
+						return $client->CharacterID();
+					}
+				}
+			}
+		}
+
+	} #end for
+
+$origclient->Message(13,"[GroupVGroup Arena] No opponent is available at this time.");
+return 0;
+}
+
+
+sub findArenaOpponent {
+my @charListArray = @{$_[0]};
+my $entity_list = $_[1];
+my $charid = $_[2];
+
+my $targetcharid = 0;
+$origclient = $entity_list->GetClientByCharID($charid);
+
+if ( !defined $origclient )
+{
+return 0;
+}
+
+for($i=0;$i<scalar @charListArray;$i++)
+{
+$cur = $charListArray[$i];
+
+if ( $cur != $charid )
+{
+$client = $entity_list->GetClientByCharID($cur);
+if ( defined $client && $client->GetLevel() == $origclient->GetLevel() && ( $client->GuildID() != $origclient->GuildID() || $client->GuildID() == 4294967295 || $origclient->GuildID() == 4294967295  ) )
+{
+$success = plugin::sendPlayersToArena($entity_list.$origclient,$client,0);
+if ( $success == 0 )
+{
+return 0;
+}
+
+return $client->CharacterID();
+}
+}
+
+} #end for
+
+$origclient->Message(13,"[1V1 Arena] No opponent is available at this time.");
+return 0;
+}
+
+sub findRandomArenaOpponent {
+my @charListArray = @{$_[0]};
+my $entity_list = $_[1];
+my $charid = $_[2];
+
+my $count = scalar @charListArray;
+my $rnd = int(rand($count));
+
+my $targetcharid = 0;
+$origclient = $entity_list->GetClientByCharID($charid);
+
+if ( !defined $origclient )
+{
+return 0;
+}
+
+for($i=$rnd;$i<$count;$i++)
+{
+$cur = $charListArray[$i];
+
+if ( $cur != $charid )
+{
+$client = $entity_list->GetClientByCharID($cur);
+if ( defined $client && $client->GetLevel() == $origclient->GetLevel() && ( $client->GuildID() != $origclient->GuildID() || $client->GuildID() == 4294967295 || $origclient->GuildID() == 4294967295  ) )
+{
+$otherName = $client->GetName();
+$myName = $origclient->GetName();
+
+$success = plugin::sendPlayersToArena($entity_list,$origclient,$client,0);
+if ( $success == 0 )
+{
+return 0;
+}
+return $client->CharacterID();
+}
+}
+
+} #end for
+
+return 0;
+}
+
+sub sendPlayersToArena {
+my $entity_list = $_[0];
+my $firstClient = $_[1];
+my $secondClient = $_[2];
+my $sendGroup = $_[3];
+
+my $group1 = undef;
+my $group2 = undef;
+my $groupcount = 1;
+if ( $sendGroup == 1 )
+{
+	$group1 = $_[4];
+	$group2 = $_[5];
+	$groupcount = $_[6];
+}
+$otherName = $secondClient->GetName();
+$myName = $firstClient->GetName();
+
+#notify clients
+
+$zone = "arena";
+$longname = "Arena";
+$rndZoneID = quest::ChooseRandom(77,213,3,161,185);
+
+@player1Loc = undefined;
+@player2Loc = undefined;
+	given($rndZoneID){
+		when(213) {
+		#powar
+		$zone = "powar";
+		$longname = "Plane of War";
+		@player1Loc = (72.3,-2476.3,3.8,192.6);
+		@player2Loc = (-471.1,-2473.3,3.8,63.2);
+		}
+		when(77) {
+		#arena
+		$zone = "arena";
+		$longname = "Arena";
+		@player1Loc = (447.4, -386.0, 3.8, 0.2);
+		@player2Loc = (443.6, 290.1, 3.8, 125.1);
+		}
+		when(3) {
+		#qrg
+		$zone = "qrg";
+		$longname = "Surefall Glade";
+		@player1Loc = (146.7, -93.0, 3.8, 243.2);
+		@player2Loc = (-281.1, -259.2, 3.8, 25.5);
+		}
+		when(161) {
+		#netherbian
+		$zone = "netherbian";
+		$longname = "Netherbian Lair";
+		@player1Loc = (14.8, -681.3, 2.5, 255.1);
+		@player2Loc = (14.5, 1646.8, -66.5, 131.0);
+		}
+		when(185) {
+		#load2
+		$zone = "load2";
+		$longname = "Loading.. Please Wait";
+		$rndLoc = quest::ChooseRandom(1,2,3);
+		if ( $rndLoc == 1 )
+		{
+		@player1Loc = (-237.5, 603.7, -81.5, 192.8);
+		@player2Loc = (-432.1, 603.3, -90.0, 63.8);
+		}
+		elsif( $rndLoc == 2 )
+		{
+		@player1Loc = (-897.0, 108.8, 509.2, 156.9);
+		@player2Loc = (-987.9, 15.6, 511.9, 28.1);
+		}
+		else
+		{
+		@player1Loc = (-179.9, -847.0, -175.5, 191.8);
+		@player2Loc = (-322.2, -848.7, -175.5, 64.9);
+		}#end locs
+		}
+}
+
+$p1x = $player1Loc[0];
+$p1y = $player1Loc[1];
+$p1z = $player1Loc[2];
+$p1h = $player1Loc[3];
+
+$p2x = $player2Loc[0];
+$p2y = $player2Loc[1];
+$p2z = $player2Loc[2];
+$p2h = $player2Loc[3];
+
+if ( $sendGroup == 1 )
+{		  
+	quest::we(13,"[Arena-GroupVersus] Two groups have been chosen!  Lead by $myName and $otherName in $longname!");
+	$firstClient->Message(13,"Your opponent group has been established, lead by $otherName in $longname!");
+	$secondClient->Message(13,"Your opponent group has been established, lead by $myName!");
+}
+else
+{
+	quest::we(13,"[Arena-1vs1] Two opponents have been chosen!  $myName versus $otherName in $longname!");
+	$firstClient->Message(13,"Your opponent has been established as $otherName in $longname!");
+	$secondClient->Message(13,"Your opponent has been established as $myName!");
+}
+
+$instid = $firstClient->CreateInstance($zone,1,1800);
+if ( $instid < 1 )
+{
+$firstClient->Message(13,"Instances are currently unavailable!");
+$secondClient->Message(13,"Instances are currently unavailable!");
+return 0;
+}
+
+#remove buffs
+$firstClient->BuffFadeAll();
+$secondClient->BuffFadeAll();
+
+plugin::debuffPet($entity_list,$firstClient);
+plugin::debuffPet($entity_list,$secondClient);
+
+#reset stats
+$firstClient->SetHP($firstClient->GetMaxHP());
+$secondClient->SetHP($client->GetMaxHP());
+
+$firstClient->SetMana($firstClient->GetMaxMana());
+$secondClient->SetMana($client->GetMaxMana());
+
+$firstClient->AddToInstance($instid); 
+$secondClient->AddToInstance($instid); 
+
+$firstClient->SetGlobal("arenamatch_instance", $instid, 5, "M30");
+$secondClient->SetGlobal("arenamatch_instance", $instid, 5, "M30");
+
+$firstClient->SetGlobal("notranslocateallowed", "1", 5, "M20");
+$firstClient->SetGlobal("noteleportallowed", "1", 5, "M20");
+$firstClient->SetGlobal("nogateallowed", "1", 5, "M20");
+
+$secondClient->SetGlobal("notranslocateallowed", "1", 5, "M20");
+$secondClient->SetGlobal("noteleportallowed", "1", 5, "M20");
+$secondClient->SetGlobal("nogateallowed", "1", 5, "M20");
+
+$firstClient->DelGlobal("arenamatch_opponentgroup");
+$secondClient->DelGlobal("arenamatch_opponentgroup");
+
+$firstClient->DelGlobal("arenamatch_opponentgroupcount");
+$secondClient->DelGlobal("arenamatch_opponentgroupcount");
+
+$firstClient->SetGlobal("arenamatch_opponent", $secondClient->CharacterID(), 5, "M30");
+$secondClient->SetGlobal("arenamatch_opponent", $firstClient->CharacterID(), 5, "M30");
+
+if ( $sendGroup == 1 && defined $group1 && defined $group2 )
+{
+$firstClient->SetGlobal("arenamatch_opponentgroup", $group2->GetID(), 5, "M30");
+$secondClient->SetGlobal("arenamatch_opponentgroup", $group1->GetID(), 5, "M30");
+$firstClient->SetGlobal("arenamatch_opponentgroupcount", $groupcount, 5, "M30");
+$secondClient->SetGlobal("arenamatch_opponentgroupcount", $groupcount, 5, "M30");
+
+		for ($count = 0; $count < 6; $count++) {
+		  $member = $group1->GetMember($count);
+		  if ( defined $member )
+		  {
+				$member->SetGlobal("arenamatch_opponentgroupcount", $groupcount, 5, "M30");
+				$member->SetGlobal("arenamatch_opponentgroup", $group2->GetID(), 5, "M30");
+				$member->SetGlobal("arenamatch_opponent", $secondClient->CharacterID(), 5, "M30");
+
+				$member->SetGlobal("notranslocateallowed", "1", 5, "M20");
+				$member->SetGlobal("noteleportallowed", "1", 5, "M20");
+				$member->SetGlobal("nogateallowed", "1", 5, "M20");
+
+				$member->AddToInstance($instid); 
+				$member->BuffFadeAll();
+				plugin::debuffPet($entity_list,$member);
+				$member->SetHP($member->GetMaxHP());
+				$member->SetMana($member->GetMaxMana());
+				$member->SetGlobal("arenamatch_instance", $instid, 5, "M30");
+				$member->MovePCInstance($rndZoneID,$instid, $p1x, $p1y, $p1z, $p1h);
+		  }
+	  }
+		for ($count = 0; $count < 6; $count++) {
+		  $member = $group2->GetMember($count);
+		  if ( defined $member )
+		  {
+				$member->SetGlobal("arenamatch_opponentgroupcount", $groupcount, 5, "M30");
+				$member->SetGlobal("arenamatch_opponentgroup", $group1->GetID(), 5, "M30");
+				$member->SetGlobal("arenamatch_opponent", $firstClient->CharacterID(), 5, "M30");
+
+				$member->SetGlobal("notranslocateallowed", "1", 5, "M20");
+				$member->SetGlobal("noteleportallowed", "1", 5, "M20");
+				$member->SetGlobal("nogateallowed", "1", 5, "M20");
+
+				$member->AddToInstance($instid); 
+				$member->BuffFadeAll();
+				plugin::debuffPet($entity_list,$member);
+				$member->SetHP($member->GetMaxHP());
+				$member->SetMana($member->GetMaxMana());
+				$member->SetGlobal("arenamatch_instance", $instid, 5, "M30");
+				$member->MovePCInstance($rndZoneID,$instid, $p2x, $p2y, $p2z, $p2h);
+		  }
+	  }
+}
+$firstClient->MovePCInstance($rndZoneID,$instid, $p1x, $p1y, $p1z, $p1h);
+$secondClient->MovePCInstance($rndZoneID,$instid, $p2x, $p2y, $p2z, $p2h);
+return 1;
+}
+
+sub handleArenaDeath {
+my $deadClient = $_[0];
+my $killedby_charid = $_[1];
+my $legitkill = $_[2];
+my $zoneid = $_[3];
+my $instanceid = $_[4];
+my $entity_list = $_[5];
+
+	if ( $instanceid < 10000 )
+	{
+	#quest::ze(13,"instanceid less than 10000.");
+	return 0;
+	}
+
+	my $qglobals = plugin::var('qglobals');
+
+	$opponent = $qglobals->{arenamatch_opponent};
+	$instid = $qglobals->{arenamatch_instance};
+	$opponentgroup = $qglobals->{arenamatch_opponentgroup};
+	if ( !defined $opponent )
+	{
+		quest::ze(13,"No opponent found.");
+		return 0;
+	}
+
+	if ( $instid != $instanceid )
+	{
+		quest::ze(13,"Instance id's did not match: $instid versus $instanceid.");
+		return 0;
+	}
+
+	$isgroupmatch = 0;
+	$deadgroup = $deadClient->GetGroup();
+	if ( defined $deadgroup && defined $opponentgroup )
+	{
+		$newgroupid = $deadgroup->GetID();
+		if ( $opponentgroup == $newgroupid )
+		{
+			$isgroupmatch = 1;
+		}
+	}
+	$otherclient = $entity_list->GetClientByCharID($killedby_charid);
+	if ( defined $otherclient && ( $opponent == $otherclient->CharacterID() || $isgroupmatch == 1 ) )
+	{
+		$deadname = $deadClient->GetName();
+		$othername = $otherclient->GetName();
+			if ( $legitkill == 1 )
+			{
+				if ( $otherclient->GetLevel() < 30 )
+				{
+					#$otherclient->AddPVPPoints(4);
+					#$otherclient->Message(13,"You received 4 pvp points for the arena fight.");
+					#$otherclient->SummonItem(132487);
+					#$otherclient->SummonItem(132487);
+				}
+				else
+				{
+					#$otherclient->AddPVPPoints(10);
+					#$otherclient->Message(13,"You received 10 pvp points for the arena fight.");
+					#$otherclient->SummonItem(142842);
+				}
+					#$deadClient->AddPVPPoints(2);
+					#$deadClient->SummonItem(132487);
+					#$deadClient->Message(13,"You received 2 pvp points for the arena fight.");
+				if ( $isgroupmatch == 1 )
+				{
+					quest::we(13,"[Arena-GroupVersus] $deadname has been defeated by $othername!");
+				}
+				else
+				{
+					quest::we(13,"[Arena-1vs1] $deadname has been defeated by $othername!");
+					quest::signalwith(999642,5,0);
+				}
+			}
+			else
+			{
+				if ( $isgroupmatch == 1 )
+				{
+					quest::we(13,"[Arena-GroupVersus-NoCredit] $deadname has been defeated by $othername!");
+				}
+				else
+				{
+					quest::we(13,"[Arena-1vs1-NoCredit] $deadname has been defeated by $othername!");
+					quest::signalwith(999642,5,0);
+				}
+			}
+
+			if ( $isgroupmatch == 1 )
+			{
+				$countLeft = plugin::getGroupActualCount($deadgroup);
+				if ( $countLeft <= 1 )
+				{
+					quest::signalwith(999642,5,0);
+				}
+			}
+		return 1;
+	}
+
+return 0;
+}
+
+sub debuffPet
+{
+my $entity_list = $_[0];
+my $member = $_[1];
+
+
+	if ( $member->GetPetID() > 0 )
+	{
+		my $npc = $entity_list->GetMobByID($member->GetPetID());
+		if ( defined $npc )
+		{
+			$npc->BuffFadeAll();
+			$npc->SetHP($npc->GetMaxHP());
+		}
+	}
+}
+
+sub arePlayersReady
+{
+my $entity_list = $_[0];
+my $client = $_[1];
+my $instanceid = $_[2];
+my $zoneid = $_[3];
+
+if ( $instanceid < 10000 )
+{
+return 0;
+}
+
+my $qglobals = plugin::var('qglobals');
+
+$opponent = $qglobals->{arenamatch_opponent};
+$groupcount = $qglobals->{arenamatch_opponentgroupcount};
+$groupid = $qglobals->{arenamatch_opponentgroup};
+
+if ( defined $groupcount )
+{
+$group1 = $client->GetGroup();
+$group2 = $entity_list->GetGroupByID($groupid);
+
+$count1 = plugin::getGroupActualCount($group1);
+$count2 = plugin::getGroupActualCount($group2);
+
+if ( $count1 < $groupcount || $count2 < $groupcount )
+{
+quest::signalwith(999642,0,0);
+quest::signalwith(999642,1,5000);
+}
+else
+{
+quest::signalwith(999642,0,0);
+quest::signalwith(999642,2,5000);
+quest::signalwith(999642,3,55000);
+quest::signalwith(999642,4,65000);
+return 1;
+}
+
+return 0;
+}
+
+$opponentClient = $entity_list->GetClientByCharID($opponent);
+
+if ( !defined $opponentClient )
+{
+quest::signalwith(999642,0,0);
+return 0;
+}
+
+if ( defined $opponentClient )
+{
+quest::signalwith(999642,0,0);
+quest::signalwith(999642,2,1000);
+quest::signalwith(999642,3,51000);
+quest::signalwith(999642,4,61000);
+return 1;
+}
+else
+{
+quest::signalwith(999642,1,1000);
+return 0;
+}
+
+return 0;
+}
+
+
+sub handleArenaLogout
+{
+my $client = $_[0];
+my $instanceid = $_[1];
+my $zoneid = $_[2];
+
+if ( $instanceid > 9999 )
+{
+$client->DelGlobal("notranslocateallowed");
+$client->DelGlobal("nogateallowed");
+$client->DelGlobal("noteleportallowed");
+}
+
+}

@@ -1,0 +1,24 @@
+sub EVENT_SAY
+{
+if ( $client->GetGM() == 0 )
+{
+return;
+}
+
+quest::setcitymode(1,1);
+quest::setcitymode(2,1);
+quest::setcitymode(3,1);
+quest::setcitymode(4,1);
+quest::setcitymode(7,1);
+quest::setcitymode(8,1);
+quest::setcitymode(21,1);
+quest::setcitymode(20,1);
+quest::setcitymode(19,1);
+quest::setcitymode(18,1);
+quest::setcitymode(17,1);
+quest::setcitymode(16,1);
+quest::setcitymode(15,1);
+quest::setcitymode(14,1);
+quest::setcitymode(13,1);
+quest::say("done");
+}

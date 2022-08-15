@@ -1,0 +1,36 @@
+################################### 
+
+#Zone: All (Global)               #                                              
+
+#Short Name:                      #                                                                  
+
+#Zone ID: 55                      #                                        
+
+###################################                                             
+
+#NPC Name: Priest_of_Discord      #                             
+
+#NPC ID: All                      #
+
+#Quest Status: Complete           #                                      
+
+###################################
+
+sub EVENT_SAY { 
+
+if($text=~/Hail/i){
+$tome = quest::saylink("Tome of Order and Discord");
+quest::say("Greetings $name, I cannot help you, you must go to Nexus to decide your fate.");
+}
+
+}
+
+sub EVENT_ITEM { 
+quest::say("Greetings $name, I cannot help you, you must go to Nexus to decide your fate.");#if(($item1=="18700" && $client->GetPVPFlag() != 5)){
+#	quest::say("I see you wish to join us in Discord! Welcome! By turning your back on the protection of Order you are now open to many more opportunities for glory and power. Remember that you can now be harmed by those who have also heard the call of Discord.");
+#	quest::pvpvalue("5");
+#	#quest::exp(100);
+#	$client->MovePC(22,-309.26,-1728.3,3.75,64.6);
+ }
+
+}

@@ -1,0 +1,40 @@
+sub EVENT_SAY {
+  if($text =~ /Hail/i) {
+  $loore = quest::saylink("lore");
+  $supercharge = quest::saylink("supercharge");
+  quest::say("Hello! $uname, Are you interested in upgrading Reefman's Ugly Broadsword ($supercharge)? Or Perhaps you want to hear some $loore about it?"); 
+  quest::doanim(15);
+
+}
+
+#  }
+
+if($text=~/lore/i) {
+quest::say("");
+quest::say("Reefmans Ugly Broadsword, it was nothing more than a middle step between common broadswords, and the greatness that was Reefman's Transcendent Broadsword. That was the final goal.");
+quest::say("");
+quest::say("Reefman once personally handed these items to his closest friends, so there are only a few in existence. The fact that you could afford one speaks volumes.");
+quest::say("");
+quest::say("With a little magic and the proper items they can be reverted to their former glory. But are you strong enough to $supercharge it. I have my doubts. But we shall see.");
+  }
+
+if($text=~/supercharge/i) {
+quest::say("All that I require is Reefmans Ugly Broadsword, Reefmans Necklace of Pure Awesomeness, a Flowing Black Silk Sash. I hear someone has the necklace here in bazaar, the rest is upto you.");
+  }
+
+}
+
+sub EVENT_ITEM {
+
+if (plugin::check_handin(\%itemcount, 142580 => 1) && plugin::check_handin(\%itemcount, 142156 => 1) && plugin::check_handin(\%itemcount, 1365 => 1)){ #### Reefmans Necklace of Pure Awesomeness, Reefmans broadsword, FBSS and get upgrade
+    quest::say("Magnificent!! My path to world domination is almost complete!!...err I'm sorry. Here you go Reefmans Transcendent Broadsword! Now If you dont mind I have...Things to do");
+    quest::ding();
+    quest::summonitem(142580);
+    quest::summonitem(142156);
+    quest::summonitem(1365);
+    quest::summonitem(142583);
+    $client->AddLevelBasedExp(95,51); ## 95% exp, upto level 51
+  }
+
+quest::say("Please, don't tell anyone about me....Thanks!");
+}

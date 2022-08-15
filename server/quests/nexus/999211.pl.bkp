@@ -1,0 +1,80 @@
+sub EVENT_SPAWN {
+if ( defined $qglobals{karanaportalopen} )
+{
+	quest::setglobal("karanaportalopen",0,3,"M2");
+}
+quest::stoptimer("zoneportal3min");
+quest::stoptimer("zoneportal2min");
+quest::stoptimer("zoneportal1min");
+quest::stoptimer("portalopen");
+
+quest::settimer("zoneportal3min",1);
+}
+
+sub EVENT_POPUPRESPONSE {
+
+if ( $client->GetPVPPoints() < 1 )
+{
+quest::say("I am afraid you have no pvp points to offer.");
+return;
+}
+if ( $popupid == 1 ) #sro
+{
+$client->SetPVPPoints($availpts-1);
+quest::say("Good luck $name!");
+quest::selfcast(542);
+$client->CastSpell(207,$userid,10,0,0);
+}
+}
+
+sub EVENT_SAY {
+$availpts = $client->GetPVPPoints();
+$purchaselink = quest::saylink("purchase travel for North Karana");
+if ($text=~/purchase travel for North Karana/i){
+quest::popup("Purchase Travel for North Karana","<c \"#479eab\">Purchase Travel for 1 PVP point to: </c><br>  <c \"#4fd613\">North Karana</c><br> <c \"#4fd613\">ARE YOU SURE?</c>",1,1,120);
+return;
+}
+
+if ( defined $qglobals{karanaportalopen} && $karanaportalopen == 1 )
+{
+if ($text=~/Hail/i){
+$saylink = quest::saylink("journey to North Karana");
+quest::say("Hello $name. I do not have much time to chat. I must concentrate my energy to help others with their travel.  If you wish to $saylink, tell me so."); 
+}
+elsif ($text=~/journey to North Karana/i){
+quest::say("Good luck $name!");
+quest::selfcast(542);
+$client->CastSpell(207,$userid,10,0,0);
+}
+}
+else
+{
+quest::say("Hello $name.  The portal is not yet open.  Please wait a few more minutes and hail me then.  However, for a PVP point I would be willing to expedite your travel, you may $purchaselink.");
+}
+
+}
+
+sub EVENT_TIMER {
+if ( $timer eq "zoneportal3min" ) {
+quest::stoptimer("zoneportal3min");
+quest::say("Three minutes remain until the North Karana portal are open, hail me at that time.");
+quest::settimer("zoneportal2min",60); # cycle one minute
+}
+elsif ( $timer eq "zoneportal2min" ) {
+quest::stoptimer("zoneportal2min");
+quest::say("Two  minutes remain until the North Karana portal is open, hail me at that time.");
+quest::settimer("zoneportal1min",60); # cycle one minute
+}
+elsif ( $timer eq "zoneportal1min" ) {
+quest::stoptimer("zoneportal1min");
+quest::say("One minute remains until the North Karana portal is open, hail me at that time.");
+quest::settimer("portalopen",60); # cycle one minute
+}
+elsif ( $timer eq "portalopen" ) {
+quest::stoptimer("portalopen");
+quest::setglobal("karanaportalopen",1,3,"M2"); #when the portal is open, global is set true for 2 min.
+quest::settimer("zoneportal3min",120); # wait 2 min before starting again
+quest::say("The portal is now open to North Karana for two minutes, hail me to be transported.");
+}
+
+} #end of sub

@@ -1,0 +1,142 @@
+sub EVENT_ATTACK {
+
+if($ulevel >45) {
+quest::say("Sorry $name, this zone is for characters upto level 45 only. So Back to nexus you go.");
+quest::movepc(152, 0, 0, 0, 0);
+return;
+}
+
+if($client->GetPVPCareerPoints() > 3500 ) {
+quest::movepc(152, 0, 0, 0, 0);
+quest::say("You have too many points $name So to nexus you go!");
+}
+}
+
+sub EVENT_DEATH {
+my $random_result = 0;
+my $random_result = int(rand(300));
+my $rndpts = 55;
+my $ptstogive = int(rand($rndpts));
+$devpet = $npc->GetPetType();
+
+if($devpet < 3 && $client->Admin() <1 )
+{
+$petkiller = '-10';
+$client->AddPVPPoints($petkiller);
+quest::say("You killed a pet so I took 10 points. Also flagged your account for further reivew.");
+
+return;
+}
+
+
+if($ulevel >45) {
+quest::say("Sorry $name, this zone is for characters upto level 45 only. So Back to nexus you go.");
+quest::movepc(152, 0, 0, 0, 0);
+return;
+}
+
+
+if($client->GetPVPCareerPoints() <3501) {
+#quest::say("hi! $random_result was rand");
+if($random_result <60){
+if($ptstogive eq '0') {
+$ptstogive = 1;
+}
+
+
+
+       $g = $client->GetGroup();
+
+                if(!$g)
+                {
+quest::say("-Solo Points- $name, you have earned $ptstogive!");
+$client->AddPVPPoints($ptstogive);
+return;
+
+                }
+                else
+                {
+                        for($i = 0; $i < 6; ++$i)
+                        {
+                                $c = $g->GetMember($i);
+
+                                if($c)
+                                {
+
+if($c->GetPVPCareerPoints() > 3501)
+{
+$name = $c->GetName();
+$c->MovePC(152, 0, 0, 0, 0);
+quest::say("$name had too many points. So to nexus they go!");
+#quest::say("Because of this cheat attempt, no points will be given to the rest of group.");
+return;
+}
+
+$name = $c->GetName();
+$ptstogivegrp = $ptstogive / 2;
+$roundedpts = int ( $ptstogivegrp + 0.5 ); 
+$c->AddPVPPoints($roundedpts);
+quest::say("-Group Points- $rounded points given to $name!");
+                                }
+                        }
+return;
+                }
+}
+quest::say("No Points for You");
+return;
+}
+
+if($client->GetPVPCareerPoints() > 3501 ) {
+quest::say("You have too many points ( $client-GetPVPCareerPoints() ) $name So to nexus you go!");
+
+quest::movepc(152, 0, 0, 0, 0);
+}
+
+
+}
+
+sub EVENT_HP {
+
+if($ulevel >45) {
+quest::say("Sorry $name, this zone is for characters upto level 45 only. So Back to nexus you go.");
+quest::movepc(152, 0, 0, 0, 0);
+return;
+}
+
+if($client->GetPVPCareerPoints() > 3501 ) {
+quest::movepc(152, 0, 0, 0, 0);
+quest::say("You have too many points $name So to nexus you go!");
+}
+
+}
+
+sub EVENT_LOOT {
+if($ulevel >45) {
+quest::say("Sorry $name, this zone is for characters upto level 45 only. So Back to nexus you go.");
+quest::movepc(152, 0, 0, 0, 0);
+return;
+}
+
+if($client->GetPVPCareerPoints() > 3501 ) {
+quest::movepc(152, 0, 0, 0, 0);
+quest::say("You have too many points $name So to nexus you go!");
+return;
+}
+}
+
+sub EVENT_SAY {
+if($ulevel >45) {
+quest::say("Sorry $name, this zone is for characters upto level 45 only. So Back to nexus you go.");
+quest::movepc(152, 0, 0, 0, 0);
+return;
+}
+
+if($client->GetPVPCareerPoints() > 3501 ) {
+quest::movepc(152, 0, 0, 0, 0);
+quest::say("You have too many points $name So to nexus you go!");
+}
+
+
+}
+
+

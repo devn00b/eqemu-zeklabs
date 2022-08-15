@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<server>
+<world>
+<shortname>zek</shortname>
+<longname>Zek [Teams/Guildwars]</longname>
+<!-- address has to be specified for minilogin to work -->
+<address>209.126.119.14</address>
+<localaddress>209.126.119.14</localaddress>
+<worldaddress>209.126.119.14</worldaddress>
+<worldip>209.126.119.14</worldip> 
+<tcp ip="209.126.119.14" port="9000" telnet="disabled"/>
+
+<!-- <locked/> -->
+
+<!-- Loginserver information. -->
+<loginserver1>
+<host>login.eqemulator.net</host>
+<port>5998</port>
+<account></account>
+<password></password>
+<eqemulogin>1</eqemulogin>
+</loginserver1>
+
+<loginserver2>
+<host>209.126.119.14</host>
+<port>5998</port>
+<account></account>
+<password></password>
+</loginserver2>
+
+<!-- Sets the shared key used by zone/launcher to connect to world -->
+<key>asdas123asdasd</key>
+</world>
+
+<!-- Database configuration, replaces db.ini -->
+<database>
+<host>localhost</host>
+<port>3306</port>
+<username></username>
+<password></password>
+<db></db>
+</database>
+
+<chatserver>
+        <host></host>
+        <port>9500</port>
+</chatserver>
+
+
+        <zones>
+                <defaultstatus>0</defaultstatus>
+                <ports low="7000" high="7300"/>
+        </zones>
+</server>

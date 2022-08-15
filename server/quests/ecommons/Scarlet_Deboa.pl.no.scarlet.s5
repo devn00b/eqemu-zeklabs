@@ -1,0 +1,120 @@
+sub EVENT_SAY {
+#$group = $client->GetGroup();
+$groupid = 0;
+$groupPick = 0;
+
+$guildnum = $client->GuildID();
+
+if ( $guildnum > 512 )
+{
+$guildnum = 0;
+}
+
+$charGlobalName = "charScarletSpawn" . $client->CharacterID();
+$guildGlobalName = "guildScarletSpawn" . $guildnum;
+
+if ( defined $client->GetGroup() )
+{
+$group = $client->GetGroup();
+$groupid = $group->GetID();
+$groupGlobalName = "groupScarletSpawn" . $groupid;
+
+if ( defined $qglobals{$groupGlobalName} ) {
+$groupPick = $qglobals{$groupGlobalName};
+}
+else
+{
+$getnewloc = quest::ChooseRandom(1,2,3,4,5,6,7,8);
+quest::setglobal($groupGlobalName,$getnewloc,7,"H6");
+$groupPick = $getnewloc;
+if ( $guildnum < 10000 && undef $qglobals{$guildGlobalName} ) {
+quest::setglobal($guildGlobalName,$getnewloc,7,"H6");
+}
+}
+}
+else
+{
+if ( $guildnum > 0 && $guildnum < 10000 )
+{
+if ( defined $qglobals{$guildGlobalName} ) {
+$groupPick = $qglobals{$guildGlobalName};
+}
+else
+{
+$getnewloc = quest::ChooseRandom(1,2,3,4,5,6,7,8);
+quest::setglobal($guildGlobalName,$getnewloc,7,"H6");
+$groupPick = $getnewloc;
+}
+}
+else
+{
+#no guild
+if ( defined $qglobals{$charGlobalName} ) {
+$groupPick = $qglobals{$charGlobalName};
+}
+else
+{
+$getnewloc = quest::ChooseRandom(1,2,3,4,5,6,7,8);
+quest::setglobal($charGlobalName,$getnewloc,5,"H6");
+$groupPick = $getnewloc;
+}
+}
+}
+
+  if ($text=~/Hail/i){
+   $visit = quest::saylink("visit");
+$groupflag = quest::saylink("remove group flag");
+$guildflag= quest::saylink("remove guild flag");
+$charflag = quest::saylink("remove char flag");
+
+  quest::say("Hello there, $name. We have scouted a new land, would you like to $visit there?  You may also $groupflag or $guildflag or $charflag.");
+  }
+elsif($text=~/remove group flag/i){
+quest::delglobal($groupGlobalName);
+quest::say("$name your group flag has been removed.");
+}
+elsif($text=~/remove guild flag/i){
+quest::delglobal($guildGlobalName);
+quest::say("$name your guild flag has been removed.");
+}
+elsif($text=~/remove char flag/i){
+quest::delglobal($charGlobalName);
+quest::say("$name your char flag has been removed.");
+}
+  elsif($text=~/visit/i)
+  {
+	  quest::say("Be Safe!");
+	  if ( $getnewloc == 1 )
+	  {
+		quest::movepc(175, -745.6, -1411, -60, 50); 
+	  }
+	  elsif ( $getnewloc == 2 )
+	  {
+		quest::movepc(175, 1461.4, -1674.3, -47.0, 63); 
+	  }
+	  elsif ( $getnewloc == 3 )
+	  {
+		quest::movepc(175, -745.6, -1411, -60, 50);
+	  }
+	  elsif ( $getnewloc == 4 )
+	  {
+		quest::movepc(175, 1761.8, 467.3, -30.7, 198);
+	  }
+	  elsif ( $getnewloc == 5 )
+	  {
+		quest::movepc(175, 1542.7, 1850.4, -101.9, 152);
+	  }
+	  elsif ( $getnewloc == 6 )
+	  {
+		quest::movepc(175, 1761.8, 467.3, -30.7, 198);
+	  }
+	  elsif ( $getnewloc == 7 )
+	  {
+		quest::movepc(175, 214.4, 1705.3, -24.5, 114);
+	  }
+	  else
+	  {
+		quest::movepc(175, -745.6, -1411, -60, 50);
+	  }
+  }
+}

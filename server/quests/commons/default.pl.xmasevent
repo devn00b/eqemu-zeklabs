@@ -1,0 +1,42 @@
+sub EVENT_DEATH {
+my $random_res = int(rand(1000));
+#my $random_res = 3;
+#my $random_spawn = 1;
+#int(rand(6));
+$spawn = int(rand(6));
+
+if ($random_res<7) {
+#quest::shout("got here! $spawn");
+
+if($spawn == 0){
+quest::shout2("Oh No!");
+quest::unique_spawn(127001,262,-144,-343,0.89,0)
+}
+
+if($spawn == 1){
+quest::shout2("Beware! You have doomed us!");
+quest::unique_spawn(127001,262,-748,2076,-42,0)
+}
+
+if($spawn == 2){
+quest::shout2("She comes!");
+quest::unique_spawn(127001,262,1993,2195,-0.72,0)
+}
+
+if($spawn == 3){
+quest::shout2("She will avenge me!");
+quest::unique_spawn(127001,262,1675,939,9.27,0)
+}
+if($spawn == 4){
+quest::shout2("She will squash you like bugs!");
+quest::unique_spawn(127001,262,1916,-1980,-37,0)
+}
+if($spawn == 5){
+quest::shout2("All prase her name!");
+quest::unique_spawn(127001,262,558,-1106,-0.72,0)
+}
+
+else{
+}
+}
+}

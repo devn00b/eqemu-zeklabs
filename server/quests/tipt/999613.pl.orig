@@ -1,0 +1,33 @@
+sub EVENT_SAY {
+my $careerptz = $client->GetPVPCareerPoints();
+
+if(($text=~/hail/i) ){
+quest::say("Greetings! Can you feel that? It feels like the veil between worlds is thin here. I wonder, if I open a [portal], where it would lead?");
+return;
+  }
+
+
+if(($text=~/portal/i) ) {
+#quest::say("There is no telling what has caused this energy to converge like this. What I do know is only those that are weak may enter. So, If you wish to see what is contained within just say '[I am weak]' and I will open a portal.");
+quest::set_zone_flag(174);
+quest::say("set your flag");
+}
+
+if(($text=~/portalx/i)  ) {
+#quest::say("There is no telling what has caused this energy to converge like this. What I do know is only those that are weak may enter. So, If you wish to see what is contained within just say '[I am weak]' and I will open a portal.");
+quest::clear_zone_flag(289);
+quest::say("unset your flag");
+}
+
+
+if(($text=~/i am weak/i) ){
+#quest::say("Well here you go weakling");
+#quest::movepc(156, -232, -3707, 196, 64.6);
+#quest::say("For testing, lets assume you got ported!");
+$pfag = quest::has_zone_flag(174);
+quest::say("Player flag testing: $pfag");
+}
+
+} 
+
+

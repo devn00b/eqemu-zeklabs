@@ -1,0 +1,98 @@
+sub EVENT_DEATH {
+#npc you want to spawn
+my $npctospawn = 127001;
+my $multispawn = 1;
+#############
+#
+# Multi NPC Spawn
+#
+#############
+
+if ( $multispawn == 1 ){
+$whospawn = int(rand(100));
+
+if ( $whospawn >50 ){
+$npctospawn = 127001; #Tunare
+}
+elsif ($whospawn <50){
+$npctospawn = 222014; #Avatar of Earth
+}else{
+}
+
+}
+
+#163075 The Cursed
+#127001 Tunare
+#221008 The Ice Lord
+#222014 Avatar of Earth
+
+#grid they are are on for pathing
+my $pathgrid = 136;
+
+#random max value. chance to spawn mob
+my $random_res = int(rand(900));
+
+#Test value to force it to spawn. Just uncomment.
+my $random_res = 3;
+
+#this gives us the spawn location and shout to go with it. Count starts at 0.
+$spawn = int(rand(6));
+
+####################################
+#
+# Spawn Locs go here
+#
+####################################
+#my $uno = "1667,540,-1.9";
+#my $dos = "3836,-790,-1.9";
+#my $tres = "3717,592,-0.8";
+#my $quatro = "3609,1203,-1.9";
+#my $cinco = "1281,1739,-2.0";
+#my $ces = "-667,1024,-1.9";
+
+
+if ($random_res<15) {
+#quest::shout("got here! $spawn");
+
+
+if($spawn == 0){
+quest::shout("Why tunare why?!");
+quest::unique_spawn($npctospawn,$pathgrid,2909,-931,-52.2,0)
+#quest::unique_spawn($npctospawn,$pathgrid,$spwn,0)
+}
+
+if($spawn == 1){
+quest::shout("She commands me to kill you all.");
+quest::unique_spawn($npctospawn,$pathgrid,2659,958,-52.3,0)
+#quest::unique_spawn($npctospawn,$pathgrid,$spwn,0)
+}
+
+if($spawn == 2){
+quest::shout("No! It cant be!!Tunare is here! Freport will burn!");
+quest::unique_spawn($npctospawn,$pathgrid,1228,160,-29,0)
+#quest::unique_spawn($npctospawn,$pathgrid,$spwn,0)
+}
+
+if($spawn == 3){
+quest::shout("RUN!!!! DEATH COMES!!!");
+quest::unique_spawn($npctospawn,$pathgrid,-177,-966,-45.5,0)
+#quest::unique_spawn($npctospawn,$pathgrid,$spwn,0)
+}
+
+if($spawn == 4){
+quest::shout("Retreat to freport! All is lost.");
+quest::unique_spawn($npctospawn,$pathgrid,1571,530,-69.9,0)
+#quest::unique_spawn($npctospawn,$pathgrid,$spwn,0)
+}
+
+if($spawn == 5){
+quest::shout("Tunare commands me to tell you,'You will be my slaves'");
+quest::unique_spawn($npctospawn,$pathgrid,3634,198,-52.2,0)
+#quest::unique_spawn($npctospawn,$pathgrid,$spwn,0)
+}
+
+else{
+#quest::shout($spawn);
+}
+}
+}

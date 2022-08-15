@@ -1,0 +1,22 @@
+sub EVENT_SPAWN { if ($moborigname=~/Fluffy/i) { quest::settimer(1,3); } }
+
+sub EVENT_TIMER { if ( $timer==1 ) { $npc->DoAnim(1,0); } }
+
+sub EVENT_COMBAT {
+	$npc->AddLootGroup(1);
+
+	if ($moborigname=~/Fluffy/i)
+	{
+	if ( $combat_state == 1 )
+	{
+	  quest::stoptimer(1);
+	}
+	else
+	{
+	  quest::settimer(1,3);
+	}
+	}
+}
+
+sub EVENT_WAYPOINT_ARRIVE { if ($moborigname=~/Fluffy/i) { quest::stoptimer(1); } }
+sub EVENT_WAYPOINT_DEPART { if ($moborigname=~/Fluffy/i) { quest::settimer(1,3); } }

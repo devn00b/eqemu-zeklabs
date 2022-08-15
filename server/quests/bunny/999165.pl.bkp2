@@ -1,0 +1,18 @@
+sub EVENT_SPAWN { quest::settimer("notify",60); }
+
+sub EVENT_TIMER {
+if ($timer eq "notify")
+{
+quest::say("Hello everyone!  Welcome to Bunny Island!  If you want to help citizens of Bunny Island see Wizbang Bobnober inside the housing to the south.  The hermit Draupner to the north-east of the front gate may have something for you to do as well.  Enjoy your stay, the portal to Norrath will be available soon.");
+$npc->DoAnim(29,0);
+}
+}
+
+
+sub EVENT_SAY {
+
+if ($text=~/hail/i) {
+quest::say("Hello $name!! At this time the portal to Norrath is not yet ready, do not worry I will let you know when it is is available!");
+}
+
+}

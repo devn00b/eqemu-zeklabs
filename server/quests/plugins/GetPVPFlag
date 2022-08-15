@@ -1,0 +1,194 @@
+				$npc->SetAppearance($SetAnimList{$SetAnimVal}); 
+	if ((!defined $hashref->{$req}) || ($hashref->{$req} != $required{$req})) {
+         if ($required{$req} < $hashref->{$req}) {
+             $hashref->{$req} -= $required{$req};
+             delete $hashref->{$req};
+        $itemid1=$client->GetItemIDAt($slot1);
+         $augid1=$client->GetAugmentIDAt($slot1, $i);
+        $itemid1=$client->GetItemIDAt($slot1);
+         $augid1=$client->GetAugmentIDAt($slot1, $i);
+        $itemid1=$client->GetItemIDAt($slot1);
+         $augid1=$client->GetAugmentIDAt($slot1, $i);
+        $itemid1=$client->GetItemIDAt($slot1);
+         $augid1=$client->GetAugmentIDAt($slot1, $i);
+        $itemid1=$client->GetItemIDAt($slot1);
+         $augid1=$client->GetAugmentIDAt($slot1, $i);
+        $itemid1=$client->GetItemIDAt($slot1);
+         $augid1=$client->GetAugmentIDAt($slot1, $i);
+1;# Default-actions.pl
+        "DEBUG: $zonesn (Non-Blackburrow) gnoll death!");
+	$angle_start = $angle_start + ($who->GetHeading() * 360.0 / 256.0);
+	$angle_end = $angle_end + ($who->GetHeading() * 360.0 / 256.0);
+		$angle_start -= 360.0;
+		$angle_end -= 360.0;
+			my $x_diff = $ent->GetX() - $who->GetX();
+			my $y_diff = $ent->GetY() - $who->GetY();
+			my $z_diff = $ent->GetZ() - $who->GetZ();
+				my $heading_to_target = $who->CalculateHeadingToTarget($ent->GetX(), $ent->GetY()) * 360.0 / 256.0;
+					$heading_to_target -= 360.0;
+# my @spawn2IDs = plugin::GetNPCsSpawn2GroupIDs(214000,-1000,1000,-500,500);   Return all spawn2 IDs in the zone for NPC ID 214000 in X -1000 to 1000 and Y -500 to 500 area
+# my @spawn2IDs = plugin::GetNPCsSpawn2GroupIDs(0,-1000,1000,-500,500,-100,100);   Return all spawn2 IDs for *ALL* NPCs in the zone for the specified X,Y area and now Z of -100 to 100
+my $dbh = DBI->connect("DBI:mysql:database=$db;host=$host", $user, $pass) || die "Could not create db handle\n";
+my   $spawn_group_ids = $dbh->prepare("SELECT * FROM spawnentry WHERE npcID=$_[0]");
+   $spawn_group_ids->execute(); #run the query the db to get list of spawn_group_ids using NPC ID that Spawn2 uses
+   while ($temp = $spawn_group_ids->fetch()) { # Use the spawn_group_ids to build and array of the NPCs spawn2 IDs.
+      $spawn2 = $dbh->prepare($spawn2_search);
+      $spawn2->execute();
+      $spawn2_id = $spawn2->fetch();
+   $spawn2 = $dbh->prepare($spawn2_search);
+   $spawn2->execute();
+   while ($spawn2_id = $spawn2->fetch()) {
+# my @spawn2IDs = plugin::GetSpawn2GroupsFromArray(\@array_of_npcs,-1000,1000,-500,500);
+# Which returns an array containing all spawn2 IDs of the NPCs in @array_of_npcs located in the X -1000 to 1000 and Y -500 to 500 area
+# var - Access a quest-related game variable from within any context
+    return $entity_list->GetMobID(plugin::val('mobid'));
+    # Step back through the call stack until we get access to the main (non-plugin) variables
+# val - Shortcut that returns the read-only -value- of a quest-related game variable instead of a reference to it
+# setVal - Shortcut that sets a scalar quest-related game variable from within any context... works well with val()
+    if ((!defined($itemcount->{$req})) || ($itemcount->{$req} < $required{$req}))
+    if ((!defined($itemcount->{$req})) || ($itemcount->{$req} < $required{$req}))
+    if ($required{$req} < $itemcount->{$req})
+      $itemcount->{$req} -= $required{$req};
+      delete $itemcount->{$req};
+    $coin2 -= $coin1;
+    for($r = 0; $r < $itemcount->{$k}; $r++)
+    delete $itemcount->{$k};
+	my $group = $cl->GetGroup();
+			my $cur = $group->GetMember($count);
+				if($cur->IsClient())
+					$cur = $cur->CastToClient();
+	$group = $cl->GetRaid();
+		my $gid = $group->GetGroup($cl->GetName());
+			my $cur = $group->GetMember($count);
+				my $c_gid = $group->GetGroup($cur->GetName());
+	my $group = $cl->GetGroup();
+		$group->CastGroupSpell($caster, $spell_id);
+	$group = $cl->GetRaid();
+		$group->CastGroupSpell($caster, $spell_id);
+			$ent->MovePC($zone_id, $x_dest, $y_dest, $z_dest, $heading_dest);
+			$ent->MovePC($zone_id, $instance_id, $x_dest, $y_dest, $z_dest, $heading_dest);
+			delete $itemcount->{$i};
+				$itemcount->{$i} = 1;
+	plugin::val('npc')->WearChange($_, plugin::val('npc')->GetTexture(), plugin::MobColor($_[0], $_[1], $_[2])) for (0..6);
+# NPC-related Helper Functions
+    $race = $mob->GetRace();
+	if ($npc->IsEngaged() == 1 || $NoEngageCheck)
+		my $GuardX = $npc->GetGuardPointX();
+		my $GuardY = $npc->GetGuardPointY();
+		my $GuardZ = $npc->GetGuardPointZ();
+		my $CurDist = $npc->CalculateDistance($GuardX, $GuardY, $GuardZ);
+			my $CurH = $npc->GetHeading();
+			$npc->GMMove($GuardX, $GuardY, $GuardZ, $CurH);
+			$npc->WipeHateList();
+# MaxXVariance - Sets the max X variance to travel 
+# MaxYVariance - Sets the max Y variance to travel 
+# MaxZVariance - Sets the max Z variance to travel.  This field is optional and default is 15.
+# LoSMobSize - Sets the size of the mob LoS check.  This field is optional and default is 5.
+	if ($npc->IsEngaged() != 1) {
+		my $CurX = $npc->GetX();
+		my $CurY = $npc->GetY();
+		#my $CurZ = $npc->GetZ();	#Not currently required by this plugin
+		my $OrigX = $npc->GetSpawnPointX();
+		my $OrigY = $npc->GetSpawnPointY();
+		my $OrigZ = $npc->GetSpawnPointZ();
+		my $GuardX = $npc->GetGuardPointX();
+		my $GuardY = $npc->GetGuardPointY();
+			my $RandomX = int(rand($MaxXVariance - 1)) + 1;
+			my $RandomY = int(rand($MaxYVariance - 1)) + 1;
+			my $NegX = $OrigX - $RandomX;
+			my $NegY = $OrigY - $RandomY;
+			my $NewZ = $npc->FindGroundZ($NewX,$NewY, 5) + 1;	#Add 1 to the new Z to prevent hopping issue when they arrive
+			if ($NewZ > -999999 && $OrigZ > ($NewZ - $MaxZVariance + 1) && $OrigZ < ($NewZ + $MaxZVariance - 1)) {
+				my $LoS_Check = $npc->CheckLoSToLoc($NewX, $NewY, $NewZ, $LoSMobSize);
+					quest::moveto($NewX, $NewY, $NewZ, -1, 1);
+	if ($npc->IsEngaged() != 1) {	
+		my $CurX = $npc->GetX();
+		my $CurY = $npc->GetY();
+		#my $CurZ = $npc->GetZ();	#Not currently required by this plugin
+		my $OrigX = $npc->GetSpawnPointX();
+		my $OrigY = $npc->GetSpawnPointY();
+		my $OrigZ = $npc->GetSpawnPointZ();
+		my $GuardX = $npc->GetGuardPointX();
+		my $GuardY = $npc->GetGuardPointY();
+			my $RandomX = int(rand($MaxXVariance - 1)) + 1;
+			my $RandomY = int(rand($MaxYVariance - 1)) + 1;
+			my $NegX = $OrigX - $RandomX;
+			my $NegY = $OrigY - $RandomY;
+					my $NewZ = $npc->FindGroundZ($NewX, $NewY, 5) + 1;	#Add 1 to the new Z to prevent hopping issue when they arrive
+					if ($NewZ > -999999 && $OrigZ > ($NewZ - 16) && $OrigZ < ($NewZ + 14)) {
+							my $LoS_Check = $npc->CheckLoSToLoc($NewX, $NewY + 2, $NewZ, 5);
+								quest::moveto($NewX, $NewY, $NewZ, -1, 1);
+							my $LoS_Check = $npc->CheckLoSToLoc($NewX, $NewY - 2, $NewZ, 5);
+								quest::moveto($NewX, $NewY, $NewZ, -1, 1);
+					quest::moveto($OrigX, $OrigY, $OrigZ, -1, 1);
+					my $NewZ = $npc->FindGroundZ($NewX, $OrigY, 5) + 1;	#Add 1 to the new Z to prevent hopping issue when they arrive
+					if ($NewZ > -999999 && $OrigZ > ($NewZ - 16) && $OrigZ < ($NewZ + 14)) {
+							my $LoS_Check = $npc->CheckLoSToLoc($NewX + 2, $OrigY, $NewZ, 5);
+								quest::moveto($NewX, $OrigY, $NewZ, -1, 1);
+							my $LoS_Check = $npc->CheckLoSToLoc($NewX - 2, $OrigY, $NewZ, 5);
+								quest::moveto($NewX, $OrigY, $NewZ, -1, 1);
+					quest::moveto($OrigX, $OrigY, $OrigZ, -1, 1);
+	if ($npc->IsEngaged() != 1) {
+		my $CurX = $npc->GetX();
+		my $CurY = $npc->GetY();
+		#my $CurZ = $npc->GetZ();	#Not currently required by this plugin
+		my $OrigX = $npc->GetSpawnPointX();
+		my $OrigY = $npc->GetSpawnPointY();
+		my $OrigZ = $npc->GetSpawnPointZ();
+		my $GuardX = $npc->GetGuardPointX();
+		my $GuardY = $npc->GetGuardPointY();
+			my $RandomX = int(rand($MaxXVariance - 1)) + 1;
+			my $RandomY = int(rand($MaxYVariance - 1)) + 1;
+			my $NegX = $OrigX - $RandomX;
+			my $NegY = $OrigY - $RandomY;
+			my $NewZ = $npc->FindGroundZ($NewX,$NewY, 5) + 1;	#Add 1 to the new Z to prevent hopping issue when they arrive
+			if ($NewZ > -999999 && $NewZ < $WaterSurfaceZ) {
+				my $LoS_Check = $npc->CheckLoSToLoc($NewX, $NewY, $SwimZ, 5);
+					#if($npc->GetFlyMode() != 1) {
+					#	$npc->SetFlyMode(1);
+					quest::moveto($NewX, $NewY, $SwimZ, -1, 1);
+		my $ReverseHeading = 256 - $Heading;
+			$ConvertAngle = $ConvertAngle - 270;
+		my $DestX = $CircleX + $Mob->GetX();
+		my $DestY = $CircleY + $Mob->GetY();
+		my $DestZ = $Mob->FindGroundZ($DestX, $DestY, $MaxZDiff);
+return 1;	#This line is required at the end of every plugin file in order to use it###Usage: plugin::RandomSay(chance(1-100), "message1","message2", etc..);
+###Usage: plugin::RandomEmote(chance(1-100), "message1","message2", etc..);
+###Usage: plugin::RandomGroupEmote(chance(1-100), "message1","message2", etc..);
+			my $NPCName = $npc->GetCleanName();	# Get the clean name of the NPC sending the message
+			my $ClientGroup = $client->GetGroup();	# Check if the client is in a group
+				my $GroupID = $ClientGroup->GetID();	# Get the Group ID for this client
+				my @clientlist = $entity_list->GetClientList();
+					$EntGroup = $ent->GetGroup();	# Check all clients for groups
+						$EntGroupID = $EntGroup->GetID();	#Check the group ID
+							$ent->Message($TextColor, "$NPCName $MyMessage"); # Message all members of the group
+				$client->Message($TextColor, "$NPCName $MyMessage");
+###Usage: plugin::RandomCloseEmote(chance(1-100), "message1","message2", etc..);
+	my $RandomResult = int(rand(($MaxRandom + 1) - $MinRandom)) + $MinRandom;
+	my $x_dist = $a->GetX() - $b->GetX();
+	my $y_dist = $a->GetY() - $b->GetY();
+	my $z_dist = $a->GetZ() - $b->GetZ();
+	my $x_dist = $a->GetX() - $b->GetX();
+	my $y_dist = $a->GetY() - $b->GetY();
+	my $x_dist = $a->GetX() - $b->GetX();
+	my $y_dist = $a->GetY() - $b->GetY();
+	my $z_dist = $a->GetZ() - $b->GetZ();
+	my $x_dist = $a->GetX() - $b->GetX();
+	my $y_dist = $a->GetY() - $b->GetY();
+	my $x_dist = $a->GetX() - $xd;
+	my $y_dist = $a->GetY() - $yd;
+	my $z_dist = $a->GetZ() - $zd;
+	my $x_dist = $a->GetX() - $xd;
+	my $y_dist = $a->GetY() - $yd;
+	my $x_dist = $a->GetX() - $xd;
+	my $y_dist = $a->GetY() - $yd;
+	my $z_dist = $a->GetZ() - $zd;
+	my $x_dist = $a->GetX() - $b->GetX();
+	my $y_dist = $a->GetY() - $b->GetY();
+	my $MyMessage = $_[0];	#Use the Message Supplied to the Function - "$_[0]" means to use the first argument given
+		#$client->Message($TextColor, "-");	#Spacer between Text messages to make them easier to read
+		my $NPCName = $npc->GetCleanName();	#Get the clean name of the NPC sending the message
+		$client->Message($TextColor, "$NPCName whispers, '$MyMessage'");	#Send a message to the player simulating a whisper directly to them from the NPC
+# Zone-related Helper Functions
+    if (plugin::val('$y') < -1200)
+# Returns a quick zone-appropriate greeting ("Tunare's blessings", "Bristlebane's favor", etc.)

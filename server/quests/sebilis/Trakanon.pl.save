@@ -1,0 +1,17 @@
+sub EVENT_COMBAT { if($combat_state == 1){ my $cur_target = $npc->GetTarget(); 
+if($cur_target) { my $target_name = $cur_target $cur_target->GetCleanName(); 
+if($target_name == 89168){ quest::say("Fucked");
+}
+quest::say("Time to die $target_name!");
+}
+}
+}
+
+
+
+
+
+
+
+
+

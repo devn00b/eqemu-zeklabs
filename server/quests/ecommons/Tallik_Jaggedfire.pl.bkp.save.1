@@ -1,0 +1,133 @@
+################## SPEECH CODE ##################
+
+sub EVENT_SAY {
+  if($text =~ /Hail/i) {
+
+  $interestedLink = quest::saylink("interested");
+quest::say("Hey there! Im here to trade your existing iksar planar loot to regular planar gear. Let me know if you're  $interestedLink");
+
+quest::doanim(15);
+  }
+
+if($text=~/interested/i) {
+    quest::say("Fantastic! All you need to do is hand me the Scaled Hierophant piece and I'll send one of my gnomes out to fetch your armor!");
+	quest::say("We also recently found a nice cache of Indicolite I will trade you for your Legionnaire Scaled armor.");
+  }
+
+}
+
+################### ITEM CODE ##################
+
+sub EVENT_ITEM {
+###
+# Iksar Shaman -> Non Shaman
+###
+#Arms
+  if (plugin::check_handin(\%itemcount, 5184 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4873);
+    quest::exp(1);
+  }
+#Boots
+ if (plugin::check_handin(\%itemcount, 5182 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+     quest::summonitem(4877);
+     quest::exp(1);
+   }
+#helm
+ if (plugin::check_handin(\%itemcount, 5188 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4871);
+    quest::exp(1);
+  }
+#bp
+ if (plugin::check_handin(\%itemcount, 5187 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4872);
+    quest::exp(1);
+  }
+#gloves
+ if (plugin::check_handin(\%itemcount, 5183=> 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4875);
+    quest::exp(1);
+  }
+#pants
+ if (plugin::check_handin(\%itemcount, 5185 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4876);
+    quest::exp(1);
+  }
+#bracers
+ if (plugin::check_handin(\%itemcount, 5186 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4874);
+    quest::exp(1);
+  }
+  
+###
+# Iksar Warrior -> Non Warrior
+###
+#helm
+  if (plugin::check_handin(\%itemcount, 5174 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4911);
+    quest::exp(1);
+  }
+#bp
+ if (plugin::check_handin(\%itemcount, 5175 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4912);
+    quest::exp(1);
+  }
+#arms
+ if (plugin::check_handin(\%itemcount, 5177 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4913);
+    quest::exp(1);
+  }
+#wrist
+ if (plugin::check_handin(\%itemcount, 5178 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4914);
+    quest::exp(1);
+  }
+#gloves
+ if (plugin::check_handin(\%itemcount, 5179 => 1)) {
+    quest::say("Mmmph!!..");
+    quest::ding();
+    quest::summonitem(4915);
+    quest::exp(1);
+  }
+#pants
+# if (plugin::check_handin(\%itemcount, 5180 => 1)) {
+#    quest::say("Mmmph!!..");
+#    quest::ding();
+#    quest::summonitem(4916);
+#    quest::exp(1);
+#  }
+#boots
+# if (plugin::check_handin(\%itemcount, 5181 => 1)) {
+#    quest::say("Mmmph!!..");
+#    quest::ding();
+#    quest::summonitem(4917);
+#    quest::exp(1);
+#  }
+  
+#  else {
+#     quest::say("Cha Ching!!");
+ #    plugin::return_items(\%itemcount);
+ # }
+}
+

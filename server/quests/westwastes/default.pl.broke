@@ -1,0 +1,65 @@
+sub EVENT_DEATH {
+#npc you want to spawn
+my $npctospawn = 163075;
+
+#grid they are are on for pathing
+my $pathgrid = 24;
+
+#random max value. chance to spawn mob
+my $random_res = int(rand(800));
+
+#Test value to force it to spawn. Just uncomment.
+my $random_res = 3;
+
+#this gives us the spawn location and shout to go with it. Count starts at 0.
+$spawn = int(rand(6));
+
+####################################
+#
+# Spawn Locs go here
+#
+####################################
+#$uno = "2610, 2380,-73.5";
+#$dos = "667,2645,-59.6";
+#$tres = "-321,2304,-76.8";
+#$quatro = "-54,-3474,-25";
+#$cinco = "-2913,-4086,-75.4";
+#$ces = "-4461,3526,-6.9";
+
+if ($random_res<7) {
+#quest::shout("got here! $spawn");
+
+
+if($spawn == 0){
+quest::shout2("Death comes for you!");
+quest::unique_spawn(163075,24,2610, 2380,-73.5,0)
+}
+
+if($spawn == 1){
+quest::shout2("The Cursed One will end the world!");
+quest::unique_spawn(163075,24,667,2645,-59.6,0)
+}
+
+if($spawn == 2){
+quest::shout2("No! It cant be!!! The Cursed One Returns!");
+quest::unique_spawn(163075,24,-321,2304,-76.8,0)
+}
+
+if($spawn == 3){
+quest::shout2("RUN!!!! DEATH COMES!!!");
+quest::unique_spawn(163075,24,-4461,3526,-6.9,0)
+}
+if($spawn == 4){
+quest::shout2("Kerafyrm save us!!!");
+quest::unique_spawn(163075,24,"-54,-3474,-25,0)
+}
+if($spawn == 5){
+quest::shout2("The end of the world approaches!");
+quest::unique_spawn(163075,24,-2913,-4086,-75.4,0)
+}
+
+else{
+#quest::shout($spawn);
+}
+}
+}

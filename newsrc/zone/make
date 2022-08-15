@@ -1,0 +1,55 @@
+make: Warning: File '../common/ruletypes.h' has modification time 24 s in the future
+mkdir -p .obj
+gcc -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated  -Wcomment -Wcast-align -Wl,-Map,zone.map -O2 -g -march=broadwell -pthread -pipe -D_GNU_SOURCE -DINVERSEXY -DFX -DZONE -DEQDEBUG=0 -DTCPN_DEBUG=1 -DCATCH_CRASH -DNO_PIDLOG -DSHAREMEM -DFIELD_ITEMS -DCOMBINED -DREVERSE_AGGRO -DAPP_OPCODE_SIZE=2 -Di386 -DEMBPERL -DEMBPERL_PLUGIN -DHAS_UNION_SEMUN -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing    -g -DNDEBUG  -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE  -c ../common/EQStream.cpp -o .obj/EQStream.o
+In file included from ../common/common_profile.h:22:0,
+                 from ../common/debug.h:93,
+                 from ../common/EQStream.cpp:18:
+../common/../zone/features.h:127:0: warning: "REVERSE_AGGRO" redefined
+ #define REVERSE_AGGRO
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../common/EQPacket.h:29:0,
+                 from ../common/EQStream.cpp:36:
+../common/emu_opcodes.h:45:20: warning: extra tokens at end of #ifdef directive
+ #ifdef LOGINCRYPTO && !defined(CHAT)
+                    ^
+In file included from ../common/EQStream.h:17:0,
+                 from ../common/EQStream.cpp:37:
+../common/../common/misc.h:30:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+ int print_stacktrace(char* execute="");
+                                      ^
+../common/EQStream.cpp: In member function ‘void EQStream::ProcessPacket(EQProtocolPacket*)’:
+../common/EQStream.cpp:426:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(NextSequencedSend > SequencedQueue.size()) {
+                        ^
+../common/EQStream.cpp:468:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(NextSequencedSend > SequencedQueue.size()) {
+                        ^
+../common/EQStream.cpp:516:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(retransmittimeout > RuleI(EQStream, RetransmitTimeoutMax))
+                         ^
+../common/EQStream.cpp: In member function ‘void EQStream::SequencedPush(EQProtocolPacket*)’:
+../common/EQStream.cpp:642:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(NextSequencedSend > SequencedQueue.size()) {
+                       ^
+../common/EQStream.cpp:654:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(NextSequencedSend > SequencedQueue.size()) {
+                       ^
+../common/EQStream.cpp: In member function ‘void EQStream::AckPackets(uint16)’:
+../common/EQStream.cpp:1224:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(NextSequencedSend > SequencedQueue.size()) {
+                       ^
+../common/EQStream.cpp:1261:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(NextSequencedSend > SequencedQueue.size()) {
+                        ^
+../common/EQStream.cpp: In member function ‘void EQStream::CheckTimeout(uint32, uint32)’:
+../common/EQStream.cpp:1403:9: warning: enumeration value ‘UNESTABLISHED’ not handled in switch [-Wswitch]
+   switch(orig_state) {
+         ^
+../common/EQStream.cpp: In member function ‘void EQStream::AdjustRates(uint32)’:
+../common/EQStream.cpp:1472:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (average_delta && (average_delta <= RuleI(EQStream, AverageDeltaMax))) {
+                                             ^
+make: *** Deleting file '.obj/EQStream.o'
+makefile.common:51: recipe for target '.obj/EQStream.o' failed
+make: *** [.obj/EQStream.o] Interrupt

@@ -1,0 +1,7 @@
+sub EVENT_SAY {
+
+if(($text=~/hail/i) ){
+$playflag = $client->GetPVPFlag();
+quest::say("Your flag is: $playflag");
+}
+}

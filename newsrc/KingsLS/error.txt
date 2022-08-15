@@ -1,0 +1,8 @@
+mkdir -p .obj
+gcc -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated  -Wcomment -Wcast-align -O2 -march=broadwell -g -pthread -pipe -DEQLAUNCH -DEQDEBUG=5 -D LOGINSERVER -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing    -g -DNDEBUG -c ../common/TCPConnection.cpp -o .obj/TCPConnection.o
+../common/TCPConnection.cpp: In member function ‘virtual void TCPConnection::ClearBuffers(bool)’:
+../common/TCPConnection.cpp:590:3: error: ‘mState’ was not declared in this scope
+   mState.unlock();
+   ^
+makefile.common:28: recipe for target '.obj/TCPConnection.o' failed
+make: *** [.obj/TCPConnection.o] Error 1

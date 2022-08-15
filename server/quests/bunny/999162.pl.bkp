@@ -1,0 +1,42 @@
+sub EVENT_SPAWN {
+
+my $max = 7;
+my $min = 1;
+my $rnd = int(rand($max)) + $min;
+quest::settimer(1,$rnd);
+quest::settimer("createloot",$rnd+5);
+}
+
+sub EVENT_TIMER {
+
+if ( $timer eq "1" ) { $npc->DoAnim(1,0); }
+if ( $timer eq "createloot" ) { quest::stoptimer("createloot"); $npc->AddLootGroup(4); }
+}
+
+sub EVENT_COMBAT {
+
+	if ( $combat_state == 1 )
+	{
+	  quest::stoptimer(1);
+	}
+	else
+	{
+		my $max = 7;
+		my $min = 1;
+		my $rnd = int(rand($max)) + $min;
+	  quest::settimer(1,$rnd);
+	}
+
+}
+
+sub EVENT_WAYPOINT_ARRIVE { quest::stoptimer(1); }
+sub EVENT_WAYPOINT_DEPART {
+my $max = 7;
+my $min = 1;
+my $rnd = int(rand($max)) + $min;
+quest::settimer(1,$rnd);
+}
+
+sub EVENT_DEATH {
+quest::stoptimer(1);
+}

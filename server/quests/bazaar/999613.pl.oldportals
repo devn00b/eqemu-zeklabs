@@ -1,0 +1,236 @@
+## This is devn00bs s5 point catch up zones entry point.
+## Goes on The Portal Master
+## Also using for ports to other locations I may use
+
+sub EVENT_SAY {
+
+##Setup quest vars.
+$devmax = quest::GetRule("Character:MaxLevel");
+
+##Disable for beta bash make it less than 2
+$betabash = 5;
+
+if ($betabash < 1)
+{
+quest::say("Sorry $name The point zones are disabled due to endless crying on the forums. We decided we have better things to do. Thank you crybabies.");
+return;
+}
+
+#got here so quest is enabled
+$careerptz = $client->GetPVPCareerPoints();
+
+if(($text=~/hail/i) && ($ulevel >10) ){
+quest::say("Greetings! Can you feel that? It feels like the veil between worlds is thin here. I wonder, if I open a [portal], where it would lead?");
+#if($devmax >40) {
+#quest::say(" ");
+#quest::say("This is amazing $name!!! I can sense another rift in the veil forming. I can sense some sort of [City] shrouded in mist. I sense great danger beyond. This requires you to be at least level 41 to enter.");
+#}
+return;
+  }
+
+#if($text=~/city/i && $ulevel >40 && $careerptz <4000){
+#quest::say("...I do hope you survive...for once...");
+#quest::movepc(90,-853.4,-0.6,3.1,63.6);
+#return;
+#}else{
+#quest::say("Sorry $name, but fuck off.");
+#}
+
+if($client->GetPVPCareerPoints() > 4499 or $ulevel<11 ){
+
+if($ulevel<11){
+quest::say("you are too low level $name, you are $ulevel, you need to be level 11. Sorry, you must try harder.");
+}
+#quest::say("I'm sorry $name, but $careerptz career points just makes you far to strong. Perhaps you should grow some balls and kill players? Pussy.");
+}
+
+if(($text=~/portal/i) && $ulevel >10 && ($client->GetPVPCareerPoints() < 4501)  ) {
+quest::say("There is no telling what has caused this energy to converge like this. What I do know is only those that are weak may enter. So, If you wish to see what is contained within just say '[I am weak]' and I will open a portal.");
+}
+
+
+if(($text=~/i am weak/i) && $ulevel >10 && $client->GetPVPCareerPoints() < 4501 ){
+
+if($ulevel < 30 && $client->GetPVPCareerPoints() < 1500) {
+#lets decide where they zone in at
+$zonep = int(rand (4));
+
+$g = $client->GetGroup();
+#quest::say("got to here");
+                if(!$g)
+                {
+$zonep = int(rand (4));
+				
+if ($zonep eq '0' && $client->GetPVPCareerPoints() < 1500 && $ulevel <30){
+quest::say("Well here you go weakling");
+quest::movepc(156, -232, -3707, 196, 64.6);
+return;
+}
+if ($zonep eq '1' && $client->GetPVPCareerPoints() < 1500 && $ulevel <30){
+quest::say("Well here you go weakling");
+quest::movepc(156, 1021.7, -1976.8, -307.8, 0.1);
+return;
+}
+if ($zonep eq '2' && $client->GetPVPCareerPoints() < 1500 && $ulevel <30){
+quest::say("Well here you go weakling");
+quest::movepc(156, -345.7, -2141.9, -10.1, 242.5);
+return;
+}
+if ($zonep eq '3' && $client->GetPVPCareerPoints() < 1500 && $ulevel <30){
+quest::say("Well here you go weakling");
+quest::movepc(156, 363, -714.7, -216.2, 47);
+return;
+}
+
+				
+                }
+                else
+                {
+                        for($i = 0; $i < 6; ++$i)
+                        {
+                                $c = $g->GetMember($i);
+#$zonep = int(rand (4));
+
+                                if($c)
+                                {
+$name = $c->GetName();
+
+if ($zonep eq '0' && $client->GetPVPCareerPoints() < 1500 && $ulevel <30){
+quest::say("-Group Port- Here you go $name. You weak pathetic being.");
+$c->MovePC(156, -232, -3707, 196, 64.6);
+
+#return;
+}
+if ($zonep eq '1' && $client->GetPVPCareerPoints() < 1500 && $ulevel <30){
+quest::say("-Group Port- Here you go $name. You weak pathetic being.");
+$c->MovePC(156, 1021.7, -1976.8, -307.8, 0.1);
+#return;
+}
+if ($zonep eq '2' && $client->GetPVPCareerPoints() < 1500 && $ulevel <30){
+quest::say("-Group Port- Here you go $name. You weak pathetic being.");
+$c->MovePC(156, -345.7, -2141.9, -10.1, 242.5);
+#return;
+}
+if ($zonep eq '3' && $client->GetPVPCareerPoints() < 1500 && $ulevel <30){
+quest::say("-Group Port- Here you go $name. You weak pathetic being.");
+$c->MovePC(156, 363, -714.7, -216.2, 47);
+#return;
+}
+
+                                }
+                        }
+return;
+                }
+##Paludwhatever
+#quest::say("Well here you go weakling");
+#quest::movepc(156, -232, -3707, 196, 64.6);
+
+quest::say("This shouldn't happen");
+return;
+}
+if($ulevel <41 && $ulevel >29 && $client->GetPVPCareerPoints() < 3501) {
+##Dawnshroud
+#quest::say("Well here you go weakling");
+#quest::movepc(174, 2085, 0, 89, 190.8);$zonep = int(rand (4));
+#$zonep = 3;
+$g = $client->GetGroup();
+
+                if(!$g)
+                {
+$zonep = int(rand (4));
+#$zonep = 1;				
+if ($zonep eq '0' && $client->GetPVPCareerPoints() < 3501 && $ulevel <41){
+quest::say("Well here you go weakling!");
+quest::movepc(174, 2085, -0, 89, 190.8);
+return;
+}
+if ($zonep eq '1' && $client->GetPVPCareerPoints() < 3501 && $ulevel <41){
+quest::say("Well here you go weakling!");
+quest::movepc(174, -1844.6, -782.1, 131.5, 63.9);
+return;
+}
+if ($zonep eq '2' && $client->GetPVPCareerPoints() < 3501 && $ulevel <41){
+quest::say("Well here you go weakling!");
+quest::movepc(174, -878.2, -1878, 102.5, 255.0);
+return;
+}
+if ($zonep eq '3' && $client->GetPVPCareerPoints() < 3501 && $ulevel <41){
+quest::say("Well here you go weakling!");
+quest::movepc(174, -174, 1888.7, 104.5, 129.4);
+return;
+}
+
+				
+                }
+                else
+                {
+				$zonep = int(rand (4));
+                        for($i = 0; $i < 6; ++$i)
+                        {
+                                $c = $g->GetMember($i);
+#$zonep = int(rand (4));
+
+                                if($c)
+                                {
+$name = $c->GetName();
+
+if ($zonep eq '0' && $client->GetPVPCareerPoints() < 3501 && $ulevel <41){
+quest::say("-Group Port- Here you go $name. You weak pathetic being.");
+$c->MovePC(174, 2085, -0, 89, 190.8);
+
+
+#return;
+}
+if ($zonep eq '1' && $client->GetPVPCareerPoints() < 3501 && $ulevel <41){
+quest::say("-Group Port- Here you go $name. You weak pathetic being.");
+$c->MovePC(174, -1844.6, -782.1, 131.5, 63.9);
+#return;
+}
+if ($zonep eq '2' && $client->GetPVPCareerPoints() < 3501 && $ulevel <41){
+quest::say("-Group Port- Here you go $name. You weak pathetic being.");
+$c->MovePC(174, -878.2, -1878, 102.5, 255.0);
+#return;
+}
+if ($zonep eq '3' && $client->GetPVPCareerPoints() < 3501 && $ulevel <41){
+quest::say("-Group Port- Here you go $name. You weak pathetic being.");
+$c->MovePC(174, -174, 1888.7, 104.5, 129.4);
+#return;
+}
+
+                                }
+                        }
+return;
+                }
+quest::say("This shouldn't happen");
+return;
+
+
+}
+
+
+if($ulevel >40 && $ulevel <50 ){
+quest::say("Im sorry $name you must wait till you are level 50 to continue.");
+return;
+}
+
+if($ulevel eq '50' && $client->GetPVPCareerPoints() < 4501  ) {
+##Tenebrous
+quest::say("Well here you go weakling");
+quest::movepc(172, 1810, 51, -36, 191.2);
+return;
+}
+
+}
+if($text=~/city/i && $ulevel >40 && $careerptz <4000){
+quest::say("...I do hope you survive...for once...");
+quest::movepc(90,-853.4,-0.6,3.1,63.6);
+return;
+}else{
+quest::say("Sorry $name, but fuck off.");
+return;
+}
+
+
+#$mehfuck =  $client->GetPVPCareerPoints();
+#quest::say("Something isn't right with you. Test: $ulevel /  $mehfuck ");
+} 

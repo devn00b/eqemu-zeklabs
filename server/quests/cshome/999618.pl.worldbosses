@@ -1,0 +1,67 @@
+use feature qw/switch/; 
+$WorldMobCooldownFlag = "worldeventmobcooldown";
+$WorldMobCooldownTime = "M45";
+
+$WorldCooldownFlag = "worldeventcooldown";
+$WorldCooldownTime = "M10";
+
+$ZoneEventFlag = "worldeventzoneflag";
+$ZoneCooldownTime = "M5";
+
+$WorldEventNPCID = "worldeventnpcspawned";
+$WorldEventNPCCooldown = "M60";
+sub EVENT_SPAWN
+{
+#quest::setglobal("worldeventmobcooldown","0",7,"S1");
+
+$WorldMobCooldownTime = "M45";
+$WorldCooldownTime = "M10";
+$ZoneCooldownTime = "M5";
+}
+
+sub EVENT_SAY
+{
+$zoneFlag = $qglobals{"worldeventzoneflag"};
+$worldNPC = $qglobals{"worldeventmobcooldown"};
+$npcID = $qglobals{"worldeventnpcspawned"};
+$eventCooldown = $qglobals{"worldeventcooldown"};
+
+quest::say("WorldNPCID: $npcID, NPC cooldown: $worldNPC, zoneID: $zoneFlag, event cooldown: $eventCooldown");
+
+#quest::say("$zoneFlag");
+$rndNum = quest::ChooseRandom(37,57,22,13,38,27,12,51,68,20);
+#quest::setglobal("worldeventmobcooldown","0",7,$WorldCooldownTime);
+#quest::setglobal("worldeventzoneflag","37",7,$ZoneCooldownTime);
+}
+
+sub EVENT_SPAWN
+{
+#15 minutes
+quest::settimer("worldevent",30);
+}
+
+sub EVENT_TIMER
+{
+if ( (defined $qglobals{"worldeventnpcspawned"} && $qglobals{"worldeventnpcspawned"} > 0) || defined $qglobals{"worldeventmobcooldown"} )
+{
+# no action cooldown is active
+quest::say("World npc spawn cooldown flag is set, waiting on choosing new location.");
+return;
+}
+
+if ( $timer eq "worldevent" )
+{
+
+quest::setglobal("worldeventcooldown","0",7,"S1");
+quest::setglobal("worldeventnpcspawned","0",7,"S1");
+quest::setglobal("worldeventmobcooldown","0",7,"S1");
+
+quest::shout2("A contestable NPC will be appearing shortly...");
+$rndNum = quest::ChooseRandom(37,57,22,13,38,27,12,51,68,20);
+quest::setglobal("worldeventzoneflag",$rndNum,7,$ZoneCooldownTime);
+quest::say("Random zone decided: $rndNum");
+quest::stoptimer("worldevent");
+quest::settimer("worldevent",600);
+}
+
+}

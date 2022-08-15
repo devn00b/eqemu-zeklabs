@@ -1,0 +1,123 @@
+gcc -c -Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated  -Wcomment -Wcast-align -Wl,-Map,zone.map -O4 -march=ivybridge -pthread -pipe -D_GNU_SOURCE -DINVERSEXY -DFX -DZONE -DEQDEBUG=0 -DTCPN_DEBUG=1 -DCATCH_CRASH -DNO_PIDLOG -DSHAREMEM -DFIELD_ITEMS -DCOMBINED -DREVERSE_AGGRO -DAPP_OPCODE_SIZE=2 -Di386 -DEMBPERL -DEMBPERL_PLUGIN -DHAS_UNION_SEMUN -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing    -g -DNDEBUG  -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -I/usr/lib/x86_64-linux-gnu/perl/5.20/CORE  hate_list.cpp -o hate_list.o
+In file included from ../common/common_profile.h:22:0,
+                 from ../common/debug.h:93,
+                 from hate_list.cpp:19:
+../common/../zone/features.h:127:0: warning: "REVERSE_AGGRO" redefined
+ #define REVERSE_AGGRO
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from zonedb.h:4:0,
+                 from entity.h:23,
+                 from masterentity.h:4,
+                 from hate_list.cpp:23:
+../common/shareddb.h:176:102: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  bool GenerateRandomLootGroupResult(RandomLootDropResult_Struct* rldr, uint32 groupid, char* npcName="UNKNOWN", char* pcName="UNKNOWN", int32 providedCRC=0);
+                                                                                                      ^
+../common/shareddb.h:176:126: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  bool GenerateRandomLootGroupResult(RandomLootDropResult_Struct* rldr, uint32 groupid, char* npcName="UNKNOWN", char* pcName="UNKNOWN", int32 providedCRC=0);
+                                                                                                                              ^
+../common/shareddb.h:184:173: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  bool GenerateRandItemStruct(float baseValue, float dbValue, Item_Struct* itmStruct, const RandomItemTemplate_Struct* rndItem, RNDITEM_DROP_TYPE dropType, char* npcNameStr="UNKNOWN", char* pcNameStr="UNKNOWN");
+                                                                                                                                                                             ^
+../common/shareddb.h:184:200: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  bool GenerateRandItemStruct(float baseValue, float dbValue, Item_Struct* itmStruct, const RandomItemTemplate_Struct* rndItem, RNDITEM_DROP_TYPE dropType, char* npcNameStr="UNKNOWN", char* pcNameStr="UNKNOWN");
+                                                                                                                                                                                                        ^
+In file included from zonedb.h:4:0,
+                 from entity.h:23,
+                 from masterentity.h:4,
+                 from hate_list.cpp:23:
+../common/shareddb.h:253:84: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  float charXPos=0.0f, float charYPos=0.0f, float charZPos=0.0f, char* charZoneName="", float targXPos=0.0f, float targYPos=0.0f, float targZPos=0.0f);
+                                                                                    ^
+../common/shareddb.h:255:84: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  float charXPos=0.0f, float charYPos=0.0f, float charZPos=0.0f, char* charZoneName="", float targXPos=0.0f, float targYPos=0.0f, float targZPos=0.0f);
+                                                                                    ^
+../common/shareddb.h:257:84: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  float charXPos=0.0f, float charYPos=0.0f, float charZPos=0.0f, char* charZoneName="", float targXPos=0.0f, float targYPos=0.0f, float targZPos=0.0f);
+                                                                                    ^
+../common/shareddb.h:281:132: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   int32 petitionID=0, bool bypassMessageLimit=false, uint32 command=0, uint32 commandValue=0, uint32 guildid=0, char* lastAttacker="", int32 fromgroupid=0, char* accountName="", int32 optionalfield1=0, int32 optionalfield2=0);
+                                                                                                                                    ^
+../common/shareddb.h:281:175: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   int32 petitionID=0, bool bypassMessageLimit=false, uint32 command=0, uint32 commandValue=0, uint32 guildid=0, char* lastAttacker="", int32 fromgroupid=0, char* accountName="", int32 optionalfield1=0, int32 optionalfield2=0);
+                                                                                                                                                                               ^
+In file included from masterentity.h:4:0,
+                 from hate_list.cpp:23:
+entity.h:360:150: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  int16 CreateGroundObject(int32 itemid, float x, float y, float z, float heading, int32 decay_time = 300000, uint32 requiredlevel = 0, char* qglobal="");
+                                                                                                                                                      ^
+In file included from masterentity.h:5:0,
+                 from hate_list.cpp:23:
+groups.h: In member function ‘void Group::SetLeader(Mob*)’:
+groups.h:79:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int i=0;i<MAX_GROUP_MEMBERS;i++)
+                 ^
+In file included from client.h:37:0,
+                 from masterentity.h:7,
+                 from hate_list.cpp:23:
+npc.h: In member function ‘void NPC::ClearQuestItems(bool)’:
+npc.h:380:14: warning: unused variable ‘inst’ [-Wunused-variable]
+    ItemInst* inst = iterator.GetData();
+              ^
+npc.h: In member function ‘void NPC::ClearQuestDeleteItems(bool)’:
+npc.h:393:14: warning: unused variable ‘inst’ [-Wunused-variable]
+    ItemInst* inst = iterator.GetData();
+              ^
+In file included from client.h:44:0,
+                 from masterentity.h:7,
+                 from hate_list.cpp:23:
+questmgr.h: At global scope:
+questmgr.h:247:158: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  int16 CreateGroundObject(int32 itemid, float x, float y, float z, float heading, int32 decay_time = 300000, uint32 levelrequirement = 0, char* qglobalvalue="");
+                                                                                                                                                              ^
+In file included from masterentity.h:7:0,
+                 from hate_list.cpp:23:
+client.h: In member function ‘void Client::CheckInfamyLevel(bool)’:
+client.h:1258:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( infamyLevel >= RuleI(PVPCombat, InfamyAttackLevel) )
+                     ^
+client.h:1267:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( infamyLevel < RuleI(PVPCombat, InfamyAttackLevel) )
+                     ^
+client.h: In member function ‘bool Client::IsCampTimerEnabled()’:
+client.h:1285:52: warning: no return statement in function returning non-void [-Wreturn-type]
+  bool IsCampTimerEnabled() { camp_timer.Enabled(); }
+                                                    ^
+In file included from masterentity.h:8:0,
+                 from hate_list.cpp:23:
+object.h: At global scope:
+object.h:138:147: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  Object(const ItemInst *inst, float x, float y, float z, float heading, int32 decay_time = 300000, uint32 levelrequirement = 0, char* qglobalflag="");
+                                                                                                                                                   ^
+hate_list.cpp: In member function ‘Mob* HateList::GetDamageTop(Mob*, bool)’:
+hate_list.cpp:171:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(r->GetTotalRaidDamage(hater) >= dmg_amt)
+                                    ^
+hate_list.cpp:179:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (grp->GetTotalGroupDamage(hater) >= dmg_amt)
+                                        ^
+hate_list.cpp:185:87: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         else if (iterator.GetData()->ent != NULL && (int32)iterator.GetData()->damage >= dmg_amt)
+                                                                                       ^
+hate_list.cpp:190:103: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   else if ( iterator.GetData()->ent && iterator.GetData()->ent->IsNPC() && iterator.GetData()->damage > dmg_npc_top )
+                                                                                                       ^
+hate_list.cpp: In member function ‘Mob* HateList::GetClosest(Mob*)’:
+hate_list.cpp:231:13: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+  if (!close && hater->IsNPC() || (close && close->DivineAura()) )
+             ^
+hate_list.cpp: In member function ‘void HateList::Add(Mob*, sint32, sint32, bool, bool)’:
+hate_list.cpp:292:135: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( isHateListEmpty && actualClient != NULL && owner->IsNPC() && owner->CastToNPC()->teamID > 0 && actualClient->GetInfamyLevel() < (RuleI(PVPCombat,InfamyAttackLevel)*2))
+                                                                                                                                       ^
+hate_list.cpp:334:75: error: ‘BANDITTEAMID’ was not declared in this scope
+       if ( actualClient->GetPVPValue() > 0 && ( (settings->ownerteamid != BANDITTEAMID && actualClient->GetPVPValue() != settings->ownerteamid) || 
+                                                                           ^
+hate_list.cpp:337:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+        if (  actualClient->GetInfamyLevel() < (RuleI(PVPCombat,InfamyAttackLevel)*2) )
+                                             ^
+hate_list.cpp:350:44: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       if (  actualClient->GetInfamyLevel() < (RuleI(PVPCombat,InfamyAttackLevel)*2) )
+                                            ^
+makefile.common:48: recipe for target 'hate_list.o' failed
+make: *** [hate_list.o] Error 1

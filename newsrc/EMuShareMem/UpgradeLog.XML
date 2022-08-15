@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="EMuShareMem">
+</Property><Property Name="Solution File" Value="E:\Kings and Bandits\projecteqemu-read-only\EQEmuServer\EMuShareMem\EMuShareMem.sln">
+</Property><Property Name="Date" Value="Monday, March 21, 2011">
+</Property><Property Name="Time" Value="15:57:52 PM">
+</Property></Properties><Event ErrorLevel="0" Project="EMuShareMem" Source="EMuShareMem.vcproj" Description="Converting project file 'E:\Kings and Bandits\projecteqemu-read-only\EQEmuServer\EMuShareMem\EMuShareMem.vcproj'.">
+</Event><Event ErrorLevel="1" Project="EMuShareMem" Source="EMuShareMem.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="EMuShareMem" Source="EMuShareMem.vcproj" Description="MSB8012: $(TargetPath) ('E:\Kings and Bandits\projecteqemu-read-only\EQEmuServer\EMuShareMem\.\../Build\EMuShareMem.dll') does not match the Linker's OutputFile property value '.\../Build/EMuShareMem.dll' ('E:\Kings and Bandits\projecteqemu-read-only\EQEmuServer\EMuShareMem\../Build/EMuShareMem.dll') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="EMuShareMem" Source="EMuShareMem.vcproj" Description="MSB8012: $(TargetPath) ('E:\Kings and Bandits\projecteqemu-read-only\EQEmuServer\EMuShareMem\.\../Build\EMuShareMem.dll') does not match the Linker's OutputFile property value '.\../Build/EMuShareMem.dll' ('E:\Kings and Bandits\projecteqemu-read-only\EQEmuServer\EMuShareMem\../Build/EMuShareMem.dll') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="EMuShareMem" Source="EMuShareMem.vcproj" Description="Done converting to new project file 'E:\Kings and Bandits\projecteqemu-read-only\EQEmuServer\EMuShareMem\EMuShareMem.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="EMuShareMem" Source="EMuShareMem.vcproj" Description="Converted">
+</Event></UpgradeLog>

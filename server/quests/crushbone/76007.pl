@@ -1,0 +1,23 @@
+sub EVENT_SPAWN
+{
+#quest::shout2("Cazic Thule grew bored of you dick faces. Now you get to face me and my shrinking bag of prizes.");
+$rnd = quest::ChooseRandom(1557,34192,68238,68720,46859,40289,28661,46846);
+$rndtwo = quest::ChooseRandom(1557,34192,68238,68720,46859,40289,28661,46846);
+$rndthree = quest::ChooseRandom(1557,34192,68238,68720,46859,40289,28661,46846);
+$ohboy = 1557;
+
+#Add 4x loot some cash.
+$npc->AddItem($rnd,1,0);
+$npc->AddItem($rndtwo,1,0);
+$npc->AddItem($rndthree,1,0);
+#$npc->AddItem($ohboy,1,0);
+
+#add cash
+$pltrnd  = int(rand (2000));
+$gldrnd  = int(rand (900));
+$slvrnd  = int(rand (500));
+$cprrnd  = int(rand (200));
+
+#$npc->AddCash($cprrnd,$silvrnd,$gldrnd,$pltrnd);
+}
+
